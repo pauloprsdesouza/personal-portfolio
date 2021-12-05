@@ -1,5 +1,6 @@
 import React from 'react';
 import { educations, experiences, skills } from '../../DB';
+import Introduction from './Indtroduction';
 import Item from './Item';
 import "./style.css"
 
@@ -7,23 +8,30 @@ function Home() {
     const educationsItems = educations;
     const experiencesItems = experiences;
     const skillsItems = skills;
+    const sections = ["Educação", "Experiência", "Stacks"];
 
     function createEducationItems() {
         return (
             <section>
-                {educationsItems.map((item, index) => (
-                    <div key={index} className="card mb-2 border-0 card-shadow">
-                        <h5 className="card-titlec p-3 bg-dark-light text-white">{item.course}</h5>
+                {educationsItems.map((education, index) => (
+                    <div key={index} className="card mb-3 border-0 card-shadow">
                         <div className="card-body ">
-                            <span className="badge bg-secondary mb-1"
-                            >{item.startedAt} - {item.finishedAt}</span>
-                            <p className="card-text">
+                            <div className="d-flex card-title m-0">
+                                <h5 className="text-primary">{education.course}</h5>&nbsp;
+                                <span className="text-secondary">({education.startedAt} - {education.finishedAt})</span>
+                            </div>
+                            <span className="text-secondary">Linha de Pesquisa: {education.researchLine}</span>
+                            <span className="badge bg-secondary"></span>
+                            <div>
                                 <a
-                                    href="education.university.url"
+                                    href={education.university.url}
                                     className="link-secondary"
                                     target="_blank">
-                                    {item.university.name}
+                                    {education.university.name}
                                 </a>
+                            </div>
+                            <p className="card-text">
+
                             </p>
                         </div>
                     </div>
@@ -42,7 +50,7 @@ function Home() {
                             >{experience.startedAt} - {experience.finishedAt}</span>
                             <h5 className="card-title">{experience.job}</h5>
                             <p className="card-text">
-                                <a href="experience.company.url"
+                                <a href={experience.company.url}
                                     className="link-secondary"
                                     target="_blank">
                                     {experience.company.name}</a>
@@ -79,11 +87,36 @@ function Home() {
         )
     }
 
+    function createAcordionContent(section) {
+        if (section === "Educação") {
+            return createEducationItems();
+        } else if (section === "Experiência") {
+            return createExperienceItems();
+        } else {
+            return createSkillsItems();
+        }
+    }
+
     return (
         <>
-            <Item title={"Educação"} items={createEducationItems} />
-            <Item title={"Experiências"} items={createExperienceItems} />
-            <Item title={"Staks Que Trabalho"} items={createSkillsItems} />
+            <Introduction />
+
+            <div className="accordion" id="acordionSections">
+                {sections.map((section, index) => (
+                    <div className="accordion-item mb-2" key={index}>
+                        <h2 className="accordion-header" id={`heading${index}`}>
+                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${index}`} aria-expanded="true" aria-controls={`collapse${index}`}>
+                                {section}
+                            </button>
+                        </h2>
+                        <div id={`collapse${index}`} className={`accordion-collapse collapse ${index == 0 ? "show" : ""}`} aria-labelledby={`heading${index}`} data-bs-parent="#acordionSections">
+                            <div className="accordion-body box-body-gray">
+                                {createAcordionContent(section)}
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </>
     )
 }

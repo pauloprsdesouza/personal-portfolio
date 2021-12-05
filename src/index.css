@@ -8,7 +8,7 @@ body {
 
   background:
   linear-gradient(rgba(243, 242, 238, 0.96) 40% 100%),
-  url("/src/assets/img/background.svg");
+  url("https://personal-portfolio-files.s3.amazonaws.com/img/background.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -29,4 +29,8 @@ code {
 
 .box-body-gray {
   background-color: #f3f2ee;
+}
+
+.card-shadow > div {
+  background-color: #fafafa;
 }

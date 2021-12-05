@@ -1,5 +1,5 @@
 const educations = [{
-        course: "Doutorado em Andamento em Ciência da Computação",
+        course: "Doutorado em Ciência da Computação",
         startedAt: "2019",
         finishedAt: "2023",
         university: {
@@ -7,10 +7,11 @@ const educations = [{
             url: "https://computacao.ufba.br/pt-br/programa-de-pos-graduacao-em-ciencia-da-computacao",
         },
         finishedWork: "",
+        researchLine: "Sistemas de Recomendação",
         brand: "ufba.png",
     },
     {
-        course: "Pós-graduação em Andamento em Direito Cibernético",
+        course: "Pós-graduação em Executivo em Business Analytics",
         startedAt: "2021",
         finishedAt: "2022",
         university: {
@@ -18,10 +19,11 @@ const educations = [{
             url: "https://ipog.edu.br/",
         },
         finishedWork: "ipog.png",
+        researchLine: "A Definir",
         brand: "ipog.png",
     },
     {
-        course: "Pós-graduação em Andamento em Computação Forense e Segurança da Informação",
+        course: "Pós-graduação em Computação Forense e Segurança da Informação",
         startedAt: "2021",
         finishedAt: "2022",
         university: {
@@ -29,6 +31,7 @@ const educations = [{
             url: "https://ipog.edu.br/",
         },
         finishedWork: "ipog.png",
+        researchLine: "A Definir",
         brand: "ipog.png",
     },
     {
@@ -40,6 +43,7 @@ const educations = [{
             url: "https://www.unit.br/",
         },
         finishedWork: "",
+        researchLine: "Cadeia de Custódia Digital",
         brand: "unit.png",
     },
     {
@@ -51,6 +55,7 @@ const educations = [{
             url: "https://computacao.ufba.br/pt-br/programa-de-pos-graduacao-em-ciencia-da-computacao",
         },
         finishedWork: "",
+        researchLine: "Sistemas de Recomendação",
         brand: "ufba.png",
     },
     {
@@ -62,6 +67,7 @@ const educations = [{
             url: "https://fanese.edu.br/",
         },
         finishedWork: "",
+        researchLine: "Data Warehaouses",
         brand: "fanese.png",
     },
     {
@@ -73,6 +79,7 @@ const educations = [{
             url: "https://www.unit.br/",
         },
         finishedWork: "",
+        researchLine: "",
         brand: "unit.png",
     },
 ];
