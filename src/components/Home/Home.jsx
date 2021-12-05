@@ -1,7 +1,6 @@
 import React from 'react';
 import { educations, experiences, skills } from '../../DB';
 import Introduction from './Indtroduction';
-import Item from './Item';
 import "./style.css"
 
 function Home() {
@@ -17,7 +16,7 @@ function Home() {
                     <div key={index} className="card mb-3 border-0 card-shadow">
                         <div className="card-body ">
                             <div className="d-flex card-title m-0">
-                                <h5 className="text-primary">{education.course}</h5>&nbsp;
+                                <h5>{education.course}</h5>&nbsp;
                                 <span className="text-secondary">({education.startedAt} - {education.finishedAt})</span>
                             </div>
                             <span className="text-secondary">Linha de Pesquisa: {education.researchLine}</span>

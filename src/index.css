@@ -7,16 +7,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   background:
-  linear-gradient(rgba(243, 242, 238, 0.96) 40% 100%),
+  linear-gradient(rgba(243, 242, 238, 0.96) 60% 100%),
   url("https://personal-portfolio-files.s3.amazonaws.com/img/background.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
 
 .card-shadow {
@@ -25,12 +20,17 @@ code {
 
 .container {
   margin-top: 20px;
+  min-height: calc(100vh - 230px);
 }
 
 .box-body-gray {
-  background-color: #f3f2ee;
+  background-color: #ffffff;
 }
 
 .card-shadow > div {
-  background-color: #fafafa;
+  background-color: #f2f3ee;
+}
+
+footer {
+  background-color: #ffffff;
 }
