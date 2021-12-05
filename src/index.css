@@ -5,9 +5,28 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background:
+  linear-gradient(rgba(243, 242, 238, 0.96) 40% 100%),
+  url("/src/assets/img/background.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.card-shadow {
+  box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.box-body-gray {
+  background-color: #f3f2ee;
 }
