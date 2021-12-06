@@ -10,7 +10,7 @@ function Footer() {
                 <li className="nav-item"><Link to="/projetos" className="nav-link px-2 text-muted">Projetos</Link></li>
             </ul>
             <div className="d-flex justify-content-between align-items-center mx-4">
-                <span className="text-muted">© 2022 Company, Inc</span>
+                <span className="text-muted">© Paulo Roberto de Souza, 2022</span>
 
                 <ul className="nav justify-content-end list-unstyled d-flex">
                     <li className="ms-3">

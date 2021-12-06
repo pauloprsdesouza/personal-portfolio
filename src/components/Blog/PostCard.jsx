@@ -2,7 +2,7 @@ import React from 'react';
 
 function PostCard({ post }) {
     return (
-        <div className="col-md-3 col-xs-12">
+        <div className="col-md-3 col-xs-12 mb-3">
             <div className="card">
                 <img src={post.imgHeader} className="card-img-top" alt="..."/>
                 <div className="card-body">

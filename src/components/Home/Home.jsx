@@ -1,5 +1,7 @@
 import React from 'react';
-import { educations, experiences, skills } from '../../DB';
+import { educations } from '../../Database/Educations';
+import { experiences } from '../../Database/Experiences';
+import { skills } from '../../Database/Skills';
 import Introduction from './Indtroduction';
 import "./style.css"
 
@@ -7,7 +9,19 @@ function Home() {
     const educationsItems = educations;
     const experiencesItems = experiences;
     const skillsItems = skills;
-    const sections = ["Educação", "Experiência", "Stacks"];
+    const sections = [
+    {
+        icon: <i class="fas fa-user-graduate"></i>,
+        title: "Educação"
+    },
+    {
+        icon: <i class="fas fa-briefcase"></i>,
+        title: "Experiência"
+    },
+    {
+        icon: <i class="fas fa-layer-group"></i>,
+        title: "Stacks"
+    }];
 
     function createEducationItems() {
         return (
@@ -87,9 +101,9 @@ function Home() {
     }
 
     function createAcordionContent(section) {
-        if (section === "Educação") {
+        if (section.title === "Educação") {
             return createEducationItems();
-        } else if (section === "Experiência") {
+        } else if (section.title === "Experiência") {
             return createExperienceItems();
         } else {
             return createSkillsItems();
@@ -102,10 +116,10 @@ function Home() {
 
             <div className="accordion" id="acordionSections">
                 {sections.map((section, index) => (
-                    <div className="accordion-item mb-2" key={index}>
+                    <div className="accordion-item mb-1" key={index}>
                         <h2 className="accordion-header" id={`heading${index}`}>
                             <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${index}`} aria-expanded="true" aria-controls={`collapse${index}`}>
-                                {section}
+                                {section.icon}&nbsp;{section.title}
                             </button>
                         </h2>
                         <div id={`collapse${index}`} className={`accordion-collapse collapse ${index == 0 ? "show" : ""}`} aria-labelledby={`heading${index}`} data-bs-parent="#acordionSections">
