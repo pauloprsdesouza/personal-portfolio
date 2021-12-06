@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { posts } from '../../Database/Posts';
+import Post from './Post';
 import PostCard from './PostCard';
 
 function Blog() {
@@ -9,11 +10,9 @@ function Blog() {
         <>
             <div className="row">
                 {postItems.map((post, index) => (
-                    <PostCard post={post} />
+                    <PostCard post={post} key={index} />
                 ))}
             </div>
-
-            <div className="fb-comments" data-href="https://paulosouza.me/blog" data-width="100%" data-numposts="10"></div>
         </>
     )
 }
