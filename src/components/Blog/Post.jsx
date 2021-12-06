@@ -18,8 +18,7 @@ function Post() {
             {post.title}
             <div className="card">
                 <div className="card-body">
-                    <div className="fb-comments" data-href="https://paulosouza.me/blog" data-width="100%" data-numposts="10"></div>
-
+                    <div className="fb-comments" data-href={`https://paulosouza.me/blog/${id}`} data-width="100%" data-numposts="10"></div>
                 </div>
             </div>
         </>
