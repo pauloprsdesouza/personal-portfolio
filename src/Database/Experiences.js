@@ -1,5 +1,5 @@
 const experiences = [{
-        job: "Pesquisador Acadmêmico",
+        job: "Pesquisador Acadêmico",
         company: {
             name: "Universidade Federal da Bahia (UFBA)",
             url: "https://computacao.ufba.br/pt-br/programa-de-pos-graduacao-em-ciencia-da-computacao",
@@ -23,7 +23,7 @@ const experiences = [{
         brand: "stefanini.png",
     },
     {
-        job: "Desenvolvedor Junior",
+        job: "Desenvolvedor Júnior",
         company: {
             name: "Indra Company",
             url: "https://www.indracompany.com/",

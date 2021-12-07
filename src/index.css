@@ -5,13 +5,46 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background:transparent;
 
+  /* background:
+  linear-gradient(rgba(39, 37, 50, 0.88) 60% 100%),
+  url("https://personal-portfolio-files.s3.amazonaws.com/img/background.svg") no-repeat center center fixed;
+  background-size:cover;
+-moz-background-size: cover;
+-webkit-background-size: cover;
+-o-background-size: cover;
+  background-repeat: no-repeat; */
+}
+
+body:after {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  display: block;
   background:
-  linear-gradient(rgba(243, 242, 238, 0.96) 60% 100%),
-  url("https://personal-portfolio-files.s3.amazonaws.com/img/background.svg");
+    linear-gradient(rgba(39, 37, 50, 0.969) 60% 100%),
+    url("https://personal-portfolio-files.s3.amazonaws.com/img/background.svg") center center;
   background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+}
+
+
+
+
+.card-title {
+  font-weight: 700 !important;
+}
+
+.card-subtitle {
+  font-weight: 400 !important;
 }
 
 .card-shadow {
@@ -27,7 +60,7 @@ body {
   background-color: #ffffff;
 }
 
-.card-shadow > div {
+.card-shadow>div {
   background-color: #fafafa;
 }
 

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { posts } from '../../Database/Posts';
-import Post from './Post';
 import PostCard from './PostCard';
 
 function Blog() {

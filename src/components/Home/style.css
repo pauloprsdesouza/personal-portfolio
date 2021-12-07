@@ -1,7 +1,49 @@
-.bg-dark-light{
+.bg-dark-light {
     background-color: #20262d;
 }
 
 .accordion-button {
     font-size: 16pt;
 }
+
+h1 {
+    font-weight: 400;
+}
+
+h5 {
+    color: #272532 !important;
+}
+
+.card-border-left-purple {
+    border-left: solid;
+    border-left-width: 7px;
+    border-left-color: #594a9b;
+}
+
+.card-border-left-green {
+    border-left: solid;
+    border-left-width: 7px;
+    border-left-color: #53a13a;
+}
+
+.card-border-bottom-yellow {
+    border-bottom: solid;
+    border-bottom-width: 7px;
+    border-bottom-color: #eca51f;
+}
+
+.text-purple {
+    color: #594a9b !important;
+    font-weight: 500;
+}
+
+.text-green {
+    color: #53a13a !important;
+    font-weight: 500;
+}
+
+
+
+
+
+

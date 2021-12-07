@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function PostCard({ post }) {
     return (
         <div className="col-md-3 col-xs-12 mb-3">
-            <div className="card">
+            <div className="card card-shadow border-0">
                 <img src={post.imgHeader} className="card-img-top" alt="..." />
                 <div className="card-body">
                     <div className="d-flex justify-content-between mb-3 text-muted">

@@ -9,6 +9,10 @@
          finishedWork: "",
          researchLine: "Sistemas de Recomendação",
          brand: "ufba.png",
+         curriculum: [{
+             discipline: "Algoritmos e Grafos",
+             workload: "51h"
+         }]
      },
      {
          course: "Pós-graduação em Executivo em Business Analytics",
@@ -21,6 +25,10 @@
          finishedWork: "ipog.png",
          researchLine: "A Definir",
          brand: "ipog.png",
+         curriculum: [{
+             discipline: "Algoritmos e Grafos",
+             workload: "51h"
+         }]
      },
      {
          course: "Pós-graduação em Computação Forense e Segurança da Informação",
@@ -33,6 +41,10 @@
          finishedWork: "ipog.png",
          researchLine: "A Definir",
          brand: "ipog.png",
+         curriculum: [{
+             discipline: "Algoritmos e Grafos",
+             workload: "51h"
+         }]
      },
      {
          course: "Pós-graduado em Perícias Criminais e Ciências Forenses",
@@ -45,6 +57,10 @@
          finishedWork: "",
          researchLine: "Cadeia de Custódia Digital",
          brand: "unit.png",
+         curriculum: [{
+             discipline: "Algoritmos e Grafos",
+             workload: "51h"
+         }]
      },
      {
          course: "Mestrado em Ciência da Computação",
@@ -57,6 +73,51 @@
          finishedWork: "",
          researchLine: "Sistemas de Recomendação",
          brand: "ufba.png",
+         curriculum: [{
+                 discipline: "Algoritmos e Grafos",
+                 workload: "51h"
+             },
+             {
+                 discipline: "Seminários Científicos",
+                 workload: "51h"
+             },
+             {
+                 discipline: "Fundamentos de Pesquisa em Ciência da Computação I",
+                 workload: "51h"
+             },
+             {
+                 discipline: "Tópicos em Inteligência Computacional II",
+                 workload: "51h"
+             },
+             {
+                 discipline: "Tópicos em Sistemas de Informação e WEB I",
+                 workload: "51h"
+             },
+             {
+                 discipline: "Tópicos em Inteligência Computacional III",
+                 workload: "51h"
+             },
+             {
+                 discipline: "Pesquisa Orientada",
+                 workload: "-"
+             },
+             {
+                 discipline: "Estágio Docente Orientado",
+                 workload: "-"
+             },
+             {
+                 discipline: "Projeto de Dissertação de Mestrado",
+                 workload: "-"
+             },
+             {
+                 discipline: "Defesa de Proposta de Mestrado",
+                 workload: "-"
+             },
+             {
+                 discipline: "Trabalho de Conclusão",
+                 workload: "-"
+             },
+         ]
      },
      {
          course: "MBA em Administração em Banco de Dados",
@@ -69,6 +130,10 @@
          finishedWork: "",
          researchLine: "Data Warehaouses",
          brand: "fanese.png",
+         curriculum: [{
+             discipline: "Algoritmos e Grafos",
+             workload: "51h"
+         }]
      },
      {
          course: "Graduação em Sistemas para Internet",
@@ -81,6 +146,10 @@
          finishedWork: "",
          researchLine: "",
          brand: "unit.png",
+         curriculum: [{
+             discipline: "Algoritmos e Grafos",
+             workload: "51h"
+         }]
      },
  ];
 
