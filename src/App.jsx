@@ -5,10 +5,11 @@ import AppBar from './components/AppBar/AppBar';
 import Blog from './components/Blog/Blog';
 import Post from './components/Blog/Post';
 import Footer from './components/Footer/Footer';
+import GoToTopButton from './components/GoToTopButton/GoToTopButton';
 import Home from './components/Home/Home';
 
-
 function App() {
+  console.log(process.env.REACT_APP_ID_FACEBOOK)
   return (
     <>
       <BrowserRouter>
@@ -20,7 +21,8 @@ function App() {
             <Route path="/blog/:id" element={<Post />} />
           </Routes>
         </div>
-        <Footer/>
+        <Footer />
+        <GoToTopButton />
       </BrowserRouter>
     </>
   );

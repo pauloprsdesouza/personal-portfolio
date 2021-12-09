@@ -9,7 +9,7 @@ function Education() {
     return (
         <section>
             {educationsItems.map((education) => (
-                <div key={education.id} className="card mb-3 border-0">
+                <div key={education.id} className="card mb-3 border-0" data-aos="fade-up">
                     <div className="card-body card-border-left-purple">
                         <h5 className="card-title">{education.course}</h5>
                         <h6 className="card-subtitle mb-3 text-muted">{education.researchLine}</h6>

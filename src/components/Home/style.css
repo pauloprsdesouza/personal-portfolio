@@ -45,14 +45,15 @@ h5 {
 .img-cirle {
     border-radius: 50% !important;
     width: 200px;
+    height: 200px;
     padding: 5px;
     border: solid 2px #b5b6bc;
+    object-fit: cover;
 }
 
 .text-justify {
        text-align: justify; 
 }
-
 
 
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; 
 import Education from './Educations/Education';
 import Experience from './Experience/Experience';
 import Introduction from './Indtroduction';
@@ -42,6 +42,7 @@ function Home() {
     return (
         <>
             <Introduction />
+       
             {sections.map((section) => (
                 <section key={section.id}>
                     <h1 className="mb-3 mt-5 text-white teste">{section.icon} {section.title}</h1>

@@ -5,16 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background:transparent;
-
-  /* background:
-  linear-gradient(rgba(39, 37, 50, 0.88) 60% 100%),
-  url("https://personal-portfolio-files.s3.amazonaws.com/img/background.svg") no-repeat center center fixed;
-  background-size:cover;
--moz-background-size: cover;
--webkit-background-size: cover;
--o-background-size: cover;
-  background-repeat: no-repeat; */
+  background: transparent;
 }
 
 body:after {
@@ -27,17 +18,15 @@ body:after {
   z-index: -1;
   display: block;
   background:
-    linear-gradient(rgba(39, 37, 50, 0.969) 60% 100%),
+    linear-gradient(rgba(39, 37, 50, 0.98) 60% 100%),
     url("https://personal-portfolio-files.s3.amazonaws.com/img/background.svg") center center;
   background-size: cover;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-repeat: no-repeat;
+
 }
-
-
-
 
 .card-title {
   font-weight: 700 !important;
