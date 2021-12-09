@@ -46,7 +46,7 @@ const jobs = [{
         startedAt: "Novembro de 2016",
         finishedAt: "Maio de 2017",
         activity: {
-            description: "Actually, I am developing researches on Recommender Systems, Information Retrieval, Semantic Web, and Social Media areas. Besides, I am developing both applications web and mobile using some technologies based on AWS cloud computin",
+            description: "Alocado na <a href='https://www.ssp.se.gov.br/'>Secretaria de Segurança Pública de Sergipe</a>, participei do desenvolvimento de projetos internos para a Polícia Civil, bem como para o público externo como o aplicativo <a href='https://apps.apple.com/br/app/disque-den%C3%BAncia-se/id1221486095'>Disque Denúncia SE 181</a>.",
             usedStacks: [angular, vueJS, bootstrap, ionic, sqlServer, cSharp, dotnet, android]
         },
         brand: "stefanini.png",
@@ -62,7 +62,7 @@ const jobs = [{
         startedAt: "Dezembro de 2013",
         finishedAt: "Novembro de 2016",
         activity: {
-            description: "Actually, I am developing researches on Recommender Systems, Information Retrieval, Semantic Web, and Social Media areas. Besides, I am developing both applications web and mobile using some technologies based on AWS cloud computin",
+            description: "Alocado na <a href='https://www.ssp.se.gov.br/'>Secretaria de Segurança Pública de Sergipe</a>, participei do desenvolvimento de projetos internos para a Polícia Civil, bem como para o público externo como o aplicativo <a href='https://apps.apple.com/br/app/disque-den%C3%BAncia-se/id1221486095'>Disque Denúncia SE 181</a>.",
             usedStacks: [angular, vueJS, bootstrap, ionic, sqlServer, cSharp, dotnet, android]
         },
         brand: "indra.png",

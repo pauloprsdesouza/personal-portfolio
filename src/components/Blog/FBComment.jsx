@@ -1,15 +1,18 @@
-import React, { useEffect } from 'react';
-
+import React, { useEffect, useState } from 'react';
 
 function FBComment({ id }) {
+    const [teste, setTeste] = useState(true);
     useEffect(() => {
-        window.FB.XFBML.parse();
-    });
+        if (window.FB !== undefined) {
+            window.FB.XFBML.parse();
+        }
+       
+    }, [id]);
 
     return (
         <div className="card">
             <div className="card-body">
-                <div className="fb-comments" data-mobile="true" data-href={`http://paulosouza.me/blog/${id}`} data-width="100%" data-numposts="5"></div>
+                <div className="fb-comments" data-href={`http://paulosouza.me/blog/${id}`} data-width="100%" data-numposts="5"></div>
             </div>
         </div>
     )

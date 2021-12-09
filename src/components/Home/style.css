@@ -42,11 +42,16 @@ h5 {
     font-weight: 500;
 }
 
-.img-cirle {
+.img-cirle-md {
     border-radius: 50% !important;
-    width: 200px;
-    height: 200px;
     padding: 5px;
+    border: solid 2px #b5b6bc;
+    object-fit: cover;
+}
+
+.img-cirle-sm {
+    border-radius: 50% !important;
+    padding: 2px;
     border: solid 2px #b5b6bc;
     object-fit: cover;
 }

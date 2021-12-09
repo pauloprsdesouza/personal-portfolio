@@ -22,7 +22,7 @@ function GoToTopButton() {
     function createButton() {
         if (showButton) {
             return (
-                <button className="btn btn-primary float-button-go-to-top" onClick={topFunction}>Para o Topo&nbsp;<i className="fas fa-chevron-up"></i></button>
+                <button className="btn btn-primary float-button-go-to-top" onClick={topFunction}><i className="fas fa-chevron-up"></i></button>
             )
         }
     }

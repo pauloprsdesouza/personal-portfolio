@@ -7,11 +7,9 @@ function Blog() {
 
     return (
         <>
-            <div className="row">
-                {postItems.map((post, index) => (
-                    <PostCard post={post} key={index} />
-                ))}
-            </div>
+            {postItems.map((post, index) => (
+                <PostCard post={post} key={index} />
+            ))}
         </>
     )
 }

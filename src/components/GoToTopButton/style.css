@@ -1,6 +1,6 @@
 .float-button-go-to-top {
     position: fixed;
     bottom: 80px;
-    right: 30px;
+    right: 10px;
     z-index: 99;
 }

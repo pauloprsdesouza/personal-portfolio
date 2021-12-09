@@ -6,8 +6,8 @@ function Introduction() {
         <div className="card mb-2 card-shadow border-0">
             <div className="card-body">
                 <div className="row justify-content-center">
-                    <div className="col-auto col-md-4 col-lg-3 text-center">
-                        <img className="img-cirle card-shadow mb-3" src="https://personal-portfolio-files.s3.amazonaws.com/img/photo-introduction.jpeg" alt="Paulo Roberto de Souza"/>
+                    <div className="col-auto col-md-4 col-lg-3 text-center px-5 mb-3">
+                        <img className="img-cirle-md card-shadow mb-3" src="https://personal-portfolio-files.s3.amazonaws.com/img/photo-introduction.jpeg" width="200" height="200" alt="Paulo Roberto de Souza"/>
                         <ul className="nav justify-content-between list-unstyled d-flex ">
                             <li className="ms-3">
                                 <a className="text-purple" href="https://github.com/pauloprsdesouza"><i className="fab fa-github-alt fa-2x"></i></a>
