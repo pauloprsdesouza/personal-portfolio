@@ -7,7 +7,7 @@ function Introduction() {
             <div className="card-body">
                 <div className="row justify-content-center">
                     <div className="col-auto col-lg-2">
-                        <img className="img-cirle card-shadow" src="http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4474284E3" />
+                        <img className="img-cirle card-shadow" src="https://personal-portfolio-files.s3.amazonaws.com/img/photo-introduction.jpeg" />
                     </div>
                     <div className="col-auto col-lg-10">
                         <h1 className="text-center text-lg-start">Paulo Roberto de Souza</h1>
