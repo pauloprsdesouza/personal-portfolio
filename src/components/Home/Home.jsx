@@ -1,6 +1,6 @@
 import React from 'react';
 import Education from './Educations/Education';
-import Experience from './Experience';
+import Experience from './Experience/Experience';
 import Introduction from './Indtroduction';
 import Stack from './Stack';
 import "./style.css"

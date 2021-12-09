@@ -1,4 +1,5 @@
  const educations = [{
+         id: 1,
          course: "Doutorado em Ciência da Computação",
          startedAt: "2019",
          finishedAt: "2023",
@@ -6,15 +7,26 @@
              name: "Universidade Federal da Bahia (UFBA)",
              url: "https://computacao.ufba.br/pt-br/programa-de-pos-graduacao-em-ciencia-da-computacao",
          },
-         finishedWork: "",
          researchLine: "Sistemas de Recomendação",
          brand: "ufba.png",
-         curriculum: [{
-             discipline: "Algoritmos e Grafos",
-             workload: "51h"
-         }]
+         curriculum: ["Algoritmos e Grafos (Mestrado)",
+             "Seminários Científicos (Mestrado)",
+             "Fundamentos de Pesquisa em Ciência da Computação II",
+             "Tópicos em Inteligência Computacional II (Mestrado)",
+             "Tópicos em Inteligência Computacional III (Mestrado)",
+             "Tópicos em Sistemas de Informação e WEB I (Mestrado)",
+             "Inteligência Artificial",
+             "Sistemas WEB",
+             "Pesquisa Orientada",
+             "Estágio Docente Orientado",
+             "Exame de Qualificação",
+             "Seminários de Avaliação Anuais",
+             "Trabalho de Conclusão",
+             "Elaboração da Tese de Doutorado"
+         ]
      },
      {
+         id: 2,
          course: "Pós-graduação em Executivo em Business Analytics",
          startedAt: "2021",
          finishedAt: "2022",
@@ -22,15 +34,24 @@
              name: "Instituto de Pós-Graduação (IPOG)",
              url: "https://ipog.edu.br/",
          },
-         finishedWork: "ipog.png",
          researchLine: "A Definir",
          brand: "ipog.png",
-         curriculum: [{
-             discipline: "Algoritmos e Grafos",
-             workload: "51h"
-         }]
+         curriculum: ["Gestão Estratégica Data Driven",
+             "Liderança em Inovação e Transformação Digital",
+             "Inteligência de Negócios e Business Analytics",
+             "Análise e Ciência de Dados",
+             "Gestão Ágil em Projetos e Produtos Data Driven",
+             "Python para Ciência de Dados",
+             "Cloud Computing, Arquitetura e Engenharia de Dados",
+             "Startup Experience - Launch",
+             "Inteligência Artificial como Vantagem Competitiva",
+             "Gestão de Marketing Guiada por Dados",
+             "Probabilidade e Estatística para Negócios",
+             "Desenvolvimento Integral do Potencial Humano"
+         ]
      },
      {
+         id: 3,
          course: "Pós-graduação em Computação Forense e Segurança da Informação",
          startedAt: "2021",
          finishedAt: "2022",
@@ -38,15 +59,24 @@
              name: "Instituto de Pós-Graduação (IPOG)",
              url: "https://ipog.edu.br/",
          },
-         finishedWork: "ipog.png",
          researchLine: "A Definir",
          brand: "ipog.png",
-         curriculum: [{
-             discipline: "Algoritmos e Grafos",
-             workload: "51h"
-         }]
+         curriculum: ["Princípios de Criminalística e Introdução à Computação Forense",
+             "Análise Forense do Sistema Operacional Windows",
+             "Análise Forense do Sistema Operacional LINUX",
+             "Tópicos Especiais: Criptomoedas, Darkweb, IoT e Forensic Readiness",
+             "Perícias em Mídias de Armazenamento",
+             "Perícias em Equipamentos Computacionais Portáteis e de Telefonia Móvel",
+             "Exames em Malwares e Técnicas Antiforenses",
+             "Perícias em Locais de Internet e relacionados à Pornografia Infanto-Juvenil",
+             "Práticas Forenses: Elaboração de Laudos e Pareceres, e Assistência Técnica",
+             "Criptografia e Criptoanálise",
+             "Segurança e Inteligência Cibernética",
+             "Perícias em Imagens Digitais"
+         ]
      },
      {
+         id: 4,
          course: "Pós-graduado em Perícias Criminais e Ciências Forenses",
          startedAt: "2019",
          finishedAt: "2021",
@@ -54,15 +84,35 @@
              name: "Universidade Tiradentes (UNIT)",
              url: "https://www.unit.br/",
          },
-         finishedWork: "",
          researchLine: "Cadeia de Custódia Digital",
          brand: "unit.png",
-         curriculum: [{
-             discipline: "Algoritmos e Grafos",
-             workload: "51h"
-         }]
+         curriculum: ["Local de Crime",
+             "Medicina Legal",
+             "Introdução à Criminalística",
+             "Psicologia Forense",
+             "Balística Forense",
+             "Legislação aplicada à Criminalística",
+             "Documentoscopia",
+             "Papiloscopia",
+             "Metodologia Científica",
+             "Bombas, explosivos e combustíveis",
+             "Biologia Forense",
+             "Odontologia Forense",
+             "Antropologia Forense",
+             "Genética Forense",
+             "Análise de drogas de abuso",
+             "Perícia Ambiental",
+             "Computação Forense",
+             "Engenharia Forense",
+             "Entomologia Forense",
+             "Acidentes de Trânsito",
+             "Toxicologia Forense",
+             "Seminários de Conclusão",
+             "Monografia"
+         ]
      },
      {
+         id: 5,
          course: "Mestrado em Ciência da Computação",
          startedAt: "2017",
          finishedAt: "2019",
@@ -70,56 +120,23 @@
              name: "Universidade Federal da Bahia (UFBA)",
              url: "https://computacao.ufba.br/pt-br/programa-de-pos-graduacao-em-ciencia-da-computacao",
          },
-         finishedWork: "",
          researchLine: "Sistemas de Recomendação",
          brand: "ufba.png",
-         curriculum: [{
-                 discipline: "Algoritmos e Grafos",
-                 workload: "51h"
-             },
-             {
-                 discipline: "Seminários Científicos",
-                 workload: "51h"
-             },
-             {
-                 discipline: "Fundamentos de Pesquisa em Ciência da Computação I",
-                 workload: "51h"
-             },
-             {
-                 discipline: "Tópicos em Inteligência Computacional II",
-                 workload: "51h"
-             },
-             {
-                 discipline: "Tópicos em Sistemas de Informação e WEB I",
-                 workload: "51h"
-             },
-             {
-                 discipline: "Tópicos em Inteligência Computacional III",
-                 workload: "51h"
-             },
-             {
-                 discipline: "Pesquisa Orientada",
-                 workload: "-"
-             },
-             {
-                 discipline: "Estágio Docente Orientado",
-                 workload: "-"
-             },
-             {
-                 discipline: "Projeto de Dissertação de Mestrado",
-                 workload: "-"
-             },
-             {
-                 discipline: "Defesa de Proposta de Mestrado",
-                 workload: "-"
-             },
-             {
-                 discipline: "Trabalho de Conclusão",
-                 workload: "-"
-             },
+         curriculum: ["Algoritmos e Grafos",
+             "Seminários Científicos",
+             "Fundamentos de Pesquisa em Ciência da Computação I",
+             "Tópicos em Inteligência Computacional II",
+             "Tópicos em Sistemas de Informação e WEB I",
+             "Tópicos em Inteligência Computacional III",
+             "Pesquisa Orientada",
+             "Estágio Docente Orientado",
+             "Projeto de Dissertação de Mestrado",
+             "Defesa de Proposta de Mestrado",
+             "Trabalho de Conclusão",
          ]
      },
      {
+         id: 6,
          course: "MBA em Administração em Banco de Dados",
          startedAt: "2014",
          finishedAt: "2016",
@@ -127,15 +144,31 @@
              name: "Faculdade de Administração e Negócios de Sergipe (FANESE)",
              url: "https://fanese.edu.br/",
          },
-         finishedWork: "",
-         researchLine: "Data Warehaouses",
+         researchLine: "Data Warehouse",
          brand: "fanese.png",
-         curriculum: [{
-             discipline: "Algoritmos e Grafos",
-             workload: "51h"
-         }]
+         curriculum: ["Fundamentos de Bancos de Dados",
+             "Infraestrutura de Redes",
+             "Infraestrutura de Sistemas Operacionais e Adm de Servidores",
+             "Ética e Responsabilidade Socioambiental",
+             "Relações Interpessoais",
+             "Arquitetura e Administração de Banco de Dados I (SQL Server)",
+             "Arquitetura e Administração de Banco de Dados II (Oracle)",
+             "Procedimentos de Backup e Restauração I (SQL Server)",
+             "Procedimentos de Backup e Restauração II (Oracle)",
+             "Metodologia da Pesquisa Científica I",
+             "Otimização de Aplicações para Banco de Dados",
+             "Preparação Certificação (MCITP)",
+             "Segurança e Auditoria em Bancos de Dados",
+             "Arquitetura e Adm. de Banco de Dados III (PostgreSQL)",
+             "Business Inteligence e DataWarehouse",
+             "Data Mining (Mineração de Dados)",
+             "Metodologia da Pesquisa Científica II",
+             "Preparação para Certificação (OCA)",
+             "Replicação e Alta Disponibilidade", "TCC"
+         ]
      },
      {
+         id: 7,
          course: "Graduação em Sistemas para Internet",
          startedAt: "2112",
          finishedAt: "2014",
@@ -143,13 +176,42 @@
              name: "Universidade Tiradentes (UNIT)",
              url: "https://www.unit.br/",
          },
-         finishedWork: "",
          researchLine: "",
          brand: "unit.png",
-         curriculum: [{
-             discipline: "Algoritmos e Grafos",
-             workload: "51h"
-         }]
+         curriculum: ["Lógica Matemática",
+             "Introdução à Informática",
+             "Introdução à Programação Web",
+             "Padrões Web",
+             "Organização e Arquitetura de Computadores",
+             "Metodologia Científica",
+             "Práticas Investigativas I",
+             "Engenharia de Software I",
+             "Tecnologia Web",
+             "Sistemas Operacionais",
+             "Organização de Processos",
+             "Práticas Extensionistas I",
+             "Estrutura de Dados I",
+             "Banco de Dados I",
+             "Engenharia de Software Ii",
+             "Tecnologia Web Ii",
+             "Estrutura de Dados I",
+             "Banco de Dados I",
+             "Engenharia de Software Ii",
+             "Redes de Computadores I",
+             "Sistemas Operacionais",
+             "Estrutura de Dados I",
+             "Engenharia de Software Ii",
+             "Segurança em Aplicações Web",
+             "Gerência de Projetos",
+             "Tópicos Especias (Optativa)",
+             "Organização de Processos",
+             "Estrutura de Dados Ii",
+             "Tecnologia Web Iii",
+             "Projeto Web I",
+             "Projeto Web Ii",
+             "Estágio em Desenvolvimento Web",
+             "Projeto de Arquitetura De Aplicações"
+         ]
      },
  ];
 

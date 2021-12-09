@@ -7,7 +7,7 @@ function Post() {
     const [post, setPost] = useState({});
 
     useEffect(() => {
-        const postById = posts.find(item => item.id == id);
+        const postById = posts.find(item => item.id === id);
 
         setPost(postById);
     }, [id])

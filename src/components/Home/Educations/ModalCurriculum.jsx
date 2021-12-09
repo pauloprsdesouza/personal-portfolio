@@ -1,21 +1,18 @@
 import React from 'react';
 
-function ModalCurriculum({ education, index, dismiss }) {
+function ModalCurriculum({ education }) {
     return (
-        <div className="modal fade" id={`modalCurriculum${index}`}>
+        <div className="modal fade" id={`modalCurriculum${education.id}`}>
             <div className="modal-dialog modal-lg">
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h5 className="modal-title text-purple">{education.course}</h5>
+                        <h5 className="modal-title">{education.course}</h5>
                     </div>
                     <div className="modal-body p-0">
-
-                        <h5 className="text-purple mb-3"></h5>
-                        <ul class="list-group list-group-flush mb-3">
-                            {education.curriculum.map((item, id) => (
-                                <li class="list-group-item d-flex justify-content-between align-items-center" key={id}>
-                                    {item.discipline}
-                                    <span className="text-bold">{item.workload}</span>
+                        <ul className="list-group list-group-flush mb-3">
+                            {education.curriculum.map((discipline, id) => (
+                                <li className="list-group-item d-flex justify-content-between align-items-center" key={id}>
+                                    {discipline}
                                 </li>
                             ))}
                         </ul>

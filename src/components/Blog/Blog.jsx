@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { posts } from '../../Database/Posts';
 import PostCard from './PostCard';
 

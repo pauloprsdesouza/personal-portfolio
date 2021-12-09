@@ -13,10 +13,9 @@ function Stack() {
                             <div className="card-body text-center card-border-bottom-yellow">
                                 <i className={`${skill.icon} " fa-5x mb-3"`}></i>
                                 <h5 className="card-title">{skill.title}</h5>
-                                {/* <p className="card-text text-secondary">{skill.description}</p> */}
-                                {skill.stacks.map((stack, index) => (
-                                    <img className="m-1" src={stack.url} alt={stack.name} key={index}></img>
-                                ))}
+                                <p className="card-text">
+
+                                </p>
                             </div>
                         </div>
                     </div>

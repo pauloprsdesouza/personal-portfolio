@@ -42,7 +42,16 @@ h5 {
     font-weight: 500;
 }
 
+.img-cirle {
+    border-radius: 50% !important;
+    width: 200px;
+    padding: 5px;
+    border: solid 2px #b5b6bc;
+}
 
+.text-justify {
+       text-align: justify; 
+}
 
 
 
