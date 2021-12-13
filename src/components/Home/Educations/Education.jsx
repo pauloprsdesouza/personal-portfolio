@@ -1,14 +1,11 @@
 import React from 'react';
-import { educations } from '../../../Database/Educations';
 import '../../../index.css'
 import ModalCurriculum from './ModalCurriculum';
 
-function Education() {
-    const educationsItems = educations;
-
+function Education({ educations }) {
     return (
         <section>
-            {educationsItems.map((education) => (
+            {educations.map((education) => (
                 <div key={education.id} className="card mb-3 border-0" data-aos="fade-up">
                     <div className="card-body card-border-left-purple">
                         <h5 className="card-title">{education.course}</h5>
@@ -24,7 +21,7 @@ function Education() {
                             <span className="text-purple"><i className="far fa-calendar-alt"></i>&nbsp;{education.startedAt} - {education.finishedAt}</span>
                         </div>
                         <div className="d-grid gap-2 d-sm-block">
-                            <button className="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target={`#modalCurriculum${education.id}`}>Grade Curricular</button>
+                            <button className="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target={`#modalCurriculum${education.id}`}>Discplines</button>
                         </div>
                     </div>
                     <ModalCurriculum education={education} />

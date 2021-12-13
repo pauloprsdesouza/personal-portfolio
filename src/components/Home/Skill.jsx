@@ -1,13 +1,10 @@
 import React from 'react';
-import { skills } from '../../Database/Skills';
 
-function Stack() {
-    const skillsItems = skills;
-
+function Skill({ skills }) {
     return (
         <section>
             <div className="row">
-                {skillsItems.map((skill, index) => (
+                {skills.map((skill, index) => (
                     <div key={index} className="col-md-4 px-md-2 mb-3">
                         <div className="card border-0" data-aos="zoom-in">
                             <div className="card-body text-center card-border-bottom-yellow">
@@ -25,4 +22,4 @@ function Stack() {
     )
 }
 
-export default Stack;
+export default Skill;

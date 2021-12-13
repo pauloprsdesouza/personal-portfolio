@@ -1,8 +1,11 @@
-import React from 'react'; 
+import React from 'react';
+import { educationsDB } from '../../Database/Educations';
+import { jobsDB } from '../../Database/Jobs';
+import { skillsDB } from '../../Database/Skills';
 import Education from './Educations/Education';
 import Experience from './Experience/Experience';
 import Introduction from './Indtroduction';
-import Stack from './Stack';
+import Skill from './Skill';
 import "./style.css"
 
 function Home() {
@@ -29,11 +32,11 @@ function Home() {
     function createContent(section) {
         switch (section.id) {
             case 1:
-                return <Education />
+                return <Education educations={educationsDB}/>
             case 2:
-                return <Experience />
+                return <Experience jobs={jobsDB}/>
             case 3:
-                return <Stack />
+                return <Skill skills={skillsDB}/>
             default:
                 break;
         }
@@ -42,7 +45,7 @@ function Home() {
     return (
         <>
             <Introduction />
-       
+
             {sections.map((section) => (
                 <section key={section.id}>
                     <h1 className="mb-3 mt-5 text-white teste">{section.icon} {section.title}</h1>

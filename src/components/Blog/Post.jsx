@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { posts } from '../../Database/Posts';
 import FBComment from './FBComment';
 import "./style.css"
 import {
@@ -13,21 +12,21 @@ import {
     WhatsappIcon,
     WhatsappShareButton
 } from "react-share";
+import { get } from '../../api/API';
+import { fromEntryToLocaleString } from '../../converters/datetime'
 
 function Post() {
     const { id } = useParams();
     const [post, setPost] = useState({});
 
     useEffect(() => {
-        const postById = posts.find(item => item.id.toString() === id);
-
-        setPost(postById);
+        get(`/posts/${id}`, setPost)
     }, [id])
 
     return (
         <>
             <div className="card mb-3">
-                <img src={post.imgHeader} className="card-img-top card-img-cover" alt="..." height="200" />
+                <img src={post.frontImageUrl} className="card-img-top card-img-cover" alt="..." height="200" />
                 <div className="card-body">
                     <div className="card-title mb-3">
                         <h1 className="text-center text-md-start">{post.title}</h1>
@@ -39,7 +38,7 @@ function Post() {
                             </div>
                             <div className="d-flex flex-column ms-3 ">
                                 <span><i className="fas fa-user"></i>&nbsp;{post.postedBy}</span>
-                                <span><i className="far fa-calendar-alt"></i>&nbsp;{post.createdAt}</span>
+                                <span><i className="far fa-calendar-alt"></i>&nbsp;{fromEntryToLocaleString(post.createdAt)}</span>
                                 <span><i className="fas fa-tag"></i>&nbsp;{post.category}</span>
                             </div>
                         </div>

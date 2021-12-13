@@ -1,13 +1,13 @@
- const educations = [{
+ const educationsDB = [{
          id: 1,
-         course: "Doutorado em Ciência da Computação",
+         course: "Doctoral's Degree in Computer Science",
          startedAt: "2019",
          finishedAt: "2023",
          university: {
-             name: "Universidade Federal da Bahia (UFBA)",
+             name: "UFBA - Federal University of Bahia",
              url: "https://computacao.ufba.br/pt-br/programa-de-pos-graduacao-em-ciencia-da-computacao",
          },
-         researchLine: "Sistemas de Recomendação",
+         researchLine: "Recommender Systems",
          brand: "ufba.png",
          curriculum: ["Algoritmos e Grafos (Mestrado)",
              "Seminários Científicos (Mestrado)",
@@ -27,14 +27,14 @@
      },
      {
          id: 2,
-         course: "Pós-graduação em Executivo em Business Analytics",
+         course: "MBA Executive in Business Analytics",
          startedAt: "2021",
          finishedAt: "2022",
          university: {
-             name: "Instituto de Pós-Graduação (IPOG)",
+             name: "IPOG - Postgraduate Institute",
              url: "https://ipog.edu.br/",
          },
-         researchLine: "A Definir",
+         researchLine: "Defining",
          brand: "ipog.png",
          curriculum: ["Gestão Estratégica Data Driven",
              "Liderança em Inovação e Transformação Digital",
@@ -52,14 +52,14 @@
      },
      {
          id: 3,
-         course: "Pós-graduação em Computação Forense e Segurança da Informação",
+         course: "Postgraduate in Computer Forensics and Information Security",
          startedAt: "2021",
          finishedAt: "2022",
          university: {
-             name: "Instituto de Pós-Graduação (IPOG)",
+             name: "IPOG - Postgraduate Institute",
              url: "https://ipog.edu.br/",
          },
-         researchLine: "A Definir",
+         researchLine: "Defining",
          brand: "ipog.png",
          curriculum: ["Princípios de Criminalística e Introdução à Computação Forense",
              "Análise Forense do Sistema Operacional Windows",
@@ -77,14 +77,14 @@
      },
      {
          id: 4,
-         course: "Pós-graduado em Perícias Criminais e Ciências Forenses",
+         course: "Postgraduate in Criminal Science and Forensic Sciences",
          startedAt: "2019",
          finishedAt: "2021",
          university: {
-             name: "Universidade Tiradentes (UNIT)",
+             name: "UNIT - Tiradentes University",
              url: "https://www.unit.br/",
          },
-         researchLine: "Cadeia de Custódia Digital",
+         researchLine: "Digital Chain of Custody",
          brand: "unit.png",
          curriculum: ["Local de Crime",
              "Medicina Legal",
@@ -113,14 +113,14 @@
      },
      {
          id: 5,
-         course: "Mestrado em Ciência da Computação",
+         course: "Master's Degree in Computer Science",
          startedAt: "2017",
          finishedAt: "2019",
          university: {
-             name: "Universidade Federal da Bahia (UFBA)",
+             name: "UFBA - Federal University of Bahia",
              url: "https://computacao.ufba.br/pt-br/programa-de-pos-graduacao-em-ciencia-da-computacao",
          },
-         researchLine: "Sistemas de Recomendação",
+         researchLine: "Recommender Systems",
          brand: "ufba.png",
          curriculum: ["Algoritmos e Grafos",
              "Seminários Científicos",
@@ -137,11 +137,11 @@
      },
      {
          id: 6,
-         course: "MBA em Administração em Banco de Dados",
+         course: "MBA in Database Administration",
          startedAt: "2014",
          finishedAt: "2016",
          university: {
-             name: "Faculdade de Administração e Negócios de Sergipe (FANESE)",
+             name: "Fanese - Faculty of Business and Administration of Sergipe",
              url: "https://fanese.edu.br/",
          },
          researchLine: "Data Warehouse",
@@ -169,11 +169,11 @@
      },
      {
          id: 7,
-         course: "Graduação em Sistemas para Internet",
+         course: "Web Systems",
          startedAt: "2112",
          finishedAt: "2014",
          university: {
-             name: "Universidade Tiradentes (UNIT)",
+             name: "UNIT - Tiradentes University",
              url: "https://www.unit.br/",
          },
          researchLine: "",
@@ -216,5 +216,5 @@
  ];
 
  export {
-     educations
+     educationsDB
  };

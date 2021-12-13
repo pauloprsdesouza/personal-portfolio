@@ -18,7 +18,7 @@ function ModalCurriculum({ education }) {
                         </ul>
                     </div>
                     <div className="modal-footer">
-                        <button type="button" className="btn btn-outline-secondary" data-bs-dismiss="modal" >Fechar</button>
+                        <button type="button" className="btn btn-outline-secondary" data-bs-dismiss="modal" >Close</button>
                     </div>
                 </div>
             </div>

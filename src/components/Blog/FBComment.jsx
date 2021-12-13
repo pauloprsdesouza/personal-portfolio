@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 function FBComment({ id }) {
-    const [teste, setTeste] = useState(true);
     useEffect(() => {
         if (window.FB !== undefined) {
             window.FB.XFBML.parse();

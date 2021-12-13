@@ -1,6 +1,6 @@
-const skills = [{
+const skillsDB = [{
         icon: "fab fa-dev",
-        title: "Full Stack Web e Mobile",
+        title: "Full Stack Web and Mobile",
         description: "Actually, I am developing researches on Recommender Systems, Information Retrieval, Semantic Web, and Social Media areas. Besides, I am developing both applications web and mobile using some technologies based on AWS cloud computin",
     },
     {
@@ -15,7 +15,7 @@ const skills = [{
     },
     {
         icon: "fas fa-database",
-        title: "Banco de Dados",
+        title: "Database",
         description: "Actually, I am developing researches on Recommender Systems, Information Retrieval, Semantic Web, and Social Media areas. Besides, I am developing both applications web and mobile using some technologies based on AWS cloud computin",
     },
     {
@@ -25,11 +25,11 @@ const skills = [{
     },
     {
         icon: "fas fa-search",
-        title: "Pesquisa",
+        title: "Research",
         description: "Actually, I am developing researches on Recommender Systems, Information Retrieval, Semantic Web, and Social Media areas. Besides, I am developing both applications web and mobile using some technologies based on AWS cloud computin",
     },
 ];
 
 export {
-    skills
+    skillsDB
 }

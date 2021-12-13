@@ -7,9 +7,10 @@ import Post from './components/Blog/Post';
 import Footer from './components/Footer/Footer';
 import GoToTopButton from './components/GoToTopButton/GoToTopButton';
 import Home from './components/Home/Home';
+import Login from './components/Login/Login';
+import RegisterPost from './components/Post/RegisterPost';
 
 function App() {
-  console.log(process.env.REACT_APP_ID_FACEBOOK)
   return (
     <>
       <BrowserRouter>
@@ -19,6 +20,8 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<Post />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/posts" element={< RegisterPost/>} />
           </Routes>
         </div>
         <Footer />

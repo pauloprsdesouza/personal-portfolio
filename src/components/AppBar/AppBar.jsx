@@ -5,7 +5,7 @@ function AppBar() {
   const [routes, setRoutes] = useState([
     {
       pathname: "/",
-      name: "Sobre",
+      name: "About",
       active: true
     },
     {
@@ -14,8 +14,8 @@ function AppBar() {
       active: false
     },
     {
-      pathname: "/projetos",
-      name: "Projetos",
+      pathname: "/projects",
+      name: "Projects",
       active: false
     }
   ]);

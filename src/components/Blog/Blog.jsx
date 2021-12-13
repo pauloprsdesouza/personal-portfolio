@@ -1,13 +1,18 @@
-import React from 'react';
-import { posts } from '../../Database/Posts';
+import React, { useEffect } from 'react';
+import { useState } from 'react/cjs/react.development';
+import { get } from '../../api/API';
 import PostCard from './PostCard';
 
 function Blog() {
-    const postItems = posts;
+    const [data, setData] = useState({posts: []});
+
+    useEffect(() => {
+        get("/posts", setData);
+    }, [])
 
     return (
         <>
-            {postItems.map((post, index) => (
+            {data.posts.map((post, index) => (
                 <PostCard post={post} key={index} />
             ))}
         </>

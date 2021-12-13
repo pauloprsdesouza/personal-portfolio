@@ -21,12 +21,12 @@ function ModalActivitiesExperience({ job }) {
                         <p className="card-text text-justify" dangerouslySetInnerHTML={{__html: job.activity.description}}></p>
 
                         <div className="mb-3">
-                            <h5>Stacks Utilizadas</h5>
+                            <h5>Used Stacks</h5>
                             {createUsedStacks(job.activity.usedStacks)}
                         </div>
                     </div>
                     <div className="modal-footer">
-                        <button type="button" className="btn btn-outline-secondary" data-bs-dismiss="modal" >Fechar</button>
+                        <button type="button" className="btn btn-outline-secondary" data-bs-dismiss="modal" >Close</button>
                     </div>
                 </div>
             </div>
