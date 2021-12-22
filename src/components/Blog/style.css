@@ -1,3 +1,58 @@
 .card-img-cover {
     object-fit: cover;
+    min-height: 100%;
+}
+
+.post-card.skeleton .hide-text {
+    background: #e2e2e2;
+    color: transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.hide-text-img-top {
+    height: 120px;;
+}
+
+.hide-text-md {
+    width: 20%;
+}
+
+.hide-text-lg {
+    width: 100%;
+}
+
+.post-card.skeleton .hide-text::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 50px;
+    background: linear-gradient(to right, #e2e2e2 25%, #d5d5d5 50%, #e2e2e2 100%);
+    animation-name: gradient-animation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    filter: blur(5px);
+}
+
+.font-size-3em {
+    font-size: 0.3em !important;
+}
+
+.text-muted > svg{
+    vertical-align: middle;
+}
+
+@keyframes gradient-animation {
+    from {
+        left: 0%;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+.card-teste {
+    background-color: #303134;
+    
 }

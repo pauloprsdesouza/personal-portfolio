@@ -1,22 +1,49 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react/cjs/react.development';
-import { get } from '../../api/API';
-import PostCard from './PostCard';
+import React, { useEffect } from "react";
+import { useState } from "react/cjs/react.development";
+import PostCardSkeleton from "./PostCard/PostCardSkeleton";
+import PostCard from "./PostCard/PostCard"
+import FilterPost from "./FilterPost/FilterPost";
+import { api } from "../../api/API";
+import Subscribe from "./Subscribe";
 
-function Blog() {
-    const [data, setData] = useState({posts: []});
+const Blog = function () {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [selectedCategory, setSelectedCategory] = useState({});
 
-    useEffect(() => {
-        get("/posts", setData);
-    }, [])
+  useEffect(() => {
+    setLoading(true);
 
-    return (
+    api.get("/posts/published", { params: { categoryId: selectedCategory.id } })
+      .then((response) => {
+        setPosts(response.data.posts);
+      }).catch(() => {
+
+      }).finally(() => {
+        setLoading(false);
+      });
+  }, [selectedCategory]);
+
+  function showLoading() {
+    return loading
+      ?
+      <PostCardSkeleton />
+      : (
         <>
-            {data.posts.map((post, index) => (
-                <PostCard post={post} key={index} />
-            ))}
+          {posts.map((post) => (<PostCard post={post} key={post.id} />))}
+          <Subscribe />
         </>
-    )
-}
+      );
+  }
+
+  return (
+    <div className="container mt-3">
+      <FilterPost setSelectedCategory={setSelectedCategory} />
+
+      {showLoading()}
+
+    </div>
+  );
+};
 
 export default Blog;

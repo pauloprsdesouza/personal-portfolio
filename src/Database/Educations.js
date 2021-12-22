@@ -1,4 +1,5 @@
- const educationsDB = [{
+ // eslint-disable-next-line import/prefer-default-export
+ export const educationsDB = [{
          id: 1,
          course: "Doctoral's Degree in Computer Science",
          startedAt: "2019",
@@ -22,8 +23,8 @@
              "Exame de Qualificação",
              "Seminários de Avaliação Anuais",
              "Trabalho de Conclusão",
-             "Elaboração da Tese de Doutorado"
-         ]
+             "Elaboração da Tese de Doutorado",
+         ],
      },
      {
          id: 2,
@@ -47,8 +48,8 @@
              "Inteligência Artificial como Vantagem Competitiva",
              "Gestão de Marketing Guiada por Dados",
              "Probabilidade e Estatística para Negócios",
-             "Desenvolvimento Integral do Potencial Humano"
-         ]
+             "Desenvolvimento Integral do Potencial Humano",
+         ],
      },
      {
          id: 3,
@@ -72,8 +73,8 @@
              "Práticas Forenses: Elaboração de Laudos e Pareceres, e Assistência Técnica",
              "Criptografia e Criptoanálise",
              "Segurança e Inteligência Cibernética",
-             "Perícias em Imagens Digitais"
-         ]
+             "Perícias em Imagens Digitais",
+         ],
      },
      {
          id: 4,
@@ -108,8 +109,8 @@
              "Acidentes de Trânsito",
              "Toxicologia Forense",
              "Seminários de Conclusão",
-             "Monografia"
-         ]
+             "Monografia",
+         ],
      },
      {
          id: 5,
@@ -133,7 +134,7 @@
              "Projeto de Dissertação de Mestrado",
              "Defesa de Proposta de Mestrado",
              "Trabalho de Conclusão",
-         ]
+         ],
      },
      {
          id: 6,
@@ -164,8 +165,8 @@
              "Data Mining (Mineração de Dados)",
              "Metodologia da Pesquisa Científica II",
              "Preparação para Certificação (OCA)",
-             "Replicação e Alta Disponibilidade", "TCC"
-         ]
+             "Replicação e Alta Disponibilidade", "TCC",
+         ],
      },
      {
          id: 7,
@@ -210,11 +211,7 @@
              "Projeto Web I",
              "Projeto Web Ii",
              "Estágio em Desenvolvimento Web",
-             "Projeto de Arquitetura De Aplicações"
-         ]
+             "Projeto de Arquitetura De Aplicações",
+         ],
      },
  ];
-
- export {
-     educationsDB
- };

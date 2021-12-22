@@ -8,6 +8,7 @@ body {
   background: transparent;
 }
 
+/* linear-gradient(rgba(39, 37, 50, 0.98) 60% 100%), */
 body:after {
   content: "";
   position: fixed;
@@ -18,7 +19,7 @@ body:after {
   z-index: -1;
   display: block;
   background:
-    linear-gradient(rgba(39, 37, 50, 0.98) 60% 100%),
+    linear-gradient(rgba(29, 29, 29, 0.99) 60% 100%), 
     url("https://personal-portfolio-files.s3.amazonaws.com/img/background.svg") center center;
   background-size: cover;
   -moz-background-size: cover;
@@ -40,9 +41,8 @@ body:after {
   box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
-.container {
-  margin-top: 20px;
-  min-height: calc(100vh - 230px);
+.wrap-container {
+  min-height: 77.2vh;
 }
 
 .box-body-gray {
@@ -55,4 +55,42 @@ body:after {
 
 footer {
   background-color: #ffffff;
+}
+
+.img-cirle-lg {
+  border-radius: 3% !important;
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
+  border: none;
+}
+
+.img-cirle-md {
+  border-radius: 10% !important;
+  padding: 1px;
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+.img-cirle-sm {
+  border-radius: 10% !important;
+  object-fit: cover;
+  width: 25px;
+  height: 25px;
+  box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+.text-sm {
+  font-size: 10pt;
+}
+
+.text-mdd {
+  font-size: 30pt !important;
+  font-weight: 800;
+}
+
+.btn-purple {
+  background-color: #611F69;
 }
