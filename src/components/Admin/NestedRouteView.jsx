@@ -1,10 +1,10 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 
-const PostView = function () {
+const NestedRouteView = function () {
     return (
         <Outlet />
     )
 }
 
-export default PostView;
+export default NestedRouteView;

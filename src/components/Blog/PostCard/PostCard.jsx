@@ -38,7 +38,7 @@ const PostCard = function ({ post }) {
           </div>
         </div>
         <div className="col-md-2 text-center align-self-center">
-          <span className="text-purple text-mdd">{post.views}</span>
+          <span className="text-purple text-md">{post.views}</span>
           <h6 className="text-muted text-sm">VIEWS</h6>
         </div>
       </div>

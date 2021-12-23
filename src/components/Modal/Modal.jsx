@@ -1,6 +1,15 @@
 import React from 'react';
+import { useEffect } from 'react/cjs/react.development';
 
-const Modal = function ({title, content, modalRef}) {
+const Modal = function ({ title, content, show, close }) {
+    const modalRef = React.createRef();
+
+    useEffect(() => {
+        if (show) {
+            var modal = window.bootstrap.Modal.getOrCreateInstance(modalRef.current);
+            modal.show();
+        }
+    }, [show])
 
     return (
         <div ref={modalRef} className="modal fade" id="modalDialogSubscribe" aria-labelledby="modalDialogSubscribe" aria-hidden="true">
@@ -14,7 +23,15 @@ const Modal = function ({title, content, modalRef}) {
                         {content}
                     </div>
                     <div className="modal-footer">
-                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button
+                            className="btn btn-secondary"
+                            type="button"
+                            data-bs-dismiss="modal"
+                            onClick={() => {
+                                close(false);
+                            }}>
+                            Close
+                        </button>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect, useState } from 'react/cjs/react.development';
+import { useState } from 'react/cjs/react.development';
 import { api } from '../../api/API';
 import Modal from '../Modal/Modal';
 import "./style.css"
@@ -9,14 +9,12 @@ const Subscribe = function () {
     const [isFormValid, setIsFormValid] = useState(false);
     const [email, setEmail] = useState("");
     const [subscribing, setSubscribing] = useState(false);
-    const modalRef = React.createRef(null);
-
-    useEffect(() => {
-        showModalDialog();
-    }, [])
+    const [showModal, setShowModal] = useState(false);
 
     function validate(event) {
         event.preventDefault();
+        setSubscribing(true);
+
         window.grecaptcha.ready(function () {
             window.grecaptcha.execute('6LfYpbodAAAAAL2tw6lzhwgIueB15G8e3hx6N7RF', { action: 'submit' }).then(function (token) {
                 toSubscribe();
@@ -24,18 +22,12 @@ const Subscribe = function () {
         });
     }
 
-    function showModalDialog() {
-        var modal = window.bootstrap.Modal.getOrCreateInstance(modalRef.current);
-        modal.show();
-    }
-
     function toSubscribe() {
-        setSubscribing(true);
-
         api.post("/subscribers", {
             email
         }).then((response) => {
             setEmail("");
+            setShowModal(true);
         }).catch((error) => {
 
         }).finally(() => {
@@ -55,10 +47,11 @@ const Subscribe = function () {
         <>
             <form
                 ref={formSubscribe}
+                noValidate
                 onSubmit={validate}
-                className={`needs-validation  ${isFormValid ? "was-validated" : ""}`}
+                className={`needs-validation ${isFormValid? "was-validated" : ""}`}
                 onChange={validateForm}>
-                <div className="card card-teste">
+                <div className="card card-education-teste">
                     <div className="card-body">
                         <h4 className="card-title text-white">Subscribe to receive hints and articles published weekly</h4>
                         <h6 className="card-subtitle text-white mb-3">Don't worry, I don't like spam too</h6>
@@ -66,6 +59,7 @@ const Subscribe = function () {
                             <input
                                 className="form-control"
                                 type="email"
+                                required
                                 value={email}
                                 pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
                                 onChange={(event) => {
@@ -81,7 +75,7 @@ const Subscribe = function () {
                     </div>
                 </div>
             </form>
-            <Modal title="Congratulations" content="Thanks for subscribing!" modalRef={modalRef} />
+            <Modal title="Congratulations" content="Thanks for subscribing!" show={showModal} close={setShowModal} />
         </>
     )
 }

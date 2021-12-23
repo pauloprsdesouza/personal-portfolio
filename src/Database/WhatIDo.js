@@ -10,7 +10,7 @@ export const whatIDoDB = [{
     },
     {
         icon: "fas fa-brain",
-        title: "Machine Learning Model",
+        title: "Machine Learning",
         description: "I have experience on creating machine learning models using techniques such as supervised, unsupervised and semi-supervised learning, which some of them were used on recommender systems.",
     },
     {

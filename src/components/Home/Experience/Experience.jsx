@@ -3,10 +3,10 @@ import ModalActivitiesExperience from "./ModalActivitiesExperience";
 
 const Experience = function ({ jobs }) {
   return (
-    <section className="mb-5">
+    <section className="mb-3">
       <h3 className="text-white section-title">experience.</h3>
       {jobs.map((job) => (
-        <div key={job.id} className="card card-education-teste border-0 mb-3" data-aos="fade-up">
+        <div key={job.id} className="card card-education-teste border-0 mb-3 shadow" data-aos="fade-up">
           <div className="card-body card-hover card-border-left-purple">
             <div className="mt-1 mb-2">
               <span className="text-white">

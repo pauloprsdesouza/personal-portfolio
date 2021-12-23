@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import CreatePaper from "./components/Admin/Papers/CreatePaper";
+import ListPapers from "./components/Admin/Papers/ListPapers";
 import CreatePost from "./components/Admin/Post/CreatePost";
 import ListPosts from "./components/Admin/Post/ListPosts";
 import AppBar from "./components/AppBar/AppBar";
@@ -10,6 +12,7 @@ import Footer from "./components/Footer/Footer";
 import GoToTopButton from "./components/GoToTopButton/GoToTopButton";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
+import CallPaper from "./components/Papers/CallPaper";
 
 const App = function () {
   return (
@@ -21,10 +24,18 @@ const App = function () {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<Post />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/admin/posts" >
-            <Route path="" element={<ListPosts />} />
-            <Route path="create" element={<CreatePost />} />
-            <Route path=":id" element={<CreatePost />} />
+          <Route path="/papers" element={<CallPaper />} />
+          <Route path="/admin" >
+            <Route path="posts/">
+              <Route path="" element={<ListPosts />} />
+              <Route path="create" element={<CreatePost />} />
+              <Route path=":id" element={<CreatePost />} />
+            </Route>
+            <Route path="papers">
+              <Route path="" element={<ListPapers />} />
+              <Route path="create" element={<CreatePaper />} />
+              <Route path=":id" element={<CreatePaper />} />
+            </Route>
           </Route>
         </Routes>
       </div>

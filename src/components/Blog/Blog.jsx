@@ -41,7 +41,6 @@ const Blog = function () {
       <FilterPost setSelectedCategory={setSelectedCategory} />
 
       {showLoading()}
-
     </div>
   );
 };

@@ -1,11 +1,10 @@
-import React, { useRef } from "react";
-import { useEffect } from "react/cjs/react.development";
+import React from "react";
 import "./style.css";
 
 const Introduction = function () {
 
   return (
-    <div className="card background-teste mb-4">
+    <div className="card background-dark mb-4">
       <div className="card-body d-flex flex-row align-content-center align-items-center">
         <div className="container px-5">
           <h1 className="section-title-lg mb-3">about.</h1>
@@ -41,12 +40,11 @@ const Introduction = function () {
                 </li>
               </ul>
             </div>
-            <img className="img-cirle-lg img-fluid card-shadow mb-3 order-0 order-lg-2" src="https://personal-portfolio-files.s3.amazonaws.com/img/photo-introduction.jpeg" alt="Paulo Roberto de Souza" />
+            <img className="img-cirle-lg img-fluid mb-3 order-0 order-lg-2" src="https://personal-portfolio-files.s3.amazonaws.com/img/photo-introduction.jpeg" alt="Paulo Roberto de Souza" />
           </div>
         </div>
       </div>
     </div>
-
   );
 };
 

@@ -19,7 +19,7 @@ body:after {
   z-index: -1;
   display: block;
   background:
-    linear-gradient(rgba(29, 29, 29, 0.99) 60% 100%), 
+    linear-gradient(rgba(29, 29, 29, 0.985) 60% 100%),
     url("https://personal-portfolio-files.s3.amazonaws.com/img/background.svg") center center;
   background-size: cover;
   -moz-background-size: cover;
@@ -37,24 +37,31 @@ body:after {
   font-weight: 400 !important;
 }
 
-.card-shadow {
-  box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+.card-education-teste {
+  background-color: #303134;
+  color: #FFFFFF !important;
 }
 
-.wrap-container {
-  min-height: 77.2vh;
+.card-education-teste>.card-body {
+  color: #FFFFFF !important;
 }
 
-.box-body-gray {
-  background-color: #ffffff;
+.card-education-teste>.card-body>.card-title {
+  color: #FFFFFF !important;
 }
 
-.card-shadow>div {
-  background-color: #fafafa;
+
+.card-education-teste>.card-body>.card-subtitle {
+  color: #FFFFFF !important;
 }
 
-footer {
-  background-color: #ffffff;
+.card-hover:hover {
+  color: #61a1ff !important;
+  cursor: pointer;
+}
+
+.card-hover:hover>.card-title {
+  color: #61a1ff !important;
 }
 
 .img-cirle-lg {
@@ -82,15 +89,15 @@ footer {
   box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
+.wrap-container {
+  min-height: 77.2vh;
+}
+
 .text-sm {
   font-size: 10pt;
 }
 
-.text-mdd {
+.text-md {
   font-size: 30pt !important;
   font-weight: 800;
-}
-
-.btn-purple {
-  background-color: #611F69;
 }

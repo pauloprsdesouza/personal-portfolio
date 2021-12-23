@@ -1,9 +1,8 @@
 import React from 'react';
-import "./style.css"
 
 const About = function () {
     return (
-        <div className="card card-education-teste mb-5">
+        <div className="card card-education-teste mb-5 shadow">
             <div className="card-body">
                 <h1 className="section-title mb-3">resume.</h1>
                 <p className="lead text-justify mb-3">

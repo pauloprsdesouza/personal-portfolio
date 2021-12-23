@@ -20,7 +20,7 @@ const AppBar = function () {
       active: false,
     },
     {
-      pathname: "/callpapers",
+      pathname: "/papers",
       name: "Call for Papers",
       active: false,
     },
@@ -53,7 +53,7 @@ const AppBar = function () {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="container-fluid">
+      <div className="container">
         <a className="navbar-brand" href="/">
           <img src="https://seeklogo.com/images/P/performing-right-society-for-music-logo-B63C4A6960-seeklogo.com.png" height="50" className="d-inline-block align-text-middle" alt="..."/>
           Paulo Roberto de Souza
@@ -62,7 +62,7 @@ const AppBar = function () {
           <span className="navbar-toggler-icon" />
         </button>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             {createLinks()}
           </ul>
         </div>
