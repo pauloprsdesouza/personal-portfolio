@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react/cjs/react.development';
 import { api } from '../../../api/API';
-import Modal from '../../Modal/Modal';
+import ModalDialogInfo from '../../Modal/ModalDialogInfo';
 
 const SendEmail = function () {
     const formContact = React.createRef();
@@ -98,7 +98,7 @@ const SendEmail = function () {
                     {isSending()}
                 </button>
             </form>
-            <Modal title="Thanks for your contact" content="I'll contact you coming soon!" show={showModal} close={setShowModal} />
+            <ModalDialogInfo title="Thanks for your contact" content="I'll contact you coming soon!" show={showModal} close={setShowModal} />
         </>
     )
 }

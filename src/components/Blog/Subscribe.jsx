@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react/cjs/react.development';
 import { api } from '../../api/API';
-import Modal from '../Modal/Modal';
+import ModalDialogInfo from '../Modal/ModalDialogInfo';
 import "./style.css"
 
 const Subscribe = function () {
@@ -75,7 +75,7 @@ const Subscribe = function () {
                     </div>
                 </div>
             </form>
-            <Modal title="Congratulations" content="Thanks for subscribing!" show={showModal} close={setShowModal} />
+            <ModalDialogInfo title="Congratulations" content="Thanks for subscribing!" show={showModal} close={setShowModal} />
         </>
     )
 }

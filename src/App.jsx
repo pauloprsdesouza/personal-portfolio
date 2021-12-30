@@ -5,16 +5,21 @@ import CreatePaper from "./components/Admin/Papers/CreatePaper";
 import ListPapers from "./components/Admin/Papers/ListPapers";
 import CreatePost from "./components/Admin/Post/CreatePost";
 import ListPosts from "./components/Admin/Post/ListPosts";
+import CreateProject from "./components/Admin/Projects/CreateProject";
+import ListProjects from "./components/Admin/Projects/ListProjects";
 import AppBar from "./components/AppBar/AppBar";
 import Blog from "./components/Blog/Blog";
 import Post from "./components/Blog/PostContent/Post";
+import Http404 from "./components/ErrorPage/Http404";
 import Footer from "./components/Footer/Footer";
 import GoToTopButton from "./components/GoToTopButton/GoToTopButton";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import CallPaper from "./components/Papers/CallPaper";
+import Projects from "./components/Projects/Projects";
 
 const App = function () {
+
   return (
     <BrowserRouter>
       <AppBar />
@@ -23,8 +28,9 @@ const App = function () {
           <Route exact path="/" element={<Home />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<Post />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/papers" element={<CallPaper />} />
+          <Route path="/projects" element={< Projects />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/admin" >
             <Route path="posts/">
               <Route path="" element={<ListPosts />} />
@@ -36,7 +42,13 @@ const App = function () {
               <Route path="create" element={<CreatePaper />} />
               <Route path=":id" element={<CreatePaper />} />
             </Route>
+            <Route path="projects/">
+              <Route path="" element={<ListProjects />} />
+              <Route path="create" element={<CreateProject />} />
+              <Route path=":id" element={<CreateProject />} />
+            </Route>
           </Route>
+          <Route path="*" status="404" element={<Http404 />} />
         </Routes>
       </div>
       <Footer />

@@ -6,6 +6,7 @@ import PostPreview from "./PostPreview";
 
 const CreatePost = function () {
     const [loading, setLoading] = useState(false);
+    const [saving, setSaving] = useState(false);
     const [content, setContent] = useState("");
     const [title, setTitle] = useState("");
     const [subtitle, setSubtitle] = useState("");
@@ -29,23 +30,27 @@ const CreatePost = function () {
     }, []);
 
     useEffect(() => {
-        api.get(`/posts/${id}`)
-            .then((response) => {
-                const post = response.data;
+        if (id) {
+            setLoading(true);
 
-                setContent(post.content);
-                setTitle(post.title);
-                setSubtitle(post.subtitle);
-                setStatus(post.status);
-                setFrontImageUrl(post.frontImageUrl);
-                setCategoryId(post.category.id);
-                setReadingTime(post.readingTime);
+            api.get(`/posts/${id}`)
+                .then((response) => {
+                    const post = response.data;
 
-            }).catch((error) => {
+                    setContent(post.content);
+                    setTitle(post.title);
+                    setSubtitle(post.subtitle);
+                    setStatus(post.status);
+                    setFrontImageUrl(post.frontImageUrl);
+                    setCategoryId(post.category.id);
+                    setReadingTime(post.readingTime);
 
-            }).finally(() => {
-                setLoading(false);
-            });
+                }).catch((error) => {
+
+                }).finally(() => {
+                    setLoading(false);
+                });
+        }
     }, [id]);
 
     function save(event) {
@@ -61,29 +66,25 @@ const CreatePost = function () {
             readingTime
         }
 
-        if (id) {
-            setLoading(true);
+        setSaving(true);
 
+        if (id) {
             api.put(`/posts/${id}`, post)
                 .then((response) => {
                     navigate("/admin/posts")
-
                 }).catch((error) => {
 
                 }).finally(() => {
-                    setLoading(false);
+                    setSaving(false);
                 });
         } else {
-            setLoading(true);
-
             api.post("/posts", post)
                 .then((response) => {
                     navigate("/admin/posts")
-
                 }).catch((error) => {
 
                 }).finally(() => {
-                    setLoading(false);
+                    setSaving(false);
                 });
         }
     }
@@ -92,8 +93,8 @@ const CreatePost = function () {
         setIsFormValid(formPost.current.checkValidity());
     }
 
-    function loadingText() {
-        return loading ? (
+    function savingText() {
+        return saving ? (
             <span>
                 <i className="fas fa-spinner fa-pulse"></i>&nbsp;
                 Saving...
@@ -128,6 +129,7 @@ const CreatePost = function () {
                                                 onChange={(event) => {
                                                     setTitle(event.target.value);
                                                 }}
+                                                disabled={loading}
                                             />
                                             <div className="invalid-feedback">
                                                 Field title is required.
@@ -144,6 +146,7 @@ const CreatePost = function () {
                                                 onChange={(event) => {
                                                     setSubtitle(event.target.value);
                                                 }}
+                                                disabled={loading}
                                             />
                                             <div className="invalid-feedback">
                                                 Field subtitle is required.
@@ -161,6 +164,7 @@ const CreatePost = function () {
                                             onChange={(event) => {
                                                 setCategoryId(event.target.value);
                                             }}
+                                            disabled={loading}
                                         >
                                             <option value="">Select</option>
                                             {data.categories.map((category) => (
@@ -181,10 +185,11 @@ const CreatePost = function () {
                                                 onChange={(event) => {
                                                     setStatus(event.target.value);
                                                 }}
+                                                disabled={loading}
                                             >
                                                 <option value="">Select</option>
                                                 <option value="I">In Progress</option>
-                                                <option value="C">Coming Soon</option>
+                                                <option value="A">Archived</option>
                                                 <option value="P">Published</option>
                                             </select>
                                             <div className="invalid-feedback">
@@ -200,7 +205,9 @@ const CreatePost = function () {
                                                 value={readingTime}
                                                 onChange={(event) => {
                                                     setReadingTime(event.target.value);
-                                                }} />
+                                                }}
+                                                disabled={loading}
+                                            />
                                         </div>
                                         <div className="invalid-feedback">
                                             Field reading time is required.
@@ -219,6 +226,7 @@ const CreatePost = function () {
                                                     onChange={(event) => {
                                                         setFrontImageUrl(event.target.value);
                                                     }}
+                                                    disabled={loading}
                                                 />
                                                 <div className="invalid-feedback">
                                                     Field front image is required.
@@ -238,6 +246,7 @@ const CreatePost = function () {
                                         onChange={(event) => {
                                             setContent(event.target.value);
                                         }}
+                                        disabled={loading}
                                     />
                                     <div className="invalid-feedback">
                                         Field post content is required.
@@ -250,8 +259,8 @@ const CreatePost = function () {
                         </div>
                     </div>
                     <div className="card-footer text-end">
-                        <button type="submit" disabled={loading || !isFormValid} className="btn btn-primary">
-                            {loadingText()}
+                        <button type="submit" disabled={saving || !isFormValid} className="btn btn-primary">
+                            {savingText()}
                         </button>
                     </div>
                 </div>

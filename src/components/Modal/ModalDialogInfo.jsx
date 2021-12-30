@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react/cjs/react.development';
 
-const Modal = function ({ title, content, show, close }) {
+const ModalDialogInfo = function ({ title, content, show, close }) {
     const modalRef = React.createRef();
 
     useEffect(() => {
@@ -39,4 +39,4 @@ const Modal = function ({ title, content, show, close }) {
     )
 }
 
-export default Modal;
+export default ModalDialogInfo;

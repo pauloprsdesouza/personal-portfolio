@@ -5,12 +5,13 @@ import { api } from '../../../api/API';
 
 const CreatePaper = function () {
     const [loading, setLoading] = useState(false);
+    const [saving, setSaving] = useState(false);
     const [title, setTitle] = useState("");
     const [submissionDeadline, setSubmissionDeadline] = useState("");
     const [type, setType] = useState("");
     const [price, setPrice] = useState("");
     const [local, setLocal] = useState("");
-    const [url, setUrl] = useState("");
+    const [websiteUrl, setWebsiteUrl] = useState("");
     const [qualis, setQualis] = useState("");
     const formPost = useRef();
     const [isFormValid, setIsFormValid] = useState();
@@ -18,22 +19,26 @@ const CreatePaper = function () {
     const navigate = useNavigate();
 
     useEffect(() => {
-        api.get(`/papers/${id}`)
-            .then((response) => {
-                const paper = response.data;
+        if (id) {
+            setLoading(true);
 
-                setTitle(paper.title);
-                setSubmissionDeadline(paper.submissionDeadline);
-                setType(paper.type);
-                setQualis(paper.qualis);
-                setPrice(paper.price);
-                setLocal(paper.local);
-                setUrl(paper.url);
-            }).catch((error) => {
+            api.get(`/papers/${id}`)
+                .then((response) => {
+                    const paper = response.data;
 
-            }).finally(() => {
-                setLoading(false);
-            });
+                    setTitle(paper.title);
+                    setSubmissionDeadline(paper.submissionDeadline);
+                    setType(paper.type);
+                    setQualis(paper.qualis);
+                    setPrice(paper.price);
+                    setLocal(paper.local);
+                    setWebsiteUrl(paper.websiteUrl);
+                }).catch((error) => {
+                    navigate("/login");
+                }).finally(() => {
+                    setLoading(false);
+                });
+        }
     }, [id]);
 
     function save(event) {
@@ -46,32 +51,28 @@ const CreatePaper = function () {
             qualis,
             price,
             local,
-            url
+            websiteUrl
         }
 
-        if (id) {
-            setLoading(true);
+        setSaving(true);
 
+        if (id) {
             api.put(`/papers/${id}`, paper)
                 .then((response) => {
                     navigate("/admin/papers")
-
                 }).catch((error) => {
 
                 }).finally(() => {
-                    setLoading(false);
+                    setSaving(false);
                 });
         } else {
-            setLoading(true);
-
             api.post("/papers", paper)
                 .then((response) => {
                     navigate("/admin/papers")
-
                 }).catch((error) => {
 
                 }).finally(() => {
-                    setLoading(false);
+                    setSaving(false);
                 });
         }
     }
@@ -80,8 +81,8 @@ const CreatePaper = function () {
         setIsFormValid(formPost.current.checkValidity());
     }
 
-    function loadingText() {
-        return loading ? (
+    function savingText() {
+        return saving ? (
             <span>
                 <i className="fas fa-spinner fa-pulse"></i>&nbsp;
                 Saving...
@@ -93,7 +94,7 @@ const CreatePaper = function () {
             <form ref={formPost} className="needs-validation was-validated" onSubmit={save} onChange={validateForm} noValidate>
                 <div className="card">
                     <div className="card-body">
-                        <div className="card-title mb-4"><h1>New Post</h1></div>
+                        <div className="card-title mb-4"><h1>New Paper</h1></div>
                         <div className="row">
                             <div className="col-12">
                                 <div className="mb-3">
@@ -105,6 +106,7 @@ const CreatePaper = function () {
                                         onChange={(event) => {
                                             setTitle(event.target.value);
                                         }}
+                                        disabled={loading}
                                     />
                                     <div className="invalid-feedback">
                                         Field title is required.
@@ -123,6 +125,7 @@ const CreatePaper = function () {
                                         onChange={(event) => {
                                             setSubmissionDeadline(event.target.value);
                                         }}
+                                        disabled={loading}
                                     />
                                     <div className="invalid-feedback">
                                         Field subtitle is required.
@@ -139,6 +142,7 @@ const CreatePaper = function () {
                                         onChange={(event) => {
                                             setType(event.target.value);
                                         }}
+                                        disabled={loading}
                                     >
                                         <option value="">Select</option>
                                         <option value="J">Journal</option>
@@ -159,6 +163,7 @@ const CreatePaper = function () {
                                         onChange={(event) => {
                                             setQualis(event.target.value);
                                         }}
+                                        disabled={loading}
                                     >
                                         <option value="">Select</option>
                                         <option value="A1">A1</option>
@@ -185,6 +190,7 @@ const CreatePaper = function () {
                                         onChange={(event) => {
                                             setLocal(event.target.value);
                                         }}
+                                        disabled={loading}
                                     />
                                     <div className="invalid-feedback">
                                         Field local is required.
@@ -199,7 +205,9 @@ const CreatePaper = function () {
                                         value={price}
                                         onChange={(event) => {
                                             setPrice(event.target.value);
-                                        }} />
+                                        }}
+                                        disabled={loading}
+                                    />
                                 </div>
                                 <div className="invalid-feedback">
                                     Field price time is required.
@@ -213,10 +221,11 @@ const CreatePaper = function () {
                                     <input
                                         className="form-control"
                                         required
-                                        value={url}
+                                        value={websiteUrl}
                                         onChange={(event) => {
-                                            setUrl(event.target.value);
+                                            setWebsiteUrl(event.target.value);
                                         }}
+                                        disabled={loading}
                                     />
                                     <div className="invalid-feedback">
                                         Field url is required.
@@ -226,8 +235,8 @@ const CreatePaper = function () {
                         </div>
                     </div>
                     <div className="card-footer text-end">
-                        <button type="submit" disabled={loading || !isFormValid} className="btn btn-primary">
-                            {loadingText()}
+                        <button type="submit" disabled={saving || !isFormValid} className="btn btn-primary">
+                            {savingText()}
                         </button>
                     </div>
                 </div>

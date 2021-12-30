@@ -1,7 +1,7 @@
 import React from "react";
-import "../style.css";
+import "./style.css";
 
-const PostCardSkeleton = function () {
+const HorizontalCardSkeleton = function () {
   return (
     <div className="post-card skeleton card border-0 mb-3">
       <div className="row gx-0">
@@ -21,4 +21,4 @@ const PostCardSkeleton = function () {
   );
 };
 
-export default PostCardSkeleton;
+export default HorizontalCardSkeleton;

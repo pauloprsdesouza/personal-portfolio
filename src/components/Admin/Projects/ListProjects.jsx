@@ -5,10 +5,10 @@ import { api } from '../../../api/API';
 import { fromEntryToLocaleString } from '../../../converters/datetime';
 import ModalDialogConfirm from '../../Modal/ModalDialogConfirm';
 
-const ListPosts = function () {
-    const [posts, setPosts] = useState([]);
+const ListProjects = function () {
+    const [projects, setProjects] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [postToDelete, setPostToDelete] = useState({});
+    const [projectToDelete, setProjectToDelete] = useState({});
     const [showModal, setShowModal] = useState(false);
 
     const navigate = useNavigate();
@@ -16,9 +16,9 @@ const ListPosts = function () {
     useEffect(() => {
         setLoading(true);
 
-        api.get("/posts")
+        api.get("/projects")
             .then((response) => {
-                setPosts(response.data.posts);
+                setProjects(response.data.projects);
             })
             .catch((erros) => {
                 navigate("/login");
@@ -28,59 +28,63 @@ const ListPosts = function () {
             })
     }, []);
 
-    function getStatus(status) {
-        switch (status) {
-            case "I":
-                return <span className="badge bg-warning">In Progress</span>
+    function getProjectType(type) {
+        switch (type) {
+            case "F":
+                return <span className="badge bg-warning">Frontend</span>
 
-            case "A":
-                return <span className="badge bg-secondary">Archived</span>
+            case "B":
+                return <span className="badge bg-secondary">Backend</span>
 
-            case "P":
-                return <span className="badge bg-success">Published</span>
             default:
                 break;
         }
     }
 
-    function deletePost() {
-        const postsTemp = [...posts];
+    function deleteProject() {
+        const projectsTemp = [...projects];
 
-        postsTemp.forEach((item) => {
-            if (postToDelete.id == item.id) {
+        projectsTemp.forEach((item) => {
+            if (projectToDelete.id == item.id) {
                 item.deleting = item.deleting;
             }
         });
 
-        setPosts(postsTemp);
+        setProjects(projectsTemp);
 
-        api.delete(`/posts/${postToDelete.id}`)
+        api.delete(`/projects/${projectToDelete.id}`)
             .then((response) => {
-                updatePostByResponse(response.data);
+                updateProjectByResponse(response.data);
             }).catch((erros) => {
                 console.error(erros);
             }).finally(() => {
-                postToDelete.deleting = false;
+                projectToDelete.deleting = false;
             });
     }
 
-    function updatePostByResponse(postResponse) {
-        const postsTemp = [...posts];
+    function updateProjectByResponse(postResponse) {
+        const projectsTemp = [...projects];
 
-        postsTemp.forEach((post) => {
-            if(postResponse.id === post.id) {
+        projectsTemp.forEach((post) => {
+            if (postResponse.id === post.id) {
                 post.status = postResponse.status;
             }
         });
 
-        setPosts(postsTemp);
-    } 
+        setProjects(projectsTemp);
+    }
+
+    function getStacks(stacks) {
+        return (stacks.split(",").map((stack, index) => (
+            <span key={index} className="badge bg-secondary ms-1">{stack}</span>
+        )))
+    }
 
     function showLoading() {
         return loading ? (
             <tfoot>
                 <tr className="text-center">
-                    <td colspan="4"> <i className="fas fa-spinner fa-pulse"></i>&nbsp;Loading...</td>
+                    <td colspan="5"> <i className="fas fa-spinner fa-pulse"></i>&nbsp;Loading...</td>
                 </tr>
             </tfoot>
         ) : "";
@@ -91,30 +95,32 @@ const ListPosts = function () {
             <div className="card">
                 <div className="card-body">
                     <div className="title d-flex justify-content-between align-middle mb-4">
-                        <h5>Registered Posts</h5>
-                        <Link className="btn btn-primary" to="create">New Post</Link>
+                        <h5>Registered Projects</h5>
+                        <Link className="btn btn-primary" to="create">New Projects</Link>
                     </div>
 
                     <table className="table">
                         <thead>
                             <tr>
                                 <th>Title</th>
+                                <th>Type</th>
+                                <th>Stacks</th>
                                 <th>Updated At</th>
-                                <th>Status</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {posts.map((post) => (
-                                <tr key={post.id}>
-                                    <td>{post.title}</td>
-                                    <td>{fromEntryToLocaleString(post.updatedAt)}</td>
-                                    <td>{getStatus(post.status)}</td>
+                            {projects.map((project) => (
+                                <tr key={project.id}>
+                                    <td>{project.title}</td>
+                                    <td>{getProjectType(project.type)}</td>
+                                    <td>{getStacks(project.stacks)}</td>
+                                    <td>{fromEntryToLocaleString(project.updatedAt)}</td>
                                     <td>
-                                        <Link className="btn btn-secondary btn-sm" to={post.id}>Edit</Link>
+                                        <Link className="btn btn-secondary btn-sm" to={project.id}>Edit</Link>
                                         <button type="button" className="btn btn-danger btn-sm ms-2" onClick={(event) => {
                                             event.preventDefault();
-                                            setPostToDelete(post);
+                                            setProjectToDelete(project);
                                             setShowModal(true);
                                         }}>Delete</button>
                                     </td>
@@ -125,15 +131,15 @@ const ListPosts = function () {
                     </table>
                 </div>
             </div>
-            <ModalDialogConfirm 
-                title="Delete Post" 
-                content={`Do you mean to delete the post ${postToDelete.title}`} 
-                show={showModal} 
-                close={setShowModal} 
-                confirm={deletePost} 
+            <ModalDialogConfirm
+                title="Delete Post"
+                content={`Do you mean to delete the post ${projectToDelete.title}`}
+                show={showModal}
+                close={setShowModal}
+                confirm={deleteProject}
             />
         </div>
     )
 }
 
-export default ListPosts;
+export default ListProjects;

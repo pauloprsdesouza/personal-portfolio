@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useState } from "react/cjs/react.development";
-import PostCardSkeleton from "./PostCard/PostCardSkeleton";
 import PostCard from "./PostCard/PostCard"
 import FilterPost from "./FilterPost/FilterPost";
 import { api } from "../../api/API";
 import Subscribe from "./Subscribe";
+import HorizontalCardSkeleton from "../Skeleton/HorizontalCardSkeleton";
 
 const Blog = function () {
   const [posts, setPosts] = useState([]);
@@ -27,7 +27,7 @@ const Blog = function () {
   function showLoading() {
     return loading
       ?
-      <PostCardSkeleton />
+      <HorizontalCardSkeleton />
       : (
         <>
           {posts.map((post) => (<PostCard post={post} key={post.id} />))}

@@ -14,7 +14,7 @@ const Contact = function () {
                         <SendEmail />
                     </div>
                     <div className="col-lg-3 text-lg-end text-center">
-                        <img src="https://personal-portfolio-files.s3.amazonaws.com/img/rocket-contact.png" className="image-fluid img-rocket-contact align-middle" width="130" />
+                        <img src="https://personal-portfolio-files.s3.amazonaws.com/img/rocket-contact.png" className="image-fluid img-rocket-contact align-middle" width="130" alt="Rocket Contact"/>
                     </div>
                 </div>
             </div>

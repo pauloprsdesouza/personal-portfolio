@@ -1,16 +1,31 @@
 import React from 'react';
 import { useEffect, useState } from 'react/cjs/react.development';
 import { api } from '../../api/API';
+import HorizontalCardSkeleton from '../Skeleton/HorizontalCardSkeleton';
 import PaperCard from './PaperCard';
+import PaperFilter from './PaperFilter';
 
 const CallPaper = function () {
     const [papers, setPapers] = useState([]);
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        search({ title: "", submissionDeadline: "", qualis: "", type: "" });
+    }, []);
+
+    function search(filterParams) {
         setLoading(true);
 
-        api.get("/papers")
+        api.get("/papers",
+            {
+                params:
+                {
+                    title: filterParams.title,
+                    submissionDeadline: filterParams.submissionDeadline,
+                    qualis: filterParams.qualis,
+                    type: filterParams.type
+                }
+            })
             .then((response) => {
                 setPapers(response.data.papers);
             })
@@ -20,7 +35,15 @@ const CallPaper = function () {
             .finally(() => {
                 setLoading(false);
             })
-    }, []);
+    }
+
+    function showLoading() {
+        return loading ? <HorizontalCardSkeleton /> : (
+            papers.map((paper) => (
+                <PaperCard paper={paper} key={paper.id} />
+            ))
+        )
+    }
 
     return (
         <div className="container">
@@ -31,9 +54,8 @@ const CallPaper = function () {
                     <p className="card-text">Here, you will find the most important journals and conferences on recommender systems area.</p>
                 </div>
             </div>
-            {papers.map((paper) => (
-                <PaperCard paper={paper} key={paper.id}/>
-            ))}
+            <PaperFilter search={search} />
+            {showLoading()}
         </div>
     )
 }

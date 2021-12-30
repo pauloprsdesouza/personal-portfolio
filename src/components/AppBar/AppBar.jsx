@@ -55,8 +55,8 @@ const AppBar = function () {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
         <a className="navbar-brand" href="/">
-          <img src="https://seeklogo.com/images/P/performing-right-society-for-music-logo-B63C4A6960-seeklogo.com.png" height="50" className="d-inline-block align-text-middle" alt="..."/>
-          Paulo Roberto de Souza
+          <img src="https://seeklogo.com/images/P/performing-right-society-for-music-logo-B63C4A6960-seeklogo.com.png" height="50" className="d-inline-block align-text-middle" alt="..." />
+          Paulo Roberto de Souza 
         </a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon" />

@@ -1,7 +1,7 @@
 import React from "react";
-import "../style.css"
+import "./style.css"
 
-const PostSkeleton = function () {
+const VerticalCardSkeleton = function () {
   return (
     <div className="post-card skeleton card">
         <div className="hide-text hide-text-lg card-img-top hide-text-img-top">&nbsp;</div>
@@ -15,4 +15,4 @@ const PostSkeleton = function () {
   );
 };
 
-export default PostSkeleton;
+export default VerticalCardSkeleton;
