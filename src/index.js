@@ -19,7 +19,7 @@ export default function initFacebookSdk() {
   return new Promise(() => {
     window.fbAsyncInit = function () {
       window.FB.init({
-        appId: process.env.RECT_APP_ID_FACEBOOK,
+        appId: process.env.REACT_APP_ID_FACEBOOK,
         autoLogAppEvents: true,
         xfbml: true,
         version: "v12.0",

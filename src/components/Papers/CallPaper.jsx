@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react/cjs/react.development';
-import { api } from '../../api/API';
+import api from '../../api/API';
 import HorizontalCardSkeleton from '../Skeleton/HorizontalCardSkeleton';
 import PaperCard from './PaperCard';
 import PaperFilter from './PaperFilter';

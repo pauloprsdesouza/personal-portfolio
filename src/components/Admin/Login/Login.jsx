@@ -1,14 +1,15 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { api } from "../../api/API";
+import React, { useRef, useState } from "react";
+import api from "../../../api/API";
+import { autenticaded } from "../../../services/Auth";
+import DangerMessage from "../../AlertMessage/DangerMessage";
 
 const Login = function () {
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState();
-  const formLogin = React.createRef();
+  const formLogin = useRef();
   const [isFormValid, setIsFormValid] = useState(false);
-  const navigate = useNavigate();
+  const [errors, setErrors] = useState([]);
 
   function loadingText() {
     return loading ? "Loging..." : "Login";
@@ -22,10 +23,14 @@ const Login = function () {
       email,
       password
     }).then((response) => {
-      document.cookie = "Token=" + response.data.token;
-      navigate("/admin/posts");
-    }).catch((erros) => {
-
+      console.log(response);
+      autenticaded(response.data.token, response.data.user.name);
+      
+      window.location.href = "/admin/posts";
+    }).catch((errors) => {
+      setErrors(["Login/Passwords is invalid. Please, check your credentials."]);
+      setEmail("");
+      setPassword("");
     }).finally(() => {
       setLoading(false);
     })
@@ -33,12 +38,13 @@ const Login = function () {
 
   function validateForm() {
     setIsFormValid(formLogin.current.checkValidity());
-}
+  }
 
   return (
     <div className="container mt-3">
-      <form 
-        ref={formLogin} 
+      <DangerMessage errors={errors} close={setErrors} />
+      <form
+        ref={formLogin}
         onSubmit={login}
         className="needs-validation was-validated"
         onChange={validateForm}
@@ -74,10 +80,10 @@ const Login = function () {
                     }}
                   />
                 </div>
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   className="btn btn-primary"
-                  disabled={!isFormValid}>
+                  disabled={!isFormValid || loading}>
                   {loadingText()}
                 </button>
               </div>

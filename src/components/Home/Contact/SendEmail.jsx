@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useState } from 'react/cjs/react.development';
-import { api } from '../../../api/API';
+import api from '../../../api/API';
 import ModalDialogInfo from '../../Modal/ModalDialogInfo';
 
 const SendEmail = function () {
-    const formContact = React.createRef();
+    const formContact = useRef();
     const [isFormValid, setIsFormValid] = useState(false);
     const [from, setFrom] = useState("");
     const [subject, setSubject] = useState("");
@@ -17,7 +17,7 @@ const SendEmail = function () {
         setSending(true);
 
         window.grecaptcha.ready(function () {
-            window.grecaptcha.execute('6LfYpbodAAAAAL2tw6lzhwgIueB15G8e3hx6N7RF', { action: 'submit' }).then(function (token) {
+            window.grecaptcha.execute(process.env.REACT_APP_ID_RECAPTCHA, { action: 'submit' }).then(function (token) {
                 send();
             });
         });

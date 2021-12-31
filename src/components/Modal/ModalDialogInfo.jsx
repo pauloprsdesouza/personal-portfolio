@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useEffect } from 'react/cjs/react.development';
 
 const ModalDialogInfo = function ({ title, content, show, close }) {
-    const modalRef = React.createRef();
+    const modalRef = useRef(null);
 
     useEffect(() => {
         if (show) {
@@ -12,11 +12,11 @@ const ModalDialogInfo = function ({ title, content, show, close }) {
     }, [show])
 
     return (
-        <div ref={modalRef} className="modal fade" id="modalDialogSubscribe" aria-labelledby="modalDialogSubscribe" aria-hidden="true">
+        <div ref={modalRef} className="modal fade" id="modalDialogInfo" aria-labelledby="modalDialogInfo" aria-hidden="true">
             <div className="modal-dialog">
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h5 className="modal-title" id="modalDialogSubscribe">{title}</h5>
+                        <h5 className="modal-title" id="modalDialogInfo">{title}</h5>
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">

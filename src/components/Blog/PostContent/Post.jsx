@@ -13,7 +13,7 @@ import {
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react/cjs/react.development";
 import { fromEntryToLocaleString } from "../../../converters/datetime";
-import { api } from "../../../api/API";
+import api from "../../../api/API";
 import FBComment from "./FBComment";
 import VerticalCardSkeleton from "../../Skeleton/VerticalCardSkeleton";
 
@@ -43,7 +43,7 @@ const Post = function () {
       .then((response) => {
 
       }).catch((error) => {
-        console.log(error);
+
 
       }).finally(() => {
         setLoading(false);

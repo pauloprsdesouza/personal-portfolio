@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react/cjs/react.development';
-import { api } from '../../../api/API';
+import api from '../../../api/API';
 import ModalDialogConfirm from '../../Modal/ModalDialogConfirm';
 
 const ListPapers = function () {
@@ -24,7 +24,7 @@ const ListPapers = function () {
             .finally(() => {
                 setLoading(false);
             })
-    }, []);
+    }, [navigate]);
 
     function getType(type) {
         switch (type) {
@@ -43,7 +43,7 @@ const ListPapers = function () {
         const papersTemp = [...papers];
 
         papersTemp.forEach((item) => {
-            if (paperToDelete.id == item.id) {
+            if (paperToDelete.id === item.id) {
                 item.deleting = !item.deleting;
             }
         });
@@ -54,7 +54,7 @@ const ListPapers = function () {
             .then((response) => {
                 updatePaperByResponse(response.data);
             }).catch((erros) => {
-                console.error(erros);
+
             }).finally(() => {
                 paperToDelete.deleting = false;
             });
@@ -74,16 +74,12 @@ const ListPapers = function () {
 
     function showLoading() {
         return loading ? (
-            <tfoot>
-                <tr className="text-center">
-                    <td colspan="6"> <i className="fas fa-spinner fa-pulse"></i>&nbsp;Loading...</td>
-                </tr>
-            </tfoot>
-        ) : "";
+            <span><i className="fas fa-spinner fa-pulse"></i>&nbsp;Loading...</span>
+        ) : null;
     }
 
     return (
-        <div className="container">
+        <div className="container mt-3">
             <div className="card">
                 <div className="card-body">
                     <div className="title d-flex justify-content-between align-middle mb-4">
@@ -120,8 +116,10 @@ const ListPapers = function () {
                                 </tr>
                             ))}
                         </tbody>
-                        {showLoading()}
                     </table>
+                    <div className="text-center mb-3">
+                        {showLoading()}
+                    </div>
                 </div>
             </div>
             <ModalDialogConfirm

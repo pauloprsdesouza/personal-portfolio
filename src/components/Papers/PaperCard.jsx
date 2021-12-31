@@ -1,6 +1,4 @@
 import React from 'react';
-import { useState } from 'react/cjs/react.development';
-import HorizontalCardSkeleton from '../Skeleton/VerticalCardSkeleton';
 
 const PaperCard = function ({ paper }) {
     function getType(type) {
@@ -31,7 +29,6 @@ const PaperCard = function ({ paper }) {
                         <span>{getType(paper.type)}</span>
                     </div>
                 </div>
-                {console.log(paper)}
                 <a
                     href={paper.websiteUrl}
                     className="btn btn-outline-primary btn-sm"

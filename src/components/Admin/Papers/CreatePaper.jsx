@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react/cjs/react.development';
-import { api } from '../../../api/API';
+import api from '../../../api/API';
 
 const CreatePaper = function () {
     const [loading, setLoading] = useState(false);
@@ -34,12 +34,13 @@ const CreatePaper = function () {
                     setLocal(paper.local);
                     setWebsiteUrl(paper.websiteUrl);
                 }).catch((error) => {
+                    setLoading(false);
                     navigate("/login");
                 }).finally(() => {
                     setLoading(false);
                 });
         }
-    }, [id]);
+    }, [id, navigate]);
 
     function save(event) {
         event.preventDefault();

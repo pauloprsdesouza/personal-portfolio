@@ -46,7 +46,7 @@ const ProjectCard = function ({ project }) {
                     className="btn btn-outline-primary btn-sm"
                     target="_blank"
                     rel="noopener noreferrer">
-                    <i class="fab fa-github-alt"></i> See on Github
+                    <i className="fab fa-github-alt"></i> See on Github
                 </a>
             </div>
         </div >

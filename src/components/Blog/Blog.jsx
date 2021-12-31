@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react/cjs/react.development";
 import PostCard from "./PostCard/PostCard"
 import FilterPost from "./FilterPost/FilterPost";
-import { api } from "../../api/API";
+import api from "../../api/API";
 import Subscribe from "./Subscribe";
 import HorizontalCardSkeleton from "../Skeleton/HorizontalCardSkeleton";
 

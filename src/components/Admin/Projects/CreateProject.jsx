@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react/cjs/react.development';
-import { api } from '../../../api/API';
+import api from '../../../api/API';
 
 const CreateProject = function () {
     const [loading, setLoading] = useState(false);
@@ -41,7 +41,7 @@ const CreateProject = function () {
                     setLoading(false);
                 });
         }
-    }, [id]);
+    }, [id, navigate]);
 
     function save(event) {
         event.preventDefault();

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useState } from 'react/cjs/react.development';
-import { api } from '../../api/API';
+import api from '../../api/API';
 import ModalDialogInfo from '../Modal/ModalDialogInfo';
 import "./style.css"
 
 const Subscribe = function () {
-    const formSubscribe = React.createRef();
+    const formSubscribe = useRef();
     const [isFormValid, setIsFormValid] = useState(false);
     const [email, setEmail] = useState("");
     const [subscribing, setSubscribing] = useState(false);
@@ -16,7 +16,7 @@ const Subscribe = function () {
         setSubscribing(true);
 
         window.grecaptcha.ready(function () {
-            window.grecaptcha.execute('6LfYpbodAAAAAL2tw6lzhwgIueB15G8e3hx6N7RF', { action: 'submit' }).then(function (token) {
+            window.grecaptcha.execute(process.env.REACT_APP_ID_RECAPTCHA, { action: 'submit' }).then(function (token) {
                 toSubscribe();
             });
         });
@@ -49,7 +49,7 @@ const Subscribe = function () {
                 ref={formSubscribe}
                 noValidate
                 onSubmit={validate}
-                className={`needs-validation ${isFormValid? "was-validated" : ""}`}
+                className={`needs-validation ${isFormValid ? "was-validated" : ""}`}
                 onChange={validateForm}>
                 <div className="card card-education-teste">
                     <div className="card-body">

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react/cjs/react.development';
-import { api } from '../../../api/API';
+import api from '../../../api/API';
 import { fromEntryToLocaleString } from '../../../converters/datetime';
 import ModalDialogConfirm from '../../Modal/ModalDialogConfirm';
 
@@ -26,7 +26,7 @@ const ListProjects = function () {
             .finally(() => {
                 setLoading(false);
             })
-    }, []);
+    }, [navigate]);
 
     function getProjectType(type) {
         switch (type) {
@@ -45,8 +45,8 @@ const ListProjects = function () {
         const projectsTemp = [...projects];
 
         projectsTemp.forEach((item) => {
-            if (projectToDelete.id == item.id) {
-                item.deleting = item.deleting;
+            if (projectToDelete.id === item.id) {
+                item.deleting = !item.deleting;
             }
         });
 
@@ -56,7 +56,7 @@ const ListProjects = function () {
             .then((response) => {
                 updateProjectByResponse(response.data);
             }).catch((erros) => {
-                console.error(erros);
+
             }).finally(() => {
                 projectToDelete.deleting = false;
             });
@@ -82,12 +82,8 @@ const ListProjects = function () {
 
     function showLoading() {
         return loading ? (
-            <tfoot>
-                <tr className="text-center">
-                    <td colspan="5"> <i className="fas fa-spinner fa-pulse"></i>&nbsp;Loading...</td>
-                </tr>
-            </tfoot>
-        ) : "";
+            <span><i className="fas fa-spinner fa-pulse"></i>&nbsp;Loading...</span>
+        ) : null;
     }
 
     return (
@@ -127,8 +123,10 @@ const ListProjects = function () {
                                 </tr>
                             ))}
                         </tbody>
-                        {showLoading()}
                     </table>
+                    <div className="text-center mb-3">
+                        {showLoading()}
+                    </div>
                 </div>
             </div>
             <ModalDialogConfirm

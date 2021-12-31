@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react/cjs/react.development";
-import { api } from "../../../api/API";
+import api from "../../../api/API";
 import PostPreview from "./PostPreview";
 
 const CreatePost = function () {
@@ -44,7 +44,6 @@ const CreatePost = function () {
                     setFrontImageUrl(post.frontImageUrl);
                     setCategoryId(post.category.id);
                     setReadingTime(post.readingTime);
-
                 }).catch((error) => {
 
                 }).finally(() => {

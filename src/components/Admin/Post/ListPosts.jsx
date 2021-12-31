@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react/cjs/react.development';
-import { api } from '../../../api/API';
+import api from '../../../api/API';
 import { fromEntryToLocaleString } from '../../../converters/datetime';
 import ModalDialogConfirm from '../../Modal/ModalDialogConfirm';
 
@@ -26,7 +26,7 @@ const ListPosts = function () {
             .finally(() => {
                 setLoading(false);
             })
-    }, []);
+    }, [navigate]);
 
     function getStatus(status) {
         switch (status) {
@@ -47,8 +47,8 @@ const ListPosts = function () {
         const postsTemp = [...posts];
 
         postsTemp.forEach((item) => {
-            if (postToDelete.id == item.id) {
-                item.deleting = item.deleting;
+            if (postToDelete.id === item.id) {
+                item.deleting = !item.deleting;
             }
         });
 
@@ -58,7 +58,7 @@ const ListPosts = function () {
             .then((response) => {
                 updatePostByResponse(response.data);
             }).catch((erros) => {
-                console.error(erros);
+
             }).finally(() => {
                 postToDelete.deleting = false;
             });
@@ -68,22 +68,18 @@ const ListPosts = function () {
         const postsTemp = [...posts];
 
         postsTemp.forEach((post) => {
-            if(postResponse.id === post.id) {
+            if (postResponse.id === post.id) {
                 post.status = postResponse.status;
             }
         });
 
         setPosts(postsTemp);
-    } 
+    }
 
     function showLoading() {
         return loading ? (
-            <tfoot>
-                <tr className="text-center">
-                    <td colspan="4"> <i className="fas fa-spinner fa-pulse"></i>&nbsp;Loading...</td>
-                </tr>
-            </tfoot>
-        ) : "";
+            <span><i className="fas fa-spinner fa-pulse"></i>&nbsp;Loading...</span>
+        ) : null;
     }
 
     return (
@@ -121,16 +117,18 @@ const ListPosts = function () {
                                 </tr>
                             ))}
                         </tbody>
-                        {showLoading()}
                     </table>
+                    <div className="text-center mb-3">
+                        {showLoading()}
+                    </div>
                 </div>
             </div>
-            <ModalDialogConfirm 
-                title="Delete Post" 
-                content={`Do you mean to delete the post ${postToDelete.title}`} 
-                show={showModal} 
-                close={setShowModal} 
-                confirm={deletePost} 
+            <ModalDialogConfirm
+                title="Delete Post"
+                content={`Do you mean to delete the post ${postToDelete.title}`}
+                show={showModal}
+                close={setShowModal}
+                confirm={deletePost}
             />
         </div>
     )
