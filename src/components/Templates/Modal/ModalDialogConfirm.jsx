@@ -33,7 +33,7 @@ const ModalDialogConfirm = function ({ title, content, show, close, confirm }) {
                             Close
                         </button>
                         <button
-                            className="btn btn-secondary"
+                            className="btn btn-primary"
                             type="button"
                             data-bs-dismiss="modal"
                             onClick={() => {

@@ -18,7 +18,7 @@ const Education = function ({ educations }) {
                 {education.finishedAt}
               </span>
             </div>
-            <h5 className="card-title">{education.course}</h5>
+            <h5 className="text-white card-title">{education.course}</h5>
             <h6 className="text-white card-subtitle mb-3">{education.researchLine}</h6>
             <a
               href={education.university.url}

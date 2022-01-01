@@ -15,7 +15,7 @@ import { useEffect, useState } from "react/cjs/react.development";
 import { fromEntryToLocaleString } from "../../../converters/datetime";
 import api from "../../../api/API";
 import FBComment from "./FBComment";
-import VerticalCardSkeleton from "../../Skeleton/VerticalCardSkeleton";
+import VerticalCardSkeleton from "../../Templates/Skeleton/VerticalCardSkeleton";
 
 const Post = function () {
   const { id } = useParams();

@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useState } from 'react/cjs/react.development';
 import api from '../../../api/API';
-import ModalDialogInfo from '../../Modal/ModalDialogInfo';
+import ModalDialogInfo from '../../Templates/Modal/ModalDialogInfo';
 
 const SendEmail = function () {
     const formContact = useRef();
@@ -73,6 +73,7 @@ const SendEmail = function () {
                         className="form-control"
                         value={subject}
                         type="text"
+                        maxLength="150"
                         required
                         placeholder="Subject"
                         onChange={(event) => {
@@ -83,12 +84,14 @@ const SendEmail = function () {
                     <textarea
                         className="form-control"
                         value={content}
+                        maxLength="500"
                         required
                         rows="4"
                         placeholder="Hi Paulo, how are you doing? I would like to contact you for..."
                         onChange={(event) => {
                             setContent(event.target.value);
                         }} />
+                    <span className="text-white">Total of {500 - content.length} chars</span>
                 </div>
                 <button
                     className="btn btn-light"

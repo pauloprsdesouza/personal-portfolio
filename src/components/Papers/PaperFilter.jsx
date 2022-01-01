@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react/cjs/react.development';
 
-const PaperFilter = function ({ search, papers }) {
+const PaperFilter = function ({ search }) {
     const [title, setTitle] = useState("");
     const [submissionDeadline, setSubmissionDeadline] = useState("");
     const [type, setType] = useState("");

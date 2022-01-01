@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useState } from 'react/cjs/react.development';
 import api from '../../api/API';
-import ModalDialogInfo from '../Modal/ModalDialogInfo';
+import ModalDialogInfo from '../Templates/Modal/ModalDialogInfo';
 import "./style.css"
 
 const Subscribe = function () {

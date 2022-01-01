@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react/cjs/react.development";
-import { getAutenticatedUser, isAuthenticated, logout } from "../../services/Auth";
-import { adminRoutes, publicRoutes } from "../../services/Routes";
+import { getAutenticatedUser, isAuthenticated, logout } from "../../../services/Auth";
+import { adminRoutes, publicRoutes } from "../../../services/Routes";
 import "./style.css";
 
 const AppBar = function () {
@@ -64,9 +64,9 @@ const AppBar = function () {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
-        <a className="navbar-brand" href="/">
-          <img src="https://seeklogo.com/images/P/performing-right-society-for-music-logo-B63C4A6960-seeklogo.com.png" height="50" className="d-inline-block align-text-middle" alt="..." />
-          Paulo Roberto de Souza
+        <a className="navbar-brand align-middle" href="/">
+          <img src="https://personal-portfolio-files.s3.amazonaws.com/img/icon.svg" height="30" className="d-inline-block align-text-middle" alt="..." />
+          &nbsp;Paulo Roberto de Souza
         </a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon" />

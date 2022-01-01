@@ -39,20 +39,6 @@ body:after {
 
 .card-education-teste {
   background-color: #303134;
-  color: #FFFFFF !important;
-}
-
-.card-education-teste>.card-body {
-  color: #FFFFFF !important;
-}
-
-.card-education-teste>.card-body>.card-title {
-  color: #FFFFFF !important;
-}
-
-
-.card-education-teste>.card-body>.card-subtitle {
-  color: #FFFFFF !important;
 }
 
 .card-hover:hover {

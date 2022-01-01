@@ -3,7 +3,7 @@ import React from 'react';
 const About = function () {
     return (
         <div className="card card-education-teste mb-5 shadow">
-            <div className="card-body">
+            <div className="card-body text-white">
                 <h1 className="section-title mb-3">resume.</h1>
                 <p className="lead text-justify mb-3">
                     He is a web and mobile full-stack developer, scientist, and researcher in the Recommender Systems area. He is a doctoral's degree student and a master's degree in Computer Science at the

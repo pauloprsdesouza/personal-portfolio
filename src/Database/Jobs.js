@@ -21,67 +21,67 @@ import {
 
 // eslint-disable-next-line import/prefer-default-export
 export const jobsDB = [{
-  id: 1,
-  role: "Academic Researcher",
-  company: {
-    name: "UFBA - Federal University of Bahia",
-    url: "https://computacao.ufba.br/pt-br/programa-de-pos-graduacao-em-ciencia-da-computacao",
+    id: 1,
+    role: "Academic Researcher",
+    company: {
+      name: "UFBA - Federal University of Bahia",
+      url: "https://computacao.ufba.br/pt-br/programa-de-pos-graduacao-em-ciencia-da-computacao",
+    },
+    place: "Salvador/BA, Brasil",
+    startedAt: "May, 2017",
+    finishedAt: "Now",
+    activity: {
+      description: "Nowadays, I have developed and researched algorithms that aim to deal with problems for decision-making. In addition, these systems use machine learning techniques, data mining, big data, etc. More precisely, I have worked in researches on the Recommender Systems area, which are widely used by companies like Netflix, Amazon, Spotify, etc. Furthermore, the researches involve at the beginning a conception of the idea until the development of algorithms to be tested by real users or through existing databases. Hence, for the development of these systems, several stacks are used such as the following presented below:",
+      usedStacks: [vueJS, bootstrap, reactJS, dynamoDB, aws, mySQL, cSharp, dotnet, sciKitLearn, python, java, dynamoDB, springBoot, github, latex],
+    },
+    brand: "ufba.png",
   },
-  place: "Salvador/BA, Brasil",
-  startedAt: "May, 2017",
-  finishedAt: "Now",
-  activity: {
-    description: "Atualmente, desenvolvo e pesquiso algoritmos que visem auxiliar na solução de problemas para apoio a decisões. Esses sistemas compreendem técnicas de <a href='https://www.ibm.com/br-pt/analytics/machine-learning'>machine learning</a>, data mining, big data, entre outras. Mais precisamente, eu atuo em pesquisas na área de Sistemas de Recomendação, os quais são amplamente utilizados por empresas como a <a href='https://netflix.com'>Netflix</a>, <a href='https://amazon.com'>Amazon</a>, <a href='https://spotfy.com'>Spotify</a>, etc. Em face dessas informações, a pesquisa envolve toda a fase da concepção da ideia até o desenvolvimento de um algoritmo, para que o mesmo possa ser testado por usuários reais ou através do uso de bases de dados existentes, mas que compreendam o contexto abordado. Portanto, para o desenvolvimento dos sistemas que compreendem a implementação de um determinado algoritmo proposto, várias stacks são utilizadas, como às apresentada a seguir:",
-    usedStacks: [vueJS, bootstrap, reactJS, dynamoDB, aws, mySQL, cSharp, dotnet, sciKitLearn, python, java, dynamoDB, springBoot, github, latex],
+  {
+    id: 2,
+    role: "Senior Developer",
+    company: {
+      name: "Stefanini",
+      url: "https://stefanini.com/en",
+    },
+    place: "Aracaju/SE, Brasil",
+    startedAt: "November, 2016",
+    finishedAt: "May, 2017",
+    activity: {
+      description: "I was responsible to develop a few web and mobile apps during that time for many areas of public security. Those apps were developed using many technologies such as: ",
+      usedStacks: [angular, vueJS, bootstrap, ionic, sqlServer, cSharp, dotnet, android],
+    },
+    brand: "stefanini.png",
   },
-  brand: "ufba.png",
-},
-{
-  id: 2,
-  role: "Senior Developer",
-  company: {
-    name: "Stefanini",
-    url: "https://stefanini.com/en",
+  {
+    id: 3,
+    role: "Junior Developer",
+    company: {
+      name: "Indra Company",
+      url: "https://www.indracompany.com/",
+    },
+    place: "Aracaju/SE, Brasil",
+    startedAt: "December, 2013",
+    finishedAt: "November, 2016",
+    activity: {
+      description: "I was responsible to develop a few web and mobile apps during that time for many areas of public security. Those apps were developed using many technologies such as: ",
+      usedStacks: [angular, vueJS, bootstrap, ionic, sqlServer, cSharp, dotnet, android],
+    },
+    brand: "indra.png",
   },
-  place: "Aracaju/SE, Brasil",
-  startedAt: "November, 2016",
-  finishedAt: "May, 2017",
-  activity: {
-    description: "Alocado na <a href='https://www.ssp.se.gov.br/'>Secretaria de Segurança Pública de Sergipe</a>, participei do desenvolvimento de projetos internos para a Polícia Civil, bem como para o público externo como o aplicativo <a href='https://apps.apple.com/br/app/disque-den%C3%BAncia-se/id1221486095'>Disque Denúncia SE 181</a>.",
-    usedStacks: [angular, vueJS, bootstrap, ionic, sqlServer, cSharp, dotnet, android],
+  {
+    id: 4,
+    role: "Full-Stack Web Developer",
+    company: {
+      name: "Code 2",
+      url: "https://www.linkedin.com/company/code-2/about/",
+    },
+    place: "Aracaju/SE, Brasil",
+    startedAt: "May, 2012",
+    finishedAt: "December, 2013",
+    activity: {
+      description: "I was responsible to develop a few web apps during that time for many areas such as academic and law. Those apps were developed using many technologies such as: ",
+      usedStacks: [sqlServer, cSharp, dotnet],
+    },
+    brand: "code2.jpg",
   },
-  brand: "stefanini.png",
-},
-{
-  id: 3,
-  role: "Junior Developer",
-  company: {
-    name: "Indra Company",
-    url: "https://www.indracompany.com/",
-  },
-  place: "Aracaju/SE, Brasil",
-  startedAt: "December, 2013",
-  finishedAt: "November, 2016",
-  activity: {
-    description: "Alocado na <a href='https://www.ssp.se.gov.br/'>Secretaria de Segurança Pública de Sergipe</a>, participei do desenvolvimento de projetos internos para a Polícia Civil, bem como para o público externo como o aplicativo <a href='https://apps.apple.com/br/app/disque-den%C3%BAncia-se/id1221486095'>Disque Denúncia SE 181</a>.",
-    usedStacks: [angular, vueJS, bootstrap, ionic, sqlServer, cSharp, dotnet, android],
-  },
-  brand: "indra.png",
-},
-{
-  id: 4,
-  role: "Full-Stack Web Developer",
-  company: {
-    name: "Code 2",
-    url: "https://www.linkedin.com/company/code-2/about/",
-  },
-  place: "Aracaju/SE, Brasil",
-  startedAt: "May, 2012",
-  finishedAt: "December, 2013",
-  activity: {
-    description: "Actually, I am developing researches on Recommender Systems, Information Retrieval, Semantic Web, and Social Media areas. Besides, I am developing both applications web and mobile using some technologies based on AWS cloud computin",
-    usedStacks: [sqlServer, cSharp, dotnet],
-  },
-  brand: "code2.jpg",
-},
 ];

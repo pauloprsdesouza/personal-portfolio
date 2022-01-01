@@ -13,7 +13,7 @@ const Experience = function ({ jobs }) {
                 {job.startedAt}&nbsp;-&nbsp;{job.finishedAt}
               </span>
             </div>
-            <h5 className="card-title">{job.role}</h5>
+            <h5 className="text-white card-title">{job.role}</h5>
             <h6 className="card-subtitle mb-3 text-white">{job.place}</h6>
             <a
               href={job.company.url}

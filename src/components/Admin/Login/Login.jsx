@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import api from "../../../api/API";
 import { autenticaded } from "../../../services/Auth";
-import DangerMessage from "../../AlertMessage/DangerMessage";
+import DangerMessage from "../../Templates/AlertMessage/DangerMessage";
 
 const Login = function () {
   const [email, setEmail] = useState("");

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FilterPostSkeleton = function () {
+const PostFilterSkeleton = function () {
     return (
         <div className="post-card skeleton card border-0 mb-3">
             <div className="card-body">
@@ -15,4 +15,4 @@ const FilterPostSkeleton = function () {
     )
 }
 
-export default FilterPostSkeleton;
+export default PostFilterSkeleton;

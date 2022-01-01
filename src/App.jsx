@@ -8,12 +8,12 @@ import CreatePost from "./components/Admin/Post/CreatePost";
 import ListPosts from "./components/Admin/Post/ListPosts";
 import CreateProject from "./components/Admin/Projects/CreateProject";
 import ListProjects from "./components/Admin/Projects/ListProjects";
-import AppBar from "./components/AppBar/AppBar";
+import AppBar from "./components/Templates/AppBar/AppBar";
 import Blog from "./components/Blog/Blog";
 import Post from "./components/Blog/PostContent/Post";
 import Http404 from "./components/ErrorPage/Http404";
-import Footer from "./components/Footer/Footer";
-import GoToTopButton from "./components/GoToTopButton/GoToTopButton";
+import Footer from "./components/Templates/Footer/Footer";
+import GoToTopButton from "./components/Templates/GoToTopButton/GoToTopButton";
 import Home from "./components/Home/Home";
 import CallPaper from "./components/Papers/CallPaper";
 import Projects from "./components/Projects/Projects";
@@ -39,7 +39,7 @@ const App = function () {
           <Route path=":id" element={<CreateProject />} />
         </Route>
       </Route>
-    ) : "";
+    ) : null;
   }
 
   return (

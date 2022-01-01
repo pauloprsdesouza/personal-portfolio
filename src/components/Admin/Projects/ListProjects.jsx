@@ -3,7 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react/cjs/react.development';
 import api from '../../../api/API';
 import { fromEntryToLocaleString } from '../../../converters/datetime';
-import ModalDialogConfirm from '../../Modal/ModalDialogConfirm';
+import Loading from '../../Templates/Loading/Loading';
+import ModalDialogConfirm from '../../Templates/Modal/ModalDialogConfirm';
+import NoItems from '../../Templates/NoItems/NoItems';
 
 const ListProjects = function () {
     const [projects, setProjects] = useState([]);
@@ -80,10 +82,12 @@ const ListProjects = function () {
         )))
     }
 
-    function showLoading() {
-        return loading ? (
-            <span><i className="fas fa-spinner fa-pulse"></i>&nbsp;Loading...</span>
-        ) : null;
+    function showLoadingOrNoItems() {
+        return loading ?
+            <Loading loading={loading} /> :
+            projects.length === 0 ?
+                <NoItems content="There are no published projects yet!" /> :
+                null;
     }
 
     return (
@@ -124,9 +128,7 @@ const ListProjects = function () {
                             ))}
                         </tbody>
                     </table>
-                    <div className="text-center mb-3">
-                        {showLoading()}
-                    </div>
+                    {showLoadingOrNoItems()}
                 </div>
             </div>
             <ModalDialogConfirm

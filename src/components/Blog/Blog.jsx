@@ -1,20 +1,24 @@
 import React, { useEffect } from "react";
 import { useState } from "react/cjs/react.development";
 import PostCard from "./PostCard/PostCard"
-import FilterPost from "./FilterPost/FilterPost";
 import api from "../../api/API";
 import Subscribe from "./Subscribe";
-import HorizontalCardSkeleton from "../Skeleton/HorizontalCardSkeleton";
+import HorizontalCardSkeleton from "../Templates/Skeleton/HorizontalCardSkeleton";
+import NoItems from "../Templates/NoItems/NoItems";
+import PostFilter from "./FilterPost/PostFilter";
 
 const Blog = function () {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [selectedCategory, setSelectedCategory] = useState({});
 
   useEffect(() => {
+    search();
+  }, []);
+
+  function search(filterParams) {
     setLoading(true);
 
-    api.get("/posts/published", { params: { categoryId: selectedCategory.id } })
+    api.get("/posts/published", { params: filterParams })
       .then((response) => {
         setPosts(response.data.posts);
       }).catch(() => {
@@ -22,25 +26,33 @@ const Blog = function () {
       }).finally(() => {
         setLoading(false);
       });
-  }, [selectedCategory]);
+  }
 
-  function showLoading() {
-    return loading
-      ?
-      <HorizontalCardSkeleton />
-      : (
-        <>
-          {posts.map((post) => (<PostCard post={post} key={post.id} />))}
-          <Subscribe />
-        </>
+  function showContent() {
+    return loading ?
+      <HorizontalCardSkeleton /> : (
+        posts.length === 0 ?
+          <NoItems content="There are no published posts yet!" /> :
+          <>
+            {posts.map((post) => (
+              <PostCard post={post} key={post.id} />)
+            )}
+            <Subscribe />
+          </>
       );
   }
 
   return (
     <div className="container mt-3">
-      <FilterPost setSelectedCategory={setSelectedCategory} />
+      <div className="card card-education-teste mt-3 mb-3 shadow">
+        <div className="card-body">
+          <h1 className="card-title text-white">Blog</h1>
+          <p className="card-text text-white">Here, you will find posts about many areas such as software development, productivity, etc.</p>
+        </div>
+      </div>
+      <PostFilter search={search} />
 
-      {showLoading()}
+      {showContent()}
     </div>
   );
 };
