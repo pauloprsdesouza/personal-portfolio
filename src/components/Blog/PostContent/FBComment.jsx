@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from "react";
-import { useState } from "react/cjs/react.development";
+import React, { useEffect, useRef, useState } from "react";
 
 const FBComment = function ({ id }) {
   const fbComment = useRef(null);

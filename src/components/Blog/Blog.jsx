@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { useState } from "react/cjs/react.development";
+import React, { useEffect, useState } from "react";
 import PostCard from "./PostCard/PostCard"
 import api from "../../api/API";
 import Subscribe from "./Subscribe";

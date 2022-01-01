@@ -1,5 +1,4 @@
-import React, { useRef } from 'react';
-import { useState } from 'react/cjs/react.development';
+import React, { useRef, useState } from 'react';
 import api from '../../api/API';
 import ModalDialogInfo from '../Templates/Modal/ModalDialogInfo';
 import "./style.css"

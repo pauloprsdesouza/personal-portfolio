@@ -1,5 +1,4 @@
-import React, { useRef } from 'react';
-import { useEffect } from 'react/cjs/react.development';
+import React, { useEffect, useRef } from 'react';
 
 const ModalDialogConfirm = function ({ title, content, show, close, confirm }) {
     const modalRef = useRef(null);

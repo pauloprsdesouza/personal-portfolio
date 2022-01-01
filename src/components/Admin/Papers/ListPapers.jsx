@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react/cjs/react.development';
 import api from '../../../api/API';
 import Loading from '../../Templates/Loading/Loading';
 import ModalDialogConfirm from '../../Templates/Modal/ModalDialogConfirm';

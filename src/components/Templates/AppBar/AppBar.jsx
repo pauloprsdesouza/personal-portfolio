@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useEffect } from "react/cjs/react.development";
 import { getAutenticatedUser, isAuthenticated, logout } from "../../../services/Auth";
 import { adminRoutes, publicRoutes } from "../../../services/Routes";
 import "./style.css";

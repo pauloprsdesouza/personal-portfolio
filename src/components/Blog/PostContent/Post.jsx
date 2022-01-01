@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../style.css";
 import {
   FacebookIcon,
@@ -11,7 +11,6 @@ import {
   WhatsappShareButton,
 } from "react-share";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react/cjs/react.development";
 import { fromEntryToLocaleString } from "../../../converters/datetime";
 import api from "../../../api/API";
 import FBComment from "./FBComment";
