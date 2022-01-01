@@ -95,142 +95,124 @@ const CreatePaper = function () {
                 <div className="card">
                     <div className="card-body">
                         <div className="card-title mb-4"><h1>New Paper</h1></div>
-                        <div className="row">
-                            <div className="col-12">
-                                <div className="mb-3">
-                                    <label className="form-label">Title</label>
-                                    <input
-                                        className="form-control"
-                                        required
-                                        value={title}
-                                        onChange={(event) => {
-                                            setTitle(event.target.value);
-                                        }}
-                                        disabled={loading}
-                                    />
-                                    <div className="invalid-feedback">
-                                        Field title is required.
-                                    </div>
-                                </div>
+                        <div className="mb-3">
+                            <label className="form-label">Title</label>
+                            <input
+                                className="form-control"
+                                required
+                                value={title}
+                                onChange={(event) => {
+                                    setTitle(event.target.value);
+                                }}
+                                disabled={loading}
+                            />
+                            <div className="invalid-feedback">
+                                Field title is required.
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-4">
-                                <div className="mb-3">
-                                    <label className="form-label">Submission Deadline</label>
-                                    <input
-                                        className="form-control"
-                                        required
-                                        value={submissionDeadline}
-                                        onChange={(event) => {
-                                            setSubmissionDeadline(event.target.value);
-                                        }}
-                                        disabled={loading}
-                                    />
-                                    <div className="invalid-feedback">
-                                        Field subtitle is required.
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-4">
-                                <div className="mb-3">
-                                    <label className="form-label">Type</label>
-                                    <select
-                                        value={type}
-                                        required
-                                        className="form-select"
-                                        onChange={(event) => {
-                                            setType(event.target.value);
-                                        }}
-                                        disabled={loading}
-                                    >
-                                        <option value="">Select</option>
-                                        <option value="J">Journal</option>
-                                        <option value="C">Conference</option>
-                                    </select>
-                                    <div className="invalid-feedback">
-                                        Field type is required.
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-4">
-                                <div className="mb-3">
-                                    <label className="form-label">Qualis</label>
-                                    <select
-                                        value={qualis}
-                                        required
-                                        className="form-select"
-                                        onChange={(event) => {
-                                            setQualis(event.target.value);
-                                        }}
-                                        disabled={loading}
-                                    >
-                                        <option value="">Select</option>
-                                        <option value="A1">A1</option>
-                                        <option value="A2">A2</option>
-                                        <option value="A3">A3</option>
-                                        <option value="B1">B1</option>
-                                        <option value="B2">B2</option>
-                                        <option value="B3">B3</option>
-                                    </select>
-                                    <div className="invalid-feedback">
-                                        Field post content is required.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-6">
-                                <div className="mb-3">
-                                    <label className="form-label">Local</label>
-                                    <input
-                                        className="form-control"
-                                        required
-                                        value={local}
-                                        onChange={(event) => {
-                                            setLocal(event.target.value);
-                                        }}
-                                        disabled={loading}
-                                    />
-                                    <div className="invalid-feedback">
-                                        Field local is required.
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-6">
-                                <div className="mb-3">
-                                    <label className="form-label">Price</label>
-                                    <input type="number" className="form-control"
-                                        required
-                                        value={price}
-                                        onChange={(event) => {
-                                            setPrice(event.target.value);
-                                        }}
-                                        disabled={loading}
-                                    />
-                                </div>
+                            <div className="col-lg-4">
+                                <label className="form-label">Submission Deadline</label>
+                                <input
+                                    className="form-control"
+                                    required
+                                    value={submissionDeadline}
+                                    onChange={(event) => {
+                                        setSubmissionDeadline(event.target.value);
+                                    }}
+                                    disabled={loading}
+                                />
                                 <div className="invalid-feedback">
-                                    Field price time is required.
+                                    Field subtitle is required.
+                                </div>
+                            </div>
+                            <div className="col-lg-4">
+                                <label className="form-label">Type</label>
+                                <select
+                                    value={type}
+                                    required
+                                    className="form-select"
+                                    onChange={(event) => {
+                                        setType(event.target.value);
+                                    }}
+                                    disabled={loading}
+                                >
+                                    <option value="">Select</option>
+                                    <option value="J">Journal</option>
+                                    <option value="C">Conference</option>
+                                </select>
+                                <div className="invalid-feedback">
+                                    Field type is required.
+                                </div>
+                            </div>
+                            <div className="col-lg-4">
+                                <label className="form-label">Qualis</label>
+                                <select
+                                    value={qualis}
+                                    required
+                                    className="form-select"
+                                    onChange={(event) => {
+                                        setQualis(event.target.value);
+                                    }}
+                                    disabled={loading}
+                                >
+                                    <option value="">Select</option>
+                                    <option value="A1">A1</option>
+                                    <option value="A2">A2</option>
+                                    <option value="A3">A3</option>
+                                    <option value="B1">B1</option>
+                                    <option value="B2">B2</option>
+                                    <option value="B3">B3</option>
+                                </select>
+                                <div className="invalid-feedback">
+                                    Field post content is required.
                                 </div>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-12">
-                                <div className="mb-3">
-                                    <label className="form-label">Website URL</label>
-                                    <input
-                                        className="form-control"
-                                        required
-                                        value={websiteUrl}
-                                        onChange={(event) => {
-                                            setWebsiteUrl(event.target.value);
-                                        }}
-                                        disabled={loading}
-                                    />
-                                    <div className="invalid-feedback">
-                                        Field url is required.
-                                    </div>
+                            <div className="col-lg-6">
+                                <label className="form-label">Local</label>
+                                <input
+                                    className="form-control"
+                                    required
+                                    value={local}
+                                    onChange={(event) => {
+                                        setLocal(event.target.value);
+                                    }}
+                                    disabled={loading}
+                                />
+                                <div className="invalid-feedback">
+                                    Field local is required.
                                 </div>
+                            </div>
+                            <div className="col-lg-6">
+                                <label className="form-label">Price</label>
+                                <input type="number" className="form-control"
+                                    required
+                                    value={price}
+                                    onChange={(event) => {
+                                        setPrice(event.target.value);
+                                    }}
+                                    disabled={loading}
+                                />
+                            </div>
+                            <div className="invalid-feedback">
+                                Field price time is required.
+                            </div>
+                        </div>
+                        <div className="mb-3">
+                            <label className="form-label">Website URL</label>
+                            <input
+                                className="form-control"
+                                required
+                                value={websiteUrl}
+                                onChange={(event) => {
+                                    setWebsiteUrl(event.target.value);
+                                }}
+                                disabled={loading}
+                            />
+                            <div className="invalid-feedback">
+                                Field url is required.
                             </div>
                         </div>
                     </div>

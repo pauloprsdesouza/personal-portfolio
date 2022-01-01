@@ -116,44 +116,38 @@ const CreatePost = function () {
 
                         <div className="tab-content" id="myTabContent">
                             <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <div className="row">
-                                    <div className="col-12">
-                                        <div className="mb-3">
-                                            <label className="form-label">Title</label>
-                                            <input
-                                                className="form-control"
-                                                required
-                                                value={title}
-                                                onChange={(event) => {
-                                                    setTitle(event.target.value);
-                                                }}
-                                                disabled={loading}
-                                            />
-                                            <div className="invalid-feedback">
-                                                Field title is required.
-                                            </div>
-                                        </div>
+                                <div className="mb-3">
+                                    <label className="form-label">Title</label>
+                                    <input
+                                        className="form-control"
+                                        required
+                                        value={title}
+                                        onChange={(event) => {
+                                            setTitle(event.target.value);
+                                        }}
+                                        disabled={loading}
+                                    />
+                                    <div className="invalid-feedback">
+                                        Field title is required.
                                     </div>
-                                    <div className="col-12">
-                                        <div className="mb-3">
-                                            <label className="form-label">Subtitle</label>
-                                            <input
-                                                className="form-control"
-                                                required
-                                                value={subtitle}
-                                                onChange={(event) => {
-                                                    setSubtitle(event.target.value);
-                                                }}
-                                                disabled={loading}
-                                            />
-                                            <div className="invalid-feedback">
-                                                Field subtitle is required.
-                                            </div>
-                                        </div>
+                                </div>
+                                <div className="mb-3">
+                                    <label className="form-label">Subtitle</label>
+                                    <input
+                                        className="form-control"
+                                        required
+                                        value={subtitle}
+                                        onChange={(event) => {
+                                            setSubtitle(event.target.value);
+                                        }}
+                                        disabled={loading}
+                                    />
+                                    <div className="invalid-feedback">
+                                        Field subtitle is required.
                                     </div>
                                 </div>
                                 <div className="row">
-                                    <div className="col">
+                                    <div className="col-lg-4">
                                         <label className="form-label">Category</label>
                                         <select
                                             className="form-select"
@@ -173,7 +167,7 @@ const CreatePost = function () {
                                             Field category is required.
                                         </div>
                                     </div>
-                                    <div className="col">
+                                    <div className="col-lg-4">
                                         <div className="mb-3">
                                             <label className="form-label">Status</label>
                                             <select
@@ -195,7 +189,7 @@ const CreatePost = function () {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col">
+                                    <div className="col-lg-4">
                                         <div className="mb-3">
                                             <label className="form-label">Reading Time (min)</label>
                                             <input type="number" className="form-control"
@@ -212,25 +206,19 @@ const CreatePost = function () {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="row">
-                                    <div className="col-12">
-                                        <div className="col-12">
-                                            <div className="mb-3">
-                                                <label className="form-label">Front Image</label>
-                                                <input
-                                                    className="form-control"
-                                                    required
-                                                    value={frontImageUrl}
-                                                    onChange={(event) => {
-                                                        setFrontImageUrl(event.target.value);
-                                                    }}
-                                                    disabled={loading}
-                                                />
-                                                <div className="invalid-feedback">
-                                                    Field front image is required.
-                                                </div>
-                                            </div>
-                                        </div>
+                                <div className="mb-3">
+                                    <label className="form-label">Front Image</label>
+                                    <input
+                                        className="form-control"
+                                        required
+                                        value={frontImageUrl}
+                                        onChange={(event) => {
+                                            setFrontImageUrl(event.target.value);
+                                        }}
+                                        disabled={loading}
+                                    />
+                                    <div className="invalid-feedback">
+                                        Field front image is required.
                                     </div>
                                 </div>
                                 <div className="mb-3">

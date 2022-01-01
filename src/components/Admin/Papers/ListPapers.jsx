@@ -90,37 +90,39 @@ const ListPapers = function () {
                         <h5>Registered Papers</h5>
                         <Link className="btn btn-primary" to="create">New Paper</Link>
                     </div>
-                    <table className="table">
-                        <thead>
-                            <tr>
-                                <th>Title</th>
-                                <th>Type</th>
-                                <th>Deadline</th>
-                                <th>Price</th>
-                                <th>Qualis</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {papers.map((paper) => (
-                                <tr key={paper.id}>
-                                    <td>{paper.title}</td>
-                                    <td>{getType(paper.type)}</td>
-                                    <td>{paper.submissionDeadline}</td>
-                                    <td>{paper.price}</td>
-                                    <td>{paper.qualis}</td>
-                                    <td>
-                                        <Link className="btn btn-secondary btn-sm" to={paper.id}>Edit</Link>
-                                        <button type="button" className="btn btn-danger btn-sm ms-2" onClick={(event) => {
-                                            event.preventDefault();
-                                            setPaperToDelete(paper);
-                                            setShowModal(true);
-                                        }}>Delete</button>
-                                    </td>
+                    <div className="table-responsive">
+                        <table className="table">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Type</th>
+                                    <th>Deadline</th>
+                                    <th>Price</th>
+                                    <th>Qualis</th>
+                                    <th>Actions</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {papers.map((paper) => (
+                                    <tr key={paper.id}>
+                                        <td>{paper.title}</td>
+                                        <td>{getType(paper.type)}</td>
+                                        <td>{paper.submissionDeadline}</td>
+                                        <td>{paper.price}</td>
+                                        <td>{paper.qualis}</td>
+                                        <td>
+                                            <Link className="btn btn-secondary btn-sm" to={paper.id}>Edit</Link>
+                                            <button type="button" className="btn btn-danger btn-sm ms-2" onClick={(event) => {
+                                                event.preventDefault();
+                                                setPaperToDelete(paper);
+                                                setShowModal(true);
+                                            }}>Delete</button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                     {showLoadingOrNoItems()}
                 </div>
             </div>

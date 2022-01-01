@@ -96,48 +96,42 @@ const CreateProject = function () {
                 <div className="card">
                     <div className="card-body">
                         <div className="card-title mb-4"><h1>New Project</h1></div>
-                        <div className="row">
-                            <div className="col-12">
-                                <div className="mb-3">
-                                    <label className="form-label">Title</label>
-                                    <input
-                                        className="form-control"
-                                        required
-                                        value={title}
-                                        onChange={(event) => {
-                                            setTitle(event.target.value);
-                                        }}
-                                        disabled={loading}
-                                    />
-                                    <div className="invalid-feedback">
-                                        Field title is required.
-                                    </div>
-                                </div>
+                        <div className="mb-3">
+                            <label className="form-label">Title</label>
+                            <input
+                                className="form-control"
+                                required
+                                value={title}
+                                onChange={(event) => {
+                                    setTitle(event.target.value);
+                                }}
+                                disabled={loading}
+                            />
+                            <div className="invalid-feedback">
+                                Field title is required.
                             </div>
                         </div>
-                        <div className="row">
-                            <div className="col-4">
-                                <div className="mb-3">
-                                    <label className="form-label">Type</label>
-                                    <select
-                                        value={type}
-                                        required
-                                        className="form-select"
-                                        onChange={(event) => {
-                                            setType(event.target.value);
-                                        }}
-                                        disabled={loading}
-                                    >
-                                        <option value="">Select</option>
-                                        <option value="F">Frontend</option>
-                                        <option value="B">Backend</option>
-                                    </select>
-                                    <div className="invalid-feedback">
-                                        Field type is required.
-                                    </div>
+                        <div className="row gy-3 mb-3">
+                            <div className="col-lg-4">
+                                <label className="form-label">Type</label>
+                                <select
+                                    value={type}
+                                    required
+                                    className="form-select"
+                                    onChange={(event) => {
+                                        setType(event.target.value);
+                                    }}
+                                    disabled={loading}
+                                >
+                                    <option value="">Select</option>
+                                    <option value="F">Frontend</option>
+                                    <option value="B">Backend</option>
+                                </select>
+                                <div className="invalid-feedback">
+                                    Field type is required.
                                 </div>
                             </div>
-                            <div className="col-4">
+                            <div className="col-lg-4">
                                 <label className="form-label">Started At</label>
                                 <input
                                     className="form-control"
@@ -152,7 +146,7 @@ const CreateProject = function () {
                                     Field started at is required.
                                 </div>
                             </div>
-                            <div className="col-4">
+                            <div className="col-lg-4">
                                 <label className="form-label">Finished At</label>
                                 <input
                                     className="form-control"
@@ -164,44 +158,36 @@ const CreateProject = function () {
                                 />
                             </div>
                         </div>
-                        <div className="row">
-                            <div className="col-12">
-                                <div className="mb-3">
-                                    <label className="form-label">Url Project GetHub</label>
-                                    <input
-                                        className="form-control"
-                                        required
-                                        value={urlProject}
-                                        onChange={(event) => {
-                                            setUrlProject(event.target.value);
-                                        }}
-                                        disabled={loading}
-                                    />
-                                    <div className="invalid-feedback">
-                                        Field url is required.
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div className="col-12">
-                            <div className="mb-3">
-                                <label className="form-label">Programing Language</label>
-                                <input
-                                    className="form-control"
-                                    required
-                                    value={stacks}
-                                    onChange={(event) => {
-                                        setStacks(event.target.value);
-                                    }}
-                                    disabled={loading}
-                                />
-                                <div className="invalid-feedback">
-                                    Field programing languages is required.
-                                </div>
+                        <div className="mb-3">
+                            <label className="form-label">Url Project GetHub</label>
+                            <input
+                                className="form-control"
+                                required
+                                value={urlProject}
+                                onChange={(event) => {
+                                    setUrlProject(event.target.value);
+                                }}
+                                disabled={loading}
+                            />
+                            <div className="invalid-feedback">
+                                Field url is required.
                             </div>
                         </div>
-
+                        <div className="mb-3">
+                            <label className="form-label">Programing Language</label>
+                            <input
+                                className="form-control"
+                                required
+                                value={stacks}
+                                onChange={(event) => {
+                                    setStacks(event.target.value);
+                                }}
+                                disabled={loading}
+                            />
+                            <div className="invalid-feedback">
+                                Field programing languages is required.
+                            </div>
+                        </div>
                         <div className="mb-3">
                             <label className="form-label">Description</label>
                             <textarea

@@ -50,7 +50,7 @@ const Login = function () {
         onChange={validateForm}
         noValidate>
         <div className="row align-items-center align-content-center">
-          <div className="col-6 ms-auto me-auto ">
+          <div className="col-lg-6 ms-auto me-auto ">
             <div className="card ">
               <div className="card-body">
                 <div className="card-title">Login</div>

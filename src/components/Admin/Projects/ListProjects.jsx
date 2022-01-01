@@ -97,36 +97,37 @@ const ListProjects = function () {
                         <h5>Registered Projects</h5>
                         <Link className="btn btn-primary" to="create">New Projects</Link>
                     </div>
-
-                    <table className="table">
-                        <thead>
-                            <tr>
-                                <th>Title</th>
-                                <th>Type</th>
-                                <th>Stacks</th>
-                                <th>Updated At</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {projects.map((project) => (
-                                <tr key={project.id}>
-                                    <td>{project.title}</td>
-                                    <td>{getProjectType(project.type)}</td>
-                                    <td>{getStacks(project.stacks)}</td>
-                                    <td>{fromEntryToLocaleString(project.updatedAt)}</td>
-                                    <td>
-                                        <Link className="btn btn-secondary btn-sm" to={project.id}>Edit</Link>
-                                        <button type="button" className="btn btn-danger btn-sm ms-2" onClick={(event) => {
-                                            event.preventDefault();
-                                            setProjectToDelete(project);
-                                            setShowModal(true);
-                                        }}>Delete</button>
-                                    </td>
+                    <div className="table-responsive">
+                        <table className="table">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Type</th>
+                                    <th>Stacks</th>
+                                    <th>Updated At</th>
+                                    <th>Actions</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {projects.map((project) => (
+                                    <tr key={project.id}>
+                                        <td className="text-nowrap">{project.title}</td>
+                                        <td>{getProjectType(project.type)}</td>
+                                        <td className="text-nowrap">{getStacks(project.stacks)}</td>
+                                        <td className="text-nowrap">{fromEntryToLocaleString(project.updatedAt)}</td>
+                                        <td className="text-nowrap">
+                                            <Link className="btn btn-secondary btn-sm" to={project.id}>Edit</Link>
+                                            <button type="button" className="btn btn-danger btn-sm ms-2" onClick={(event) => {
+                                                event.preventDefault();
+                                                setProjectToDelete(project);
+                                                setShowModal(true);
+                                            }}>Delete</button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                     {showLoadingOrNoItems()}
                 </div>
             </div>

@@ -93,34 +93,35 @@ const ListPosts = function () {
                         <h5>Registered Posts</h5>
                         <Link className="btn btn-primary" to="create">New Post</Link>
                     </div>
-
-                    <table className="table">
-                        <thead>
-                            <tr>
-                                <th>Title</th>
-                                <th>Updated At</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {posts.map((post) => (
-                                <tr key={post.id}>
-                                    <td>{post.title}</td>
-                                    <td>{fromEntryToLocaleString(post.updatedAt)}</td>
-                                    <td>{getStatus(post.status)}</td>
-                                    <td>
-                                        <Link className="btn btn-secondary btn-sm" to={post.id}>Edit</Link>
-                                        <button type="button" className="btn btn-danger btn-sm ms-2" onClick={(event) => {
-                                            event.preventDefault();
-                                            setPostToDelete(post);
-                                            setShowModal(true);
-                                        }}>Delete</button>
-                                    </td>
+                    <div className="table-responsive">
+                        <table className="table">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Updated At</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {posts.map((post) => (
+                                    <tr key={post.id}>
+                                        <td>{post.title}</td>
+                                        <td className="text-nowrap">{fromEntryToLocaleString(post.updatedAt)}</td>
+                                        <td>{getStatus(post.status)}</td>
+                                        <td className="text-nowrap">
+                                            <Link className="btn btn-secondary btn-sm" to={post.id}>Edit</Link>
+                                            <button type="button" className="btn btn-danger btn-sm ms-2" onClick={(event) => {
+                                                event.preventDefault();
+                                                setPostToDelete(post);
+                                                setShowModal(true);
+                                            }}>Delete</button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                     {showLoadingOrNoItems()}
                 </div>
             </div>

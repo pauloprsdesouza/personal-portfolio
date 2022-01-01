@@ -13,10 +13,10 @@ const PostCard = function ({ post }) {
   return (
     <div className="card border-0 mb-3">
       <div className="row">
-        <div className="col-md-2">
+        <div className="col-lg-2 text-center">
           <img src={post.frontImageUrl} className="card-img-cover img-fluid rounded-start" alt={post.title} />
         </div>
-        <div className="col-md-8">
+        <div className="col-lg-8">
           <div className="card-body">
             <div className="mb-2 align-middle">
               <span className="text-start">
