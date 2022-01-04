@@ -4,8 +4,8 @@ import {
 } from "../services/Auth";
 
 const api = axios.create({
-     baseURL: "http://localhost:5000",
-     // baseURL: "https://nudivlc2q9.execute-api.us-east-1.amazonaws.com/dev",
+     //baseURL: "http://localhost:5000",
+     baseURL: "https://nudivlc2q9.execute-api.us-east-1.amazonaws.com/dev",
 
     headers: {
         "Content-Type": "application/json",
