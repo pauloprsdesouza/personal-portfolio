@@ -46,7 +46,7 @@ const CallPaper = function () {
         return loading ?
             <HorizontalCardSkeleton /> : (
                 papers.length === 0 ?
-                    <NoItems content="There are no published papers yet!" /> :
+                    <NoItems content="It was not possible to find published papers for this search." /> :
                     papers.map((paper) => (
                         <PaperCard paper={paper} key={paper.id} />
                     ))
