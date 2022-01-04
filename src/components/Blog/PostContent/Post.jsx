@@ -59,7 +59,7 @@ const Post = function () {
               {post.category.name.toUpperCase()}
             </span>
             <div className="card-title mb-4">
-              <h1 className="fw-bold">{post.title}</h1>
+              <h3 className="fw-bold">{post.title}</h3>
               <h6 className="text-muted">{post.subtitle}</h6>
             </div>
             <div className="d-flex justify-content-between flex-column flex-md-row mb-4">

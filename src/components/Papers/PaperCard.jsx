@@ -17,7 +17,7 @@ const PaperCard = function ({ paper }) {
     return (
         <div className="card shadow mb-3">
             <div className="card-body">
-                <h4 className="card-title">{paper.title}</h4>
+                <h5 className="card-title">{paper.title}</h5>
                 <div className="row mb-3">
                     <div className="col-9">
                         <h6><i className="far fa-calendar-alt"></i> Submission Deadline: {paper.submissionDeadline}</h6>

@@ -36,7 +36,8 @@ const SendEmail = function () {
             setFrom("");
             setContent("");
             setShowModal(true);
-        }).catch(() => {
+        }).catch((erros) => {
+            console.log(erros)
 
         }).finally(() => {
             setSending(false);

@@ -9,6 +9,11 @@ export const publicRoutes = [{
         active: false,
     },
     {
+        pathname: "/publications",
+        name: "Publications",
+        active: false,
+    },
+    {
         pathname: "/projects",
         name: "Projects",
         active: false,
@@ -28,6 +33,11 @@ export const adminRoutes = [{
     {
         pathname: "/admin/papers",
         name: "Papers",
+        active: false,
+    },
+    {
+        pathname: "/admin/publications",
+        name: "Publications",
         active: false,
     },
     {

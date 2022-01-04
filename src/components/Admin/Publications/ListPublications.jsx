@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { disable } from 'workbox-navigation-preload';
 import api from '../../../api/API';
-import { fromEntryToLocaleString } from '../../../converters/datetime';
 import Loading from '../../Templates/Loading/Loading';
 import ModalDialogConfirm from '../../Templates/Modal/ModalDialogConfirm';
 import NoItems from '../../Templates/NoItems/NoItems';
 
-const ListPosts = function () {
-    const [posts, setPosts] = useState([]);
+const ListPublications = function () {
+    const [publications, setPublications] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [postToDelete, setPostToDelete] = useState({});
+    const [publicationToDelete, setPublicationToDelete] = useState({});
     const [showModal, setShowModal] = useState(false);
 
     const navigate = useNavigate();
@@ -17,9 +17,9 @@ const ListPosts = function () {
     useEffect(() => {
         setLoading(true);
 
-        api.get("/posts")
+        api.get("/publications")
             .then((response) => {
-                setPosts(response.data.posts);
+                setPublications(response.data.publications);
             })
             .catch((erros) => {
                 navigate("/login");
@@ -29,59 +29,48 @@ const ListPosts = function () {
             })
     }, [navigate]);
 
-    function getStatus(status) {
-        switch (status) {
-            case "I":
-                return <span className="badge bg-warning">In Progress</span>
+    function getPublicationType(type) {
+        switch (type) {
+            case "C":
+                return <span className="badge bg-warning">Conference</span>
 
-            case "A":
-                return <span className="badge bg-secondary">Archived</span>
+            case "J":
+                return <span className="badge bg-secondary">Journal</span>
 
-            case "P":
-                return <span className="badge bg-success">Published</span>
             default:
                 break;
         }
     }
 
-    function deletePost() {
-        const postsTemp = [...posts];
+    function deletePublication() {
+        const publicationsTemp = [...publications];
 
-        postsTemp.forEach((item) => {
-            if (postToDelete.id === item.id) {
+        publicationsTemp.forEach((item) => {
+            if (publicationToDelete.id === item.id) {
                 item.deleting = !item.deleting;
             }
         });
 
-        setPosts(postsTemp);
+        setPublications(publicationsTemp);
 
-        api.delete(`/posts/${postToDelete.id}`)
+        api.delete(`/publications/${publicationToDelete.id}`)
             .then((response) => {
-                updatePostByResponse(response.data);
+                var index = publicationsTemp.indexOf(publicationToDelete);
+                publicationsTemp.splice(index, 1);
+
+                setPublications(publicationsTemp);
             }).catch((erros) => {
 
             }).finally(() => {
-                postToDelete.deleting = false;
+                publicationToDelete.deleting = false;
             });
-    }
-
-    function updatePostByResponse(postResponse) {
-        const postsTemp = [...posts];
-
-        postsTemp.forEach((post) => {
-            if (postResponse.id === post.id) {
-                post.status = postResponse.status;
-            }
-        });
-
-        setPosts(postsTemp);
     }
 
     function showLoadingOrNoItems() {
         return loading ?
             <Loading loading={loading} /> :
-            posts.length === 0 ?
-                <NoItems content="There are no published posts yet!" /> :
+            publications.length === 0 ?
+                <NoItems content="There are no published projects yet!" /> :
                 null;
     }
 
@@ -90,36 +79,38 @@ const ListPosts = function () {
             <div className="card">
                 <div className="card-body">
                     <div className="title d-flex justify-content-between align-middle mb-4">
-                        <h5>Registered Posts</h5>
-                        <Link className="btn btn-primary" to="create">New Post</Link>
+                        <h5>Registered Publications</h5>
+                        <Link className="btn btn-primary" to="create">New Publication</Link>
                     </div>
                     <div className="table-responsive">
                         <table className="table">
                             <thead>
                                 <tr>
                                     <th>Title</th>
-                                    <th>Updated At</th>
-                                    <th>Status</th>
+                                    <th>Type</th>
+                                    <th>Year</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {posts.map((post) => (
-                                    <tr key={post.id}>
-                                        <td>{post.title}</td>
-                                        <td className="text-nowrap">{fromEntryToLocaleString(post.updatedAt)}</td>
-                                        <td>{getStatus(post.status)}</td>
+                                {publications.map((publication) => (
+                                    <tr key={publication.id}>
+                                        <td className="text-nowrap">{publication.title}</td>
+                                        <td>{getPublicationType(publication.type)}</td>
+                                        <td className="text-nowrap">{publication.year}</td>
                                         <td className="text-nowrap">
-                                            <Link className="btn btn-secondary btn-sm" to={post.id}>Edit</Link>
+                                            <Link className="btn btn-secondary btn-sm" to={publication.id}>Edit</Link>
                                             <button
                                                 type="button"
                                                 className="btn btn-danger btn-sm ms-2"
-                                                disabled={post.status === "A"}
+                                                disabled={publication.deleting}
                                                 onClick={(event) => {
                                                     event.preventDefault();
-                                                    setPostToDelete(post);
+                                                    setPublicationToDelete(publication);
                                                     setShowModal(true);
-                                                }}>Delete</button>
+                                                }}>
+                                                {!publication.deleting ? "Delete" : "Deleting..."}
+                                            </button>
                                         </td>
                                     </tr>
                                 ))}
@@ -130,14 +121,14 @@ const ListPosts = function () {
                 </div>
             </div>
             <ModalDialogConfirm
-                title="Delete Post"
-                content={`Do you mean to delete the post ${postToDelete.title}`}
+                title="Delete Publication"
+                content={`Do you mean to delete the publication ${publicationToDelete.title}`}
                 show={showModal}
                 close={setShowModal}
-                confirm={deletePost}
+                confirm={deletePublication}
             />
         </div>
     )
 }
 
-export default ListPosts;
+export default ListPublications;

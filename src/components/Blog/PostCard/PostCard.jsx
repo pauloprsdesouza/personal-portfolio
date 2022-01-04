@@ -24,7 +24,7 @@ const PostCard = function ({ post }) {
                 <span className="ms-2">{post.postedBy.name}</span>
               </span>
             </div>
-            <h3 className="card-title text-primary mb-2">{post.title}</h3>
+            <h4 className="card-title mb-2">{post.title}</h4>
             <h6 className="card-subtitle mb-4 text-muted">{post.subtitle}</h6>
             <div className="d-flex justify-content-between align-items-center mb-2">
               <Link className="btn btn-outline-secondary btn-sm" to={`/blog/${createSlugUrl()}`}>

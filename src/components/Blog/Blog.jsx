@@ -4,7 +4,7 @@ import api from "../../api/API";
 import Subscribe from "./Subscribe";
 import HorizontalCardSkeleton from "../Templates/Skeleton/HorizontalCardSkeleton";
 import NoItems from "../Templates/NoItems/NoItems";
-import PostFilter from "./FilterPost/PostFilter";
+import PostFilter from "./PostFilter/PostFilter";
 
 const Blog = function () {
   const [posts, setPosts] = useState([]);
@@ -31,7 +31,7 @@ const Blog = function () {
     return loading ?
       <HorizontalCardSkeleton /> : (
         posts.length === 0 ?
-          <NoItems content="There are no published posts yet!" /> :
+          <NoItems content="It was not possible to find published posts for this search." /> :
           <>
             {posts.map((post) => (
               <PostCard post={post} key={post.id} />)

@@ -1,3 +1,4 @@
 export function fromEntryToLocaleString(date) {
-    return new Date(date).toLocaleString();
+    let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(date).toLocaleString('en-GB', options);
 }

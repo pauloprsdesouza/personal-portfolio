@@ -18,12 +18,16 @@ import Home from "./components/Home/Home";
 import CallPaper from "./components/Papers/CallPaper";
 import Projects from "./components/Projects/Projects";
 import { isAuthenticated } from "./services/Auth";
+import CancelSubscribing from "./components/Blog/CancelSubscribing";
+import CreatePublication from "./components/Admin/Publications/CreatePublication";
+import ListPublications from "./components/Admin/Publications/ListPublications";
+import Publications from "./components/Publications/Publications";
 
 const App = function () {
   function routesAdmin() {
     return isAuthenticated() ? (
       <Route path="/admin" >
-        <Route path="posts/">
+        <Route path="posts">
           <Route path="" element={<ListPosts />} />
           <Route path="create" element={<CreatePost />} />
           <Route path=":id" element={<CreatePost />} />
@@ -33,10 +37,15 @@ const App = function () {
           <Route path="create" element={<CreatePaper />} />
           <Route path=":id" element={<CreatePaper />} />
         </Route>
-        <Route path="projects/">
+        <Route path="projects">
           <Route path="" element={<ListProjects />} />
           <Route path="create" element={<CreateProject />} />
           <Route path=":id" element={<CreateProject />} />
+        </Route>
+        <Route path="publications/">
+          <Route path="" element={<ListPublications />} />
+          <Route path="create" element={<CreatePublication />} />
+          <Route path=":id" element={<CreatePublication />} />
         </Route>
       </Route>
     ) : null;
@@ -52,6 +61,8 @@ const App = function () {
           <Route path="/blog/:id" element={<Post />} />
           <Route path="/papers" element={<CallPaper />} />
           <Route path="/projects" element={< Projects />} />
+          <Route path="/publications" element={< Publications />} />
+          <Route path="/blog/cancel/subscribing/:id" element={< CancelSubscribing />} />
           <Route path="/login" element={<Login />} />
           {routesAdmin()}
           <Route path="*" status="404" element={<Http404 />} />

@@ -15,8 +15,6 @@ const CreateProject = function () {
     const [stacks, setStacks] = useState("");
     const [urlProject, setUrlProject] = useState("");
     const [description, setDescription] = useState("");
-    const [startedAt, setStartedAt] = useState("");
-    const [finishedAt, setFinishedAt] = useState("");
 
     useEffect(() => {
         if (id) {
@@ -31,8 +29,6 @@ const CreateProject = function () {
                     setStacks(project.stacks)
                     setUrlProject(project.urlProject);
                     setDescription(project.description);
-                    setStartedAt(project.startedAt);
-                    setFinishedAt(project.finishedAt);
 
                 }).catch((error) => {
                     navigate("/login");
@@ -50,9 +46,7 @@ const CreateProject = function () {
             type,
             stacks,
             urlProject,
-            description,
-            startedAt,
-            finishedAt
+            description
         }
 
         setSaving(true);
@@ -132,60 +126,34 @@ const CreateProject = function () {
                                 </div>
                             </div>
                             <div className="col-lg-4">
-                                <label className="form-label">Started At</label>
+                                <label className="form-label">Url Project GetHub</label>
                                 <input
                                     className="form-control"
                                     required
-                                    value={startedAt}
+                                    value={urlProject}
                                     onChange={(event) => {
-                                        setStartedAt(event.target.value);
+                                        setUrlProject(event.target.value);
                                     }}
                                     disabled={loading}
                                 />
                                 <div className="invalid-feedback">
-                                    Field started at is required.
+                                    Field url is required.
                                 </div>
                             </div>
                             <div className="col-lg-4">
-                                <label className="form-label">Finished At</label>
+                                <label className="form-label">Programing Language</label>
                                 <input
                                     className="form-control"
-                                    value={finishedAt}
+                                    required
+                                    value={stacks}
                                     onChange={(event) => {
-                                        setFinishedAt(event.target.value);
+                                        setStacks(event.target.value);
                                     }}
                                     disabled={loading}
                                 />
-                            </div>
-                        </div>
-                        <div className="mb-3">
-                            <label className="form-label">Url Project GetHub</label>
-                            <input
-                                className="form-control"
-                                required
-                                value={urlProject}
-                                onChange={(event) => {
-                                    setUrlProject(event.target.value);
-                                }}
-                                disabled={loading}
-                            />
-                            <div className="invalid-feedback">
-                                Field url is required.
-                            </div>
-                        </div>
-                        <div className="mb-3">
-                            <label className="form-label">Programing Language</label>
-                            <input
-                                className="form-control"
-                                required
-                                value={stacks}
-                                onChange={(event) => {
-                                    setStacks(event.target.value);
-                                }}
-                                disabled={loading}
-                            />
-                            <div className="invalid-feedback">
-                                Field programing languages is required.
+                                <div className="invalid-feedback">
+                                    Field programing languages is required.
+                                </div>
                             </div>
                         </div>
                         <div className="mb-3">

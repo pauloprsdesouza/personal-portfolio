@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react';
 import api from '../../api/API';
 import NoItems from '../Templates/NoItems/NoItems';
 import HorizontalCardSkeleton from '../Templates/Skeleton/HorizontalCardSkeleton';
-import ProjectCard from './ProjectCard';
+import PublicationCard from './PublicationCard';
 
-const Projects = function () {
-    const [projects, setProjects] = useState([]);
+const Publications = function () {
+    const [publications, setPublications] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        api.get("/projects")
+        api.get("/publications")
             .then((response) => {
-                setProjects(response.data.projects);
+                setPublications(response.data.publications);
             }).catch((error) => {
 
             }).finally(() => {
@@ -22,10 +22,10 @@ const Projects = function () {
     function showLoading() {
         return loading ?
             <HorizontalCardSkeleton /> : (
-                projects.length === 0 ?
-                    <NoItems content="It was not possible to find projects for this search." /> :
-                    projects.map((project) => (
-                        <ProjectCard key={project.id} project={project} />
+                publications.length === 0 ?
+                    <NoItems content="It was not possible to find publications for this search." /> :
+                    publications.map((publication) => (
+                        <PublicationCard key={publication.id} project={publication} />
                     ))
             )
     }
@@ -34,8 +34,8 @@ const Projects = function () {
         <div className="container">
             <div className="card card-education-teste mt-3 mb-3 shadow">
                 <div className="card-body">
-                    <h1 className="card-title text-white">Projects</h1>
-                    <p className="card-text text-white">Here, you will find projects that I developed a long of the yars.</p>
+                    <h1 className="card-title text-white">Publications</h1>
+                    <p className="card-text text-white">Here, you will find my publications a long of the yars.</p>
                 </div>
             </div>
 
@@ -44,4 +44,4 @@ const Projects = function () {
     )
 }
 
-export default Projects;
+export default Publications;

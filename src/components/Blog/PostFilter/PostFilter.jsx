@@ -3,13 +3,10 @@ import api from '../../../api/API';
 
 const PostFilter = function ({ search }) {
     const [categories, setCategories] = useState([]);
-    const [loading, setLoading] = useState(true);
     const [title, setTitle] = useState("");
     const [categoryId, setCategoryId] = useState("");
 
     useEffect(() => {
-        setLoading(true);
-
         api.get("/categories")
             .then((response) => {
                 setCategories(response.data.categories);
@@ -18,7 +15,7 @@ const PostFilter = function ({ search }) {
 
             })
             .finally(() => {
-                setLoading(false);
+                
             });
     }, []);
 
@@ -29,15 +26,13 @@ const PostFilter = function ({ search }) {
         }}>
             <div className="card mb-4">
                 <div className="card-body">
-                    <h5 className="mb-4">Topics</h5>
+                    <h5 className="card-title mb-3">Filter</h5>
                     <div className="row mb-3">
                         <div className="col-lg-8">
-                            <div className="mb-3">
-                                <label className="form-label">Title</label>
-                                <input type="text" className="form-control" onChange={(event) => {
-                                    setTitle(event.target.value);
-                                }} />
-                            </div>
+                            <label className="form-label">Title</label>
+                            <input type="text" className="form-control" onChange={(event) => {
+                                setTitle(event.target.value);
+                            }} />
                         </div>
                         <div className="col-lg-4">
                             <label className="form-label">Topic</label>

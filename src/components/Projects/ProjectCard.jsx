@@ -16,7 +16,7 @@ const ProjectCard = function ({ project }) {
 
     function getStacks() {
         return (project.stacks.split(",").map((stack, index) => (
-            <span key={index} className="badge bg-secondary ms-1">{stack}</span>
+            <span key={index} className="badge bg-secondary me-1">{stack}</span>
         )))
     }
 
@@ -24,12 +24,13 @@ const ProjectCard = function ({ project }) {
     return (
         <div className="card shadow mb-3">
             <div className="card-body">
-                <h3 className="card-title">
+                <h5 className="card-title">
                     {project.title}
-                </h3>
+                </h5>
                 <div className="row">
                     <div className="col-9">
                         <p className="card-text">{project.description}</p>
+                        <h6>Used Stacks</h6>
                         <div className="mb-3">
                             {getStacks()}
                         </div>

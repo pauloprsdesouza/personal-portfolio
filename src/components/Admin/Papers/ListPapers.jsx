@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import api from '../../../api/API';
+import { fromEntryToLocaleString } from '../../../converters/datetime';
 import Loading from '../../Templates/Loading/Loading';
 import ModalDialogConfirm from '../../Templates/Modal/ModalDialogConfirm';
 import NoItems from '../../Templates/NoItems/NoItems';
@@ -53,24 +54,15 @@ const ListPapers = function () {
 
         api.delete(`/papers/${paperToDelete.id}`)
             .then((response) => {
-                updatePaperByResponse(response.data);
+                var index = papersTemp.indexOf(paperToDelete);
+                papersTemp.splice(index, 1);
+
+                setPapers(papersTemp);
             }).catch((erros) => {
 
             }).finally(() => {
                 paperToDelete.deleting = false;
             });
-    }
-
-    function updatePaperByResponse(paperResponse) {
-        const papersTemp = [...papers];
-
-        papersTemp.forEach((paper) => {
-            if (paperResponse.id === paper.id) {
-                paper.status = paperResponse.status;
-            }
-        });
-
-        setPapers(papersTemp);
     }
 
     function showLoadingOrNoItems() {
@@ -107,16 +99,20 @@ const ListPapers = function () {
                                     <tr key={paper.id}>
                                         <td>{paper.title}</td>
                                         <td>{getType(paper.type)}</td>
-                                        <td>{paper.submissionDeadline}</td>
+                                        <td>{fromEntryToLocaleString(paper.submissionDeadline)}</td>
                                         <td>{paper.price}</td>
                                         <td>{paper.qualis}</td>
                                         <td>
                                             <Link className="btn btn-secondary btn-sm" to={paper.id}>Edit</Link>
-                                            <button type="button" className="btn btn-danger btn-sm ms-2" onClick={(event) => {
-                                                event.preventDefault();
-                                                setPaperToDelete(paper);
-                                                setShowModal(true);
-                                            }}>Delete</button>
+                                            <button
+                                                type="button"
+                                                className="btn btn-danger btn-sm ms-2"
+                                                disabled={paper.deleting}
+                                                onClick={(event) => {
+                                                    event.preventDefault();
+                                                    setPaperToDelete(paper);
+                                                    setShowModal(true);
+                                                }}>{!paper.deleting ? "Delete" : "Deleting..."}</button>
                                         </td>
                                     </tr>
                                 ))}

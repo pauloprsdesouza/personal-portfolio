@@ -110,10 +110,11 @@ const CreatePaper = function () {
                                 Field title is required.
                             </div>
                         </div>
-                        <div className="row">
+                        <div className="row mb-3">
                             <div className="col-lg-4">
                                 <label className="form-label">Submission Deadline</label>
                                 <input
+                                    type="date"
                                     className="form-control"
                                     required
                                     value={submissionDeadline}
@@ -123,7 +124,7 @@ const CreatePaper = function () {
                                     disabled={loading}
                                 />
                                 <div className="invalid-feedback">
-                                    Field subtitle is required.
+                                    Field submission deadline is required.
                                 </div>
                             </div>
                             <div className="col-lg-4">
@@ -169,7 +170,7 @@ const CreatePaper = function () {
                                 </div>
                             </div>
                         </div>
-                        <div className="row">
+                        <div className="row mb-3">
                             <div className="col-lg-6">
                                 <label className="form-label">Local</label>
                                 <input
@@ -186,8 +187,10 @@ const CreatePaper = function () {
                                 </div>
                             </div>
                             <div className="col-lg-6">
-                                <label className="form-label">Price</label>
-                                <input type="number" className="form-control"
+                                <label className="form-label">Date</label>
+                                <input 
+                                    type="date" 
+                                    className="form-control"
                                     required
                                     value={price}
                                     onChange={(event) => {

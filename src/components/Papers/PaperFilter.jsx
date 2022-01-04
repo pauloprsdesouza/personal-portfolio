@@ -13,7 +13,7 @@ const PaperFilter = function ({ search }) {
         }}>
             <div className="card mb-3 shadow">
                 <div className="card-body">
-                    <h3 className="card-title mb-3">Filter</h3>
+                    <h5 className="card-title mb-3">Filter</h5>
                     <div className="mb-3">
                         <label className="form-label">Title</label>
                         <input type="text" className="form-control" onChange={(event) => {
