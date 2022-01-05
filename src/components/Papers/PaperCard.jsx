@@ -24,7 +24,7 @@ const PaperCard = function ({ paper }) {
                         <h6><i className="far fa-calendar-alt"></i> Submission Deadline: {fromEntryToLocaleString(paper.submissionDeadline)}</h6>
                         <h6><i className="fas fa-map-marker-alt"></i> Local: {paper.local}</h6>
                     </div>
-                    <div className="col-lg-3 text-lg-end order-0 order-lg-1 mb-lg-3">
+                    <div className="col-lg-3 text-lg-end order-0 order-lg-1 mb-3">
                         <h6>Qualis {paper.qualis}</h6>
                         <span>{getType(paper.type)}</span>
                     </div>
