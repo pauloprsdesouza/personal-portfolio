@@ -9,7 +9,7 @@ const CreatePaper = function () {
     const [submissionDeadline, setSubmissionDeadline] = useState("");
     const [type, setType] = useState("");
     const [price, setPrice] = useState("");
-    const [local, setLocal] = useState("");
+    const [place, setPlace] = useState("");
     const [websiteUrl, setWebsiteUrl] = useState("");
     const [qualis, setQualis] = useState("");
     const formPost = useRef();
@@ -30,7 +30,7 @@ const CreatePaper = function () {
                     setType(paper.type);
                     setQualis(paper.qualis);
                     setPrice(paper.price);
-                    setLocal(paper.local);
+                    setPlace(paper.place);
                     setWebsiteUrl(paper.websiteUrl);
                 }).catch((error) => {
                     setLoading(false);
@@ -50,7 +50,7 @@ const CreatePaper = function () {
             type,
             qualis,
             price,
-            local,
+            place,
             websiteUrl
         }
 
@@ -172,50 +172,34 @@ const CreatePaper = function () {
                         </div>
                         <div className="row mb-3">
                             <div className="col-lg-6">
-                                <label className="form-label">Local</label>
+                                <label className="form-label">Place</label>
                                 <input
                                     className="form-control"
                                     required
-                                    value={local}
+                                    value={place}
                                     onChange={(event) => {
-                                        setLocal(event.target.value);
+                                        setPlace(event.target.value);
                                     }}
                                     disabled={loading}
                                 />
                                 <div className="invalid-feedback">
-                                    Field local is required.
+                                    Field place is required.
                                 </div>
                             </div>
                             <div className="col-lg-6">
-                                <label className="form-label">Date</label>
-                                <input 
-                                    type="date" 
+                                <label className="form-label">Website URL</label>
+                                <input
                                     className="form-control"
                                     required
-                                    value={price}
+                                    value={websiteUrl}
                                     onChange={(event) => {
-                                        setPrice(event.target.value);
+                                        setWebsiteUrl(event.target.value);
                                     }}
                                     disabled={loading}
                                 />
-                            </div>
-                            <div className="invalid-feedback">
-                                Field price time is required.
-                            </div>
-                        </div>
-                        <div className="mb-3">
-                            <label className="form-label">Website URL</label>
-                            <input
-                                className="form-control"
-                                required
-                                value={websiteUrl}
-                                onChange={(event) => {
-                                    setWebsiteUrl(event.target.value);
-                                }}
-                                disabled={loading}
-                            />
-                            <div className="invalid-feedback">
-                                Field url is required.
+                                <div className="invalid-feedback">
+                                    Field url is required.
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -28,27 +28,25 @@ const ProjectCard = function ({ project }) {
                     {project.title}
                 </h5>
                 <div className="row">
-                    <div className="col-9">
-                        <p className="card-text">{project.description}</p>
-                        <h6>Used Stacks</h6>
+                    <div className="col-lg-9 order-lg-0 order-1">
+                        <p className="card-text text-justify text-muted">{project.description}</p>
                         <div className="mb-3">
                             {getStacks()}
                         </div>
                     </div>
-                    <div className="col-3 text-end">
+                    <div className="col-lg-3 text-lg-end order-lg-1 order-0">
                         <div className="mb-3">
                             {getProjectType()}
                         </div>
                     </div>
                 </div>
-
                 <a
                     href={project.urlProject}
                     className="btn btn-outline-primary btn-sm"
                     target="_blank"
-                    rel="noopener noreferrer">
-                    <i className="fab fa-github-alt"></i> See on Github
+                    rel="noopener noreferrer">See on Github
                 </a>
+
             </div>
         </div >
     )

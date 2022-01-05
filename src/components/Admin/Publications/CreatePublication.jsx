@@ -49,7 +49,7 @@ const CreatePublication = function () {
     function save(event) {
         event.preventDefault();
 
-        const project = {
+        const publication = {
             title,
             type,
             abstract,
@@ -64,7 +64,7 @@ const CreatePublication = function () {
         setSaving(true);
 
         if (id) {
-            api.put(`/publications/${id}`, project)
+            api.put(`/publications/${id}`, publication)
                 .then((response) => {
                     navigate("/admin/publications")
                 }).catch((error) => {
@@ -73,7 +73,7 @@ const CreatePublication = function () {
                     setSaving(false);
                 });
         } else {
-            api.post("/publications", project)
+            api.post("/publications", publication)
                 .then((response) => {
                     navigate("/admin/publications")
                 }).catch((error) => {

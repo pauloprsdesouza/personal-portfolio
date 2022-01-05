@@ -17,32 +17,32 @@ const PublicationCard = function ({ project: publication }) {
     return (
         <div className="card shadow mb-3">
             <div className="card-body">
-                <h5 className="card-title">
+                <h4 className="card-title">
                     {publication.title}
-                </h5>
-                <div className="row">
-                    <div className="col-9">
-                        <p className="card-text">{publication.publisher}</p>
+                </h4>
+                <div className="row mb-3 text-muted">
+                    <div className="col-lg-9 order-1 order-lg-0">
+                        <div>
+                            <b>Publisher</b>: {publication.publisher}
+                        </div>
+                        <div>
+                            <span><b>Year</b>: {publication.year}</span>
+                        </div>
+                        <div>
+                            <span><b>Qualis</b>: {publication.qualis}</span>
+                        </div>
                     </div>
-                    <div className="col-3 text-end">
+                    <div className="col-lg-3 order-0 order-lg-1 text-lg-end">
                         <div className="mb-3">
                             {getPublicationType()}
                         </div>
                     </div>
                 </div>
-                <div className="mb-2">
-                    <span>Year: {publication.year}</span>
 
-                </div>
-                <div className="mb-2">
-                    <span>Qualis: {publication.qualis}</span>
-                </div>
-
-                <h4>Abstract</h4>
-                <p className="card-text text-justify">
+                <h5>Abstract</h5>
+                <p className="card-text text-justify text-muted">
                     {publication.abstract}
                 </p>
-
                 <a
                     href={publication.urlPublication}
                     className="btn btn-outline-primary btn-sm"

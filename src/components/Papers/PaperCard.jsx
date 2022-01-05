@@ -1,4 +1,5 @@
 import React from 'react';
+import { fromEntryToLocaleString } from '../../converters/datetime';
 
 const PaperCard = function ({ paper }) {
     function getType(type) {
@@ -17,14 +18,13 @@ const PaperCard = function ({ paper }) {
     return (
         <div className="card shadow mb-3">
             <div className="card-body">
-                <h5 className="card-title">{paper.title}</h5>
-                <div className="row mb-3">
-                    <div className="col-9">
-                        <h6><i className="far fa-calendar-alt"></i> Submission Deadline: {paper.submissionDeadline}</h6>
-                        <h6><i className="fas fa-receipt"></i> Price: {paper.price}</h6>
-                        <i className="fas fa-map-marker-alt"></i> Local: {paper.local}
+                <h5 className="card-title mb-3">{paper.title}</h5>
+                <div className="row">
+                    <div className="col-lg-9 order-1 order-lg-0 text-muted">
+                        <h6><i className="far fa-calendar-alt"></i> Submission Deadline: {fromEntryToLocaleString(paper.submissionDeadline)}</h6>
+                        <h6><i className="fas fa-map-marker-alt"></i> Local: {paper.local}</h6>
                     </div>
-                    <div className="col-3 text-end">
+                    <div className="col-lg-3 text-lg-end order-0 order-lg-1 mb-lg-3">
                         <h6>Qualis {paper.qualis}</h6>
                         <span>{getType(paper.type)}</span>
                     </div>

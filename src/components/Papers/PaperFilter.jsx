@@ -22,17 +22,17 @@ const PaperFilter = function ({ search }) {
                     </div>
 
                     <div className="collapse" id="collapsePaperFilter">
-                        <div className="row">
-                            <div className="col-4">
+                        <div className="row gy-3 mb-3">
+                            <div className="col-lg-4">
                                 <label className="form-label">From Deadline</label>
-                                <div className="input-group mb-3">
+                                <div className="input-group">
                                     <input type="text" className="form-control" onChange={(event) => {
                                         setSubmissionDeadline(event.target.value);
                                     }} />
 
                                 </div>
                             </div>
-                            <div className="col-4">
+                            <div className="col-lg-4">
                                 <label className="form-label">Qualis</label>
                                 <select className="form-select"
                                     onChange={(event) => {
@@ -47,7 +47,7 @@ const PaperFilter = function ({ search }) {
                                     <option value="B3">B3</option>
                                 </select>
                             </div>
-                            <div className="col-4">
+                            <div className="col-lg-4">
                                 <label className="form-label">Type</label>
                                 <select className="form-select" onChange={(event) => {
                                     setType(event.target.value);
@@ -65,7 +65,6 @@ const PaperFilter = function ({ search }) {
                         </button>
                         <button className="btn btn-outline-primary btn-sm" type="submit">Search</button>
                     </div>
-
                 </div>
             </div>
         </form >
