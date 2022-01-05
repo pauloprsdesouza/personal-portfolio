@@ -64,8 +64,8 @@ const AppBar = function () {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
         <a className="navbar-brand align-middle" href="/">
-          <img src="https://personal-portfolio-files.s3.amazonaws.com/img/icon.svg" height="30" className="d-inline-block align-text-middle" alt="..." />
-          &nbsp;Paulo Roberto de Souza
+          <img src="https://personal-portfolio-files.s3.amazonaws.com/img/logo.png" height="50" className="d-inline-block align-text-middle" alt="..." />
+          &nbsp;&nbsp;&nbsp;Paulo Roberto de Souza
         </a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon" />
