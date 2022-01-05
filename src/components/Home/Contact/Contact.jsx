@@ -9,7 +9,7 @@ const Contact = function () {
                     <div className="col-lg-7">
                         <h1 className="card-title background-contact-title text-white">Where do we start</h1>
                         <h4 className="lead card-subtitle text-white mb-4">
-                            Schedule a call so I can learn about your product and we can discuss the best way to help you meet your goals. I only work with two people each month so book a call now to avoid missing out.
+                            Schedule a call so I can learn about your product and we can discuss the best way to help you meet your goals.
                         </h4>
                         <SendEmail />
                     </div>
