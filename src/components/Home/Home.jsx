@@ -9,6 +9,8 @@ import Introduction from "./Indtroduction";
 import Skill from "./Skill";
 import "./style.css";
 import Contact from "./Contact/Contact";
+import Course from "./Courses/Course";
+import { coursesDB } from "../../Database/Courses";
 
 const Home = function () {
 
@@ -20,6 +22,7 @@ const Home = function () {
         <Skill skills={whatIDoDB} />
         <Education educations={educationsDB} />
         <Experience jobs={jobsDB} />
+        <Course courses={coursesDB}/>
         <Contact />
       </div>
     </>
