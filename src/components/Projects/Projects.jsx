@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import apiGit from '../../api/API';
+import apiGithub from '../../api/APIGithub';
 import NoItems from '../Templates/NoItems/NoItems';
 import HorizontalCardSkeleton from '../Templates/Skeleton/HorizontalCardSkeleton';
 import ProjectCard from './ProjectCard';
@@ -9,7 +9,7 @@ const Projects = function () {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        apiGit.get("/repos")
+        apiGithub.get("/repos")
             .then((response) => {
                 setProjects(response.data);
             }).catch((error) => {
