@@ -1,4 +1,4 @@
-<h1 align="center"> ReachJS Personal Portfolio </h1>
+<h1 align="center"> ReactJS Personal Portfolio </h1>
 
 ## Hello there 👋
 
