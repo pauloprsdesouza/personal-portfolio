@@ -4,7 +4,7 @@ import "./style.css";
 const Introduction = function () {
 
   return (
-    <div className="card background-dark mb-4">
+    <div className="card background-dark mb-4 border-0">
       <div className="card-body d-flex flex-row align-content-center align-items-center">
         <div className="container px-5">
           <h1 className="section-title-lg mb-3">about.</h1>
@@ -27,16 +27,16 @@ const Introduction = function () {
             <div className="mb-3 text-center order-1 order-lg-1">
               <ul className="nav list-unstyled d-flex flex-lg-column justify-content-between">
                 <li className="mb-4">
-                  <a className="text-white text-warning-hover" href="https://github.com/pauloprsdesouza" rel="noopener noreferrer"><i className="fab fa-github-alt fa-3x" /></a>
+                  <a className="text-white text-warning-hover" href="https://github.com/pauloprsdesouza" target="_blank" rel="noopener noreferrer"><i className="fab fa-github-alt fa-3x" /></a>
                 </li>
                 <li className="mb-4">
-                  <a className="text-white text-warning-hover" href="https://www.linkedin.com/in/pauloprsdesouza" rel="noopener noreferrer"><i className="fab fa-linkedin-in fa-3x" /></a>
+                  <a className="text-white text-warning-hover" href="https://www.linkedin.com/in/pauloprsdesouza" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin-in fa-3x" /></a>
                 </li>
                 <li className="mb-4">
-                  <a className="text-white text-warning-hover" href="https://instagram.com/pauloprsdesouza" rel="noopener noreferrer"><i className="fab fa-instagram fa-3x" /></a>
+                  <a className="text-white text-warning-hover" href="https://instagram.com/pauloprsdesouza" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram fa-3x" /></a>
                 </li>
                 <li>
-                  <a className="text-white text-warning-hover" href="https://api.whatsapp.com/send?phone=5579999733237&text=Hi Paulo, how are you doing? Do you have time for a meet?" rel="noopener noreferrer"><i className="fab fa-whatsapp fa-3x"></i></a>
+                  <a className="text-white text-warning-hover" href="https://api.whatsapp.com/send?phone=5579999733237&text=Hi Paulo, how are you doing? Do you have time for a meet?" target="_blank" rel="noopener noreferrer"><i className="fab fa-whatsapp fa-3x"></i></a>
                 </li>
               </ul>
             </div>

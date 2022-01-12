@@ -11,25 +11,31 @@ const Education = function ({ educations }) {
       {educations.map((education) => (
         <div key={education.id} className="card card-education-teste mb-3 border-0 shadow" data-aos="fade-up">
           <div className="card-body card-hover card-border-left-purple">
-            <div className="mb-2">
-              <span className="text-white">
-                {education.startedAt}
-                -
-                {education.finishedAt}
-              </span>
+            <div className="d-flex justify-content-between align-items-center g-4">
+              <div>
+                <h5 className="text-white card-title">{education.course}</h5>
+                <h6 className="text-white card-subtitle mb-3">{education.researchLine}</h6>
+                <a
+                  href={education.university.url}
+                  className="text-white text-decoration-none"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fas fa-university" />
+                  &nbsp;
+                  {education.university.name}
+                </a>
+              </div>
+              <div >
+                <span className="text-white">
+                  {education.startedAt}
+                  -
+                  {education.finishedAt}
+                </span>
+              </div>
             </div>
-            <h5 className="text-white card-title">{education.course}</h5>
-            <h6 className="text-white card-subtitle mb-3">{education.researchLine}</h6>
-            <a
-              href={education.university.url}
-              className="text-white text-decoration-none"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="fas fa-university" />
-              &nbsp;
-              {education.university.name}
-            </a>
+
+
 
             <div className="d-grid d-sm-block mt-3">
               <button type="button" className="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target={`#modalCurriculum${education.id}`}>Discplines</button>

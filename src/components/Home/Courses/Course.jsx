@@ -12,7 +12,7 @@ const Course = function ({ courses }) {
     }
 
     return (
-        <section className="mb-5">
+        <section className="mb-3">
             <h3 className="text-white section-title">courses.</h3>
             <ul class="list-group list-group-flush">
                 {courses.map((course, index) => (

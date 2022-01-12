@@ -44,7 +44,7 @@ export const jobsDB = [{
       url: "https://stefanini.com/en",
     },
     place: "Aracaju/SE, Brasil",
-    startedAt: "November, 2016",
+    startedAt: "Nov, 2016",
     finishedAt: "May, 2017",
     activity: {
       description: "I was responsible to develop a few web and mobile apps during that time for many areas of public security. Those apps were developed using many technologies such as: ",
@@ -60,8 +60,8 @@ export const jobsDB = [{
       url: "https://www.indracompany.com/",
     },
     place: "Aracaju/SE, Brasil",
-    startedAt: "December, 2013",
-    finishedAt: "November, 2016",
+    startedAt: "Dec, 2013",
+    finishedAt: "Nov, 2016",
     activity: {
       description: "I was responsible to develop a few web and mobile apps during that time for many areas of public security. Those apps were developed using many technologies such as: ",
       usedStacks: [angular, vueJS, bootstrap, ionic, sqlServer, cSharp, dotnet, android],
@@ -77,7 +77,7 @@ export const jobsDB = [{
     },
     place: "Aracaju/SE, Brasil",
     startedAt: "May, 2012",
-    finishedAt: "December, 2013",
+    finishedAt: "Dec, 2013",
     activity: {
       description: "I was responsible to develop a few web apps during that time for many areas such as academic and law. Those apps were developed using many technologies such as: ",
       usedStacks: [sqlServer, cSharp, dotnet],
