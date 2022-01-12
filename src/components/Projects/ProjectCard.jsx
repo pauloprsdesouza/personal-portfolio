@@ -17,6 +17,17 @@ const ProjectCard = function ({ project }) {
         )
     }
 
+    function getTopics(project) {
+        return (
+            project.topics.length > 0 ? (
+                <div className="mb-3">
+                    {project.topics.map((topic, index) => (
+                        <span key={index} className="badge bg-secondary me-1">{topic}</span>
+                    ))}
+                </div>) : null
+        )
+    }
+
     return (
         <div className="card shadow mb-3">
             <div className="card-body">
@@ -28,11 +39,7 @@ const ProjectCard = function ({ project }) {
                 </h6>
                 <div className="row">
                     <div className="col-lg-9 order-lg-0 order-1">
-                        <div className="mb-3">
-                            {project.topics.map((topic, index) => (
-                                <span key={index} className="badge bg-secondary me-1">{topic}</span>
-                            ))}
-                        </div>
+                        {getTopics(project)}
                         <div className="text-secondary">
                             {footerLegend(project)}
                         </div>
