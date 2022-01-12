@@ -1,52 +1,43 @@
 import React from 'react';
+import { fromEntryToLocaleString } from '../../converters/datetime';
 
 const ProjectCard = function ({ project }) {
-    function getProjectType() {
-        switch (project.type) {
-            case "F":
-                return <span className="badge bg-primary">Frontend</span>
 
-            case "B":
-                return <span className="badge bg-success">Backend</span>
-
-            default:
-                break;
-        }
+    function footerLegend(project) {
+        return (
+            <>
+                <span>
+                    Updated at {fromEntryToLocaleString(project.updated_at)}
+                </span>
+                <span className="ms-3">
+                    <i className="fas fa-balance-scale"></i>&nbsp;{project.license.name}
+                </span>
+                <span className="badge bg-success ms-3">{project.language}</span>
+            </>
+        )
     }
-
-    function getStacks() {
-        return (project.stacks.split(",").map((stack, index) => (
-            <span key={index} className="badge bg-secondary me-1">{stack}</span>
-        )))
-    }
-
 
     return (
         <div className="card shadow mb-3">
             <div className="card-body">
                 <h5 className="card-title">
-                    {project.title}
+                    <a className="text-decoration-none text-dark" href={project.html_url} target="_blank">{project.name}</a>
                 </h5>
+                <h6 className="card-subtitle mb-2">
+                    {project.description}
+                </h6>
                 <div className="row">
                     <div className="col-lg-9 order-lg-0 order-1">
-                        <p className="card-text text-justify text-muted">{project.description}</p>
                         <div className="mb-3">
-                            {getStacks()}
+                            {project.topics.map((topic, index) => (
+                                <span key={index} className="badge bg-secondary me-1">{topic}</span>
+                            ))}
                         </div>
-                    </div>
-                    <div className="col-lg-3 text-lg-end order-lg-1 order-0">
-                        <div className="mb-3">
-                            {getProjectType()}
+                        <div className="text-secondary">
+                            {footerLegend(project)}
                         </div>
                     </div>
                 </div>
-                <a
-                    href={project.urlProject}
-                    className="btn btn-outline-primary btn-sm"
-                    target="_blank"
-                    rel="noopener noreferrer">See on Github
-                </a>
-
             </div>
         </div >
     )

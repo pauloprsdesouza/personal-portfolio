@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import api from '../../api/API';
+import apiGit from '../../api/API';
 import NoItems from '../Templates/NoItems/NoItems';
 import HorizontalCardSkeleton from '../Templates/Skeleton/HorizontalCardSkeleton';
 import ProjectCard from './ProjectCard';
@@ -9,15 +9,15 @@ const Projects = function () {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        api.get("/projects")
+        apiGit.get("/repos")
             .then((response) => {
-                setProjects(response.data.projects);
+                setProjects(response.data);
             }).catch((error) => {
-
+                
             }).finally(() => {
                 setLoading(false);
             });
-    });
+    }, []);
 
     function showLoading() {
         return loading ?
