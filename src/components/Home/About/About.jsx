@@ -18,12 +18,21 @@ const About = function () {
                     &nbsp;<a className="text-decoration-none text-white" href="https://unit.br" rel="noopener noreferrer">UNIT - Tiradentes University</a>
                     . He already worked developing mobile and web applications in the public security context, law, and academic.
                 </p>
-                <div className="text-center text-lg-start">
-                    <a className="btn btn-outline-light"
-                        href="http://lattes.cnpq.br/6583921321802015"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >Lattes Curriculum</a>
+                <div className="d-flex flex-row gap-3">
+                    <div className="text-center text-lg-start">
+                        <a className="btn btn-outline-light"
+                            href="http://lattes.cnpq.br/6583921321802015"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >Lattes Curriculum</a>
+                    </div>
+                    <div className="text-center text-lg-start">
+                        <a className="btn btn-outline-light"
+                            href="https://personal-portfolio-files.s3.amazonaws.com/CV_Paulo_Roberto_de_Souza.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >PT-BR Curriculum</a>
+                    </div>
                 </div>
             </div>
         </div>
