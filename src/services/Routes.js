@@ -39,10 +39,5 @@ export const adminRoutes = [{
         pathname: "/admin/publications",
         name: "Publications",
         active: false,
-    },
-    {
-        pathname: "/admin/projects",
-        name: "Projects",
-        active: false,
     }
 ];

@@ -37,11 +37,6 @@ const App = function () {
           <Route path="create" element={<CreatePaper />} />
           <Route path=":id" element={<CreatePaper />} />
         </Route>
-        <Route path="projects">
-          <Route path="" element={<ListProjects />} />
-          <Route path="create" element={<CreateProject />} />
-          <Route path=":id" element={<CreateProject />} />
-        </Route>
         <Route path="publications/">
           <Route path="" element={<ListPublications />} />
           <Route path="create" element={<CreatePublication />} />
