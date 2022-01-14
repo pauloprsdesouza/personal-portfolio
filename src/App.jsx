@@ -6,8 +6,6 @@ import CreatePaper from "./components/Admin/Papers/CreatePaper";
 import ListPapers from "./components/Admin/Papers/ListPapers";
 import CreatePost from "./components/Admin/Post/CreatePost";
 import ListPosts from "./components/Admin/Post/ListPosts";
-import CreateProject from "./components/Admin/Projects/CreateProject";
-import ListProjects from "./components/Admin/Projects/ListProjects";
 import AppBar from "./components/Templates/AppBar/AppBar";
 import Blog from "./components/Blog/Blog";
 import Post from "./components/Blog/PostContent/Post";
