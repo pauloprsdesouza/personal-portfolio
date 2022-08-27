@@ -14,7 +14,7 @@ const Introduction = function () {
               <h1 className="section-title text-purple">Paulo Roberto de Souza</h1>
               <h6 className="text-muted mb-4">FULL STACK WEB AND MOBILE DEVELOPER</h6>
               <p className="card-text mb-5">
-                I enjoy to develop software in order to help people on solve problems through the use innovative ideas improving decision making.
+                I enjoy developing software in order to help people to solve problems through the use of innovative ideas improving the decision making.
               </p>
               <div className="d-grid gap-2 d-sm-block">
                 <a className="btn btn-outline-light btn-lg"
