@@ -24,9 +24,7 @@ const Home: React.FC = () => {
                             Full Stack Web Developer | Data Scientist
                         </h5>
                         <div className="d-flex justify-content-between mb-2">
-                            <button className="btn btn-outline-dark flex-fill m-1">
-                                Download CV
-                            </button>
+                            <a className="btn btn-outline-dark flex-fill m-1" href="https://portfolio-personal-files.s3.amazonaws.com/Paulo_Souza_Resume.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
                             <a className="btn btn-dark flex-fill m-1" href="#contact">
                                 Contact Info
                             </a>

@@ -15,6 +15,6 @@ experiences.push({ type: "frontend", stack: "HTML", level: "Experienced" });
 experiences.push({ type: "frontend", stack: "CSS", level: "Experienced" });
 experiences.push({ type: "frontend", stack: "Javascript", level: "Experienced" });
 experiences.push({ type: "infra", stack: "AWS", level: "Experienced" });
-experiences.push({ type: "infra", stack: "Azure Devops", level: "Experienced" });
+experiences.push({ type: "infra", stack: "Azure", level: "Experienced" });
 
 export default experiences;
