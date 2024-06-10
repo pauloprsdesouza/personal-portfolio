@@ -33,7 +33,6 @@ const ProjectsSection: React.FC = () => {
                 renderProjects()
             }
             </div>
-
         </div>
     )
 }
