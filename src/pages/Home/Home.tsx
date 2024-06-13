@@ -8,16 +8,16 @@ import ExperienceSection from "./Components/Experiences/ExperienceSection";
 const Home: React.FC = () => {
     return (
         <>
-            <div className="d-flex vh-100 align-items-center justify-content-center">
-                <div className="d-flex justify-content-center flex-row align-items-center">
-                    <div className="m-4">
+            <div className="d-flex vh-100 justify-content-center">
+                <div className="row align-content-center">
+                    <div className="col-lg-4 mb-lg-0 mb-4 p-5 p-lg-0">
                         <img
                             src="https://portfolio-personal-files.s3.amazonaws.com/profile.png"
-                            width="300"
+                            className="img-fluid vh-25"
                             alt="Profile"
                         />
                     </div>
-                    <div className="text-center m-4">
+                    <div className="col-lg-8 text-center">
                         <h6>Hello, I'm</h6>
                         <h1>Paulo Roberto</h1>
                         <h5 className="mb-4">

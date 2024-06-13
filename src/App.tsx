@@ -9,7 +9,7 @@ function App() {
   return (
     <BrowserRouter>
     <AppBar />
-    <div className="wrap-container container-fluid">
+    <div className="container">
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>

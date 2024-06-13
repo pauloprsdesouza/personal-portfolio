@@ -3,13 +3,18 @@ import "../../style.css"
 import { ExperiencesModel } from "./Models/ExperienceModel";
 import experiences from "../../../../helpers/ExperiencesHelper";
 
+interface RenderExperiencesProps {
+    type: string;
+    title: string;
+}
+
 const ExperienceSection: React.FC = () => {
 
-    function renderExperiences(type: string, title: string) {
+    const RenderExperiences: React.FC<RenderExperiencesProps> = ({ type, title }) => {
         const filteredExperiences: ExperiencesModel = experiences.filter(experience => experience.type === type);
 
         return (
-            <div className="card rounded-4">
+            <div className="card rounded-4 mb-3">
                 <div className="card-body">
                     <h3 className="card-tile mb-5">{title}</h3>
                     <div className="row row-cols-2">
@@ -31,25 +36,19 @@ const ExperienceSection: React.FC = () => {
     }
 
     return (
-        <div className="text-center my-5 container" id="experience">
+        <div className="text-center my-5" id="experience">
             <span className="lead">Explore My</span>
             <h1 className="mb-5">Experience</h1>
 
-            <div className="row row-cols-3">
-                <div className="col d-flex">
-                    {
-                        renderExperiences("frontend", "Frontend")
-                    }
+            <div className="d-flex gx-2 align-items-stretch">
+                <div className="col-lg-4 col-12">
+                    <RenderExperiences type="frontend" title="Frontend" />
                 </div>
-                <div className="col d-flex">
-                    {
-                        renderExperiences("backend", "Backend")
-                    }
+                <div className="col-lg-4 col-12">
+                    <RenderExperiences type="backend" title="Backend" />
                 </div>
-                <div className="col d-flex">
-                    {
-                        renderExperiences("infra", "Infrastructure")
-                    }
+                <div className="col-lg-4 col-12">
+                    <RenderExperiences type="infra" title="Infrastructure" />
                 </div>
             </div>
         </div >
