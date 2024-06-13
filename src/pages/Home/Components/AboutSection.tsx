@@ -10,11 +10,11 @@ const AboutSection: React.FC = () => {
 
             <div className="row">
                 <div className="col-lg-4">
-                    <img src="https://portfolio-personal-files.s3.amazonaws.com/profile-gray-scale.png" className="img-fluid mb-lg-0 mb-2" width="100%"/>
+                    <img src="https://portfolio-personal-files.s3.amazonaws.com/profile-gray-scale.png" className="img-fluid mb-lg-0 mb-2" width="100%" />
                 </div>
                 <div className="col-lg-8">
                     <div className="d-flex justify-content-between text-center">
-                        <div className="card m-2 rounded-4 flex-fill">
+                        <div className="card m-2 rounded-4 flex-fill shadow-sm border-0">
                             <div className="card-body">
                                 <i className="fa-solid fa-award fa-2x"></i>
                                 <div className="card-text">
@@ -25,16 +25,16 @@ const AboutSection: React.FC = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="card m-2 rounded-4 flex-fill">
+                        <div className="card m-2 rounded-4 flex-fill shadow-sm border-0">
                             <div className="card-body">
                                 <i className="fa-solid fa-graduation-cap fa-2x"></i>
                                 <h2>Education</h2>
-                                <p>
+                                <div>
                                     PhD. and MSc. in Computer Science.
-                                </p>
-                                <p>
+                                </div>
+                                <div>
                                     Recommender System Expert
-                                </p>
+                                </div>
                             </div>
                         </div>
                     </div>

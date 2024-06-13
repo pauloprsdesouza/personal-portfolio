@@ -14,7 +14,7 @@ const ExperienceSection: React.FC = () => {
         const filteredExperiences: ExperiencesModel = experiences.filter(experience => experience.type === type);
 
         return (
-            <div className="card rounded-4 mb-3">
+            <div className="card rounded-4 mb-3 shadow-sm border-0 flex-fill">
                 <div className="card-body">
                     <h3 className="card-tile mb-5">{title}</h3>
                     <div className="row row-cols-2">
@@ -40,14 +40,14 @@ const ExperienceSection: React.FC = () => {
             <span className="lead">Explore My</span>
             <h1 className="mb-5">Experience</h1>
 
-            <div className="d-flex gx-2 align-items-stretch">
-                <div className="col-lg-4 col-12">
+            <div className="row d-flex align-items-stretch justify-content-between">
+                <div className="col-lg-4 col-12 mb-4 mb-lg-0 d-flex">
                     <RenderExperiences type="frontend" title="Frontend" />
                 </div>
-                <div className="col-lg-4 col-12">
+                <div className="col-lg-4 col-12 mb-4 mb-lg-0 d-flex">
                     <RenderExperiences type="backend" title="Backend" />
                 </div>
-                <div className="col-lg-4 col-12">
+                <div className="col-lg-4 col-12 mb-4 mb-lg-0 d-flex">
                     <RenderExperiences type="infra" title="Infrastructure" />
                 </div>
             </div>
