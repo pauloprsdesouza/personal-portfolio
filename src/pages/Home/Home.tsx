@@ -1,9 +1,9 @@
 import React from "react";
 import AboutSection from "./Components/AboutSection";
-import ProjectsSection from "./Components/Projects/ProjectsSection";
 import ContactSection from "./Components/ContactSection";
+import ProjectsSection from "./Components/ProjectsSection";
 import "../../App.css";
-import ExperienceSection from "./Components/Experiences/ExperienceSection";
+import ExperienceSection from "./Components/ExperiencesSection";
 
 const Home: React.FC = () => {
     return (
