@@ -1,16 +1,31 @@
-<h1 align="center"> ReactJS Personal Portfolio </h1>
+# Personal Portfolio
 
-## Hello there 👋
+[![License](https://img.shields.io/github/license/pauloprsdesouza/personal-portfolio)](./LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/pauloprsdesouza/personal-portfolio)](https://github.com/pauloprsdesouza/personal-portfolio/commits/main)
+[![Top Language](https://img.shields.io/github/languages/top/pauloprsdesouza/personal-portfolio)](https://github.com/pauloprsdesouza/personal-portfolio)
 
-### This app was developed in order to create my personal portfolio.
+Frontend portfolio application showcasing professional profile, projects, and technical background.
 
-## Stacks Used
+## Tech Stack
+- JavaScript
+- React
+- Frontend web architecture
 
-- [React JS](https://reactjs.org/);
-- [Bootstrap 5.1.3](https://getbootstrap.com/);
-- [React Router](https://reactrouter.com/);
-- [Testing Library](https://testing-library.com/).
+## Architecture
+- `src/` contains UI components, pages, and application logic.
+- `public/` contains static assets.
+- Project scripts support local development and production build workflows.
 
-## Infrastructure AWS
-- [AWS Amplify](https://aws.amazon.com/amplify/) in order to realize Continuous Delivery (CI);
-- [Route 53](https://aws.amazon.com/route53/) to add a domain https://paulosouza.me.
+## Quick Start
+```bash
+npm install
+npm start
+```
+
+## Build
+```bash
+npm run build
+```
+
+## Contributing
+See `CONTRIBUTING.md` for contribution and PR guidelines.
