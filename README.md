@@ -1,20 +1,19 @@
 # Personal Portfolio
 
 [![License](https://img.shields.io/github/license/pauloprsdesouza/personal-portfolio)](./LICENSE)
-[![Last Commit](https://img.shields.io/github/last-commit/pauloprsdesouza/personal-portfolio)](https://github.com/pauloprsdesouza/personal-portfolio/commits/main)
+[![Last Commit](https://img.shields.io/github/last-commit/pauloprsdesouza/personal-portfolio)](https://github.com/pauloprsdesouza/personal-portfolio/commits)
 [![Top Language](https://img.shields.io/github/languages/top/pauloprsdesouza/personal-portfolio)](https://github.com/pauloprsdesouza/personal-portfolio)
 
-Frontend portfolio application showcasing professional profile, projects, and technical background.
+## Overview
+A React JS APP, which contains a personal portfolio including a blog and others functionalities
 
 ## Tech Stack
 - JavaScript
-- React
-- Frontend web architecture
+- Node.js / npm ecosystem
 
-## Architecture
-- `src/` contains UI components, pages, and application logic.
-- `public/` contains static assets.
-- Project scripts support local development and production build workflows.
+## Repository Structure
+- `src/` - main source code
+- `public/` - static assets
 
 ## Quick Start
 ```bash
@@ -22,10 +21,12 @@ npm install
 npm start
 ```
 
-## Build
-```bash
-npm run build
-```
+## Validation
+- Run local build and tests where available.
+- Validate main workflows/endpoints before opening pull requests.
 
 ## Contributing
 See `CONTRIBUTING.md` for contribution and PR guidelines.
+
+## Status
+Actively maintained by Paulo Roberto de Souza.
